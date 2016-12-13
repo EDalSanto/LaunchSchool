@@ -1,0 +1,4 @@
+informal greeting is a reference to the original object and << mutates the
+object that called it
+One could avoid it by cloning the original or using a string method like string
+concat that creats a new string object

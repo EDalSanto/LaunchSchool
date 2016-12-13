@@ -1,0 +1,2 @@
+String method << modifies Ruby string object itself whereas array = creates new
+local var to method
