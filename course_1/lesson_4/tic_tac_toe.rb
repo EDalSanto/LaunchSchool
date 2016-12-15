@@ -291,36 +291,40 @@ def alternate_player(current_player)
   end
 end
 
-player_wins = 0
-computer_wins = 0
 
-while player_wins < 5 && computer_wins < 5
-  board = initialize_board
-  first = who_goes_first?
-  current_player = first
+if __FILE__ == $0
 
-  loop do
+  player_wins = 0
+  computer_wins = 0
+  
+  while player_wins < 5 && computer_wins < 5
+    board = initialize_board
+    first = who_goes_first?
+    current_player = first
+  
+    loop do
+      display_board(board)
+      display_wins(player_wins, computer_wins)
+      play_piece!(board, current_player)
+      break if somebody_won?(board) || board_full?(board)
+      current_player = alternate_player(current_player)
+    end
+  
     display_board(board)
-    display_wins(player_wins, computer_wins)
-    play_piece!(board, current_player)
-    break if somebody_won?(board) || board_full?(board)
-    current_player = alternate_player(current_player)
+  
+    winner = detect_winner(board)
+    if winner 
+      winner == 'Player' ? player_wins += 1 : computer_wins += 1
+      prompt "#{winner} won!"
+    else
+      prompt "It's a tie!"
+    end
+  
+    prompt "Would you like to play again? (y or n)"
+    play_again = gets.chomp.downcase
+    break unless play_again.start_with?('y')
+  
   end
-
-  display_board(board)
-
-  winner = detect_winner(board)
-  if winner 
-    winner == 'Player' ? player_wins += 1 : computer_wins += 1
-    prompt "#{winner} won!"
-  else
-    prompt "It's a tie!"
-  end
-
-  prompt "Would you like to play again? (y or n)"
-  play_again = gets.chomp.downcase
-  break unless play_again.start_with?('y')
-
+  
+  prompt "Thanks for playing Tic Tac Toe. Goodbye!"
 end
-
-prompt "Thanks for playing Tic Tac Toe. Goodbye!"

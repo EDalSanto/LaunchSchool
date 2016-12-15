@@ -141,6 +141,7 @@ if __FILE__ == $0
   prompt("Welcome to Twenty-One!")
   loop do
     prompt("Player wins: #{player_wins}, Dealer wins: #{dealer_wins}")
+    # Initialize decks and hands
     deck = make_deck
     player_hand = []
     dealer_hand = []
@@ -149,12 +150,15 @@ if __FILE__ == $0
     display_dealer(dealer_hand)
     display_player(player_hand)
 
+    # Player turn
     player_turn!(deck, player_hand)
 
     if busted?(player_hand)
+      # Don't continue to Dealer
       prompt("Player BUSTED, Dealer wins!")
       dealer_wins += 1
     else
+      # Dealer can proceed with hand
       dealer_turn!(deck, dealer_hand)
       if busted?(dealer_hand)
         prompt("DEALER BUSTED!, Player wins!")
