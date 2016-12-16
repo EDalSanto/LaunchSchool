@@ -1,14 +1,3 @@
-# 1. Display the initial empty 3x3 board
-# 2. Ask the user to mark a square
-# 3. Ask the computer to mark a square
-# 4. Display the updated board state
-# 5. If winner, display winner
-# 6. If board is full, display tie
-# 7. If neither winner nor board is full, go to #2
-# 8. Play again?
-# 9. If yes, go to #1
-# 10. Good bye!
-
 require 'pry'
 
 WINNING_LINES = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] + # rows
@@ -18,7 +7,7 @@ INITIAL_MARKER = ' '.freeze
 PLAYER_MARKER = 'X'.freeze
 COMPUTER_MARKER = 'O'.freeze
 FIRST = 'choose'.freeze
-INFINITY = 1.0/0
+INFINITY = 1.0 / 0
 
 def display_cell(cell, num)
   if cell == ' '
@@ -88,46 +77,6 @@ def player_places_piece!(brd)
   brd[square] = PLAYER_MARKER
 end
 
-def immediate_threat?(brd)
-  WINNING_LINES.each do |line|
-    if brd.values_at(*line).count(PLAYER_MARKER) == 2
-      line.each do |square|
-        return square if brd[square] == INITIAL_MARKER 
-      end
-    end
-  end
-
-  nil
-end
-
-def search_for_win(brd)
-  WINNING_LINES.each do |line|
-    if brd.values_at(*line).count(COMPUTER_MARKER) == 2
-      line.each do |square|
-        return square if brd[square] == INITIAL_MARKER 
-      end
-    end
-  end
-
-  nil
-end
-
-# original computer places piece
-#def computer_places_piece!(brd)
-#  # search for win first
-#  square = search_for_win(brd)
-#
-#  # if winning move wasn't found check for threat
-#  square = immediate_threat?(brd) if !square
-#
-#  # pick square 5 if 
-#  square = 5 if brd[5] == INITIAL_MARKER   
-#
-#  # if no winning and no threat, pick random
-#
-#  brd[square] = COMPUTER_MARKER
-#end
-
 def board_full?(brd)
   empty_squares(brd).empty?
 end
@@ -169,24 +118,6 @@ def get_available_moves(board)
     moves.push(v) if v == INITIAL_MARKER
   end
   moves
-end
-
-def get_new_state(board, move, current_player)
-  if current_player == 'player'
-    board[move] = PLAYER_MARKER
-  else
-    board[move] = COMPUTER_MARKER
-  end
-end
-
-def find_best_move(brd)
-  best_move = nil
-  moves = get_available_moves(brd)
-  moves.each do |move|
-    if evaluate(brd) > best_move 
-      best_move = move
-    end
-  end
 end
 
 def minimax(brd, depth, current_player)
@@ -236,7 +167,7 @@ end
 # For each possible move, run minimax on that path to find best move
 def find_best_move(brd)
 
-  # Shortcircuit first move so 5 is always choosen 
+  # Shortcircuit first move so 5 is always choosen
   return 5 if empty_squares(brd).count == 9
 
 
@@ -266,7 +197,7 @@ def who_goes_first?
       puts "Sorry, please enter player or computer"
       answer = gets.chomp
     end
-  elsif FIRST == 'player' 
+  elsif FIRST == 'player'
     answer = 'player'
   else
     answer = 'computer'
@@ -275,8 +206,8 @@ def who_goes_first?
 end
 
 def play_piece!(board, current_player)
-  if current_player == 'player' 
-    player_places_piece!(board) 
+  if current_player == 'player'
+    player_places_piece!(board)
   else
     computer_move = find_best_move(board)
     board[computer_move] = COMPUTER_MARKER
@@ -292,7 +223,7 @@ def alternate_player(current_player)
 end
 
 
-if __FILE__ == $0
+if __FILE__ == $PROGRAM_NAME
 
   player_wins = 0
   computer_wins = 0
