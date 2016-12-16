@@ -1,7 +1,9 @@
 require 'pry'
 
-SUITS = ['H', 'D', 'C', 'S'].freeze
-VALUES = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'].freeze
+SUITS = ['H', 'D', 'C', 'S']
+VALUES = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+MAX_VALUE = 21
+DEALER_LIMIT = 17
 
 def prompt(msg)
   puts "=> #{msg}"
@@ -23,8 +25,8 @@ end
 
 def correct_for_aces(hand, sum)
   aces = values(hand).select { |val| val == 'A' }.count
-  aces.times do 
-    sum -= 10 if sum > 21
+  aces.times do
+    sum -= 10 if sum > MAX_VALUE
   end
   sum
 end
@@ -33,7 +35,7 @@ def total(hand)
   sum = 0
 
   values(hand).each do |val|
-    if ('2'..'10').to_a.include?(val)
+    if !!/\d/.match(val)
       sum += val.to_i
     elsif !!/[JQK]/.match(val)
       sum += 10
@@ -64,7 +66,7 @@ def display_player(hand)
   prompt("Player Total: #{total(hand)}")
 end
 
-def display_dealer(hand) 
+def display_dealer(hand)
   puts "-----------------------------------------"
   if hand.count == 2
     visible_card = hand.sample
@@ -77,7 +79,7 @@ def display_dealer(hand)
 end
 
 def busted?(hand)
-  total(hand) > 21
+  total(hand) > MAX_VALUE
 end
 
 def player_turn!(deck, hand)
@@ -101,7 +103,7 @@ def player_turn!(deck, hand)
 end
 
 def dealer_turn!(deck, hand)
-  while total(hand) < 17 
+  while total(hand) < DEALER_LIMIT
     deal_card!(deck, hand)
   end
 end
@@ -110,9 +112,9 @@ def detect_result(player_hand, dealer_hand)
   player_total = total(player_hand)
   dealer_total = total(dealer_hand)
 
-  if player_total > 21 
-    :player_busted 
-  elsif dealer_total > 21
+  if player_total > MAX_VALUE
+    :player_busted
+  elsif dealer_total > MAX_VALUE
     :dealer_busted
   elsif dealer_total < player_total
     :player
@@ -142,29 +144,30 @@ def display_result(player_hand, dealer_hand)
 end
 
 def display_final_hands(dealer_hand, player_hand)
-   prompt("------------Final Hands-------------")
-   prompt("Dealer Hand: #{dealer_hand.map { |card| card[1] }.join('-')}")
-   prompt("Dealer Total: #{total(dealer_hand)}")
-   puts "-----------------------------------------"
-   prompt("Player Hand: #{player_hand.map { |card| card[1] }.join('-')}")
-   prompt("Player Total: #{total(player_hand)}")
+  prompt("------------Final Hands-------------")
+  prompt("Dealer Hand: #{dealer_hand.map { |card| card[1] }.join('-')}")
+  prompt("Dealer Total: #{total(dealer_hand)}")
+  puts "-----------------------------------------"
+  prompt("Player Hand: #{player_hand.map { |card| card[1] }.join('-')}")
+  prompt("Player Total: #{total(player_hand)}")
 end
 
 def play_again?
-   puts "--------------------"
-   prompt("Would you like to play again?")
-   ans = gets.chomp 
-   ans.downcase.start_with?('y')
+  puts "--------------------"
+  prompt("Would you like to play again?")
+  ans = gets.chomp
+  ans.downcase.start_with?('y')
 end
 
-if __FILE__ == $0
-   
+if __FILE__ == $PROGRAM_NAME
+
   player_wins = 0
   dealer_wins = 0
 
   prompt("Welcome to Twenty-One!")
-  loop do
+  while player_wins < 5 && dealer_wins < 5
     prompt("Player wins: #{player_wins}, Dealer wins: #{dealer_wins}")
+    prompt("First to five wins")
     deck = make_deck
     player_hand = []
     dealer_hand = []
@@ -188,4 +191,11 @@ if __FILE__ == $0
     system 'clear'
   end
 
+  if player_wins == 5
+    prompt("Player reached 5 wins first!")
+  elsif dealer_wins == 5
+    prompt("Dealer reached 5 wins first!")
+  else
+    prompt("No one reached 5 wins")
+  end
 end
