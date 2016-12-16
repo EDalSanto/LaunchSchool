@@ -35,9 +35,9 @@ def total(hand)
   sum = 0
 
   values(hand).each do |val|
-    if !!/\d/.match(val)
+    if /\d/.match(val)
       sum += val.to_i
-    elsif !!/[JQK]/.match(val)
+    elsif /[JQK]/.match(val)
       sum += 10
     else
       sum += 11
@@ -88,13 +88,13 @@ def player_turn!(deck, hand)
   loop do
     puts "-------------------------------------"
     prompt("hit or stay?")
-    answer = gets.chomp
+    answer = gets.chomp.downcase
 
-    while answer != 'hit' && answer != 'stay'
+    while !answer.start_with?('h') && !answer.start_with?('s')
       prompt("Please enter hit or stay!")
-      answer = gets.chomp
+      answer = gets.chomp.downcase
     end
-    break if answer == 'stay'
+    break if answer.start_with?('s')
 
     deal_card!(deck, hand)
     display_player(hand)
@@ -189,6 +189,7 @@ if __FILE__ == $PROGRAM_NAME
     if !busted?(player_hand)
       dealer_turn!(deck, dealer_hand)
     end
+
     system 'clear'
     winner = display_result(player_hand, dealer_hand)
     display_final_hands(dealer_hand, player_hand)
@@ -197,6 +198,7 @@ if __FILE__ == $PROGRAM_NAME
     elsif winner == :player || winner == :dealer_busted
       player_wins += 1
     end
+
     break unless play_again?
     system 'clear'
   end
