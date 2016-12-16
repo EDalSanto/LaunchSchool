@@ -8,3 +8,7 @@
 * The end goal of this program is be a full-stack engineer who truly understands the underpinnings of the web, and not just how to use a specific framework. 
 * Since I've already programmed in Ruby, and have been programming in C non-stop for the past 4 months, I hope to really go deep into the material and be prepared for anything. 
 * For more info checkout Launch School https://launchschool.com and their open book shelf: https://launchschool.com/books/
+```ruby
+def test
+end
+```
