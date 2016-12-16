@@ -159,6 +159,16 @@ def play_again?
   ans.downcase.start_with?('y')
 end
 
+def who_won?(player_wins, dealer_wins)
+  if player_wins == 5
+    prompt("Player reached 5 wins first!")
+  elsif dealer_wins == 5
+    prompt("Dealer reached 5 wins first!")
+  else
+    prompt("No one reached 5 wins")
+  end
+end
+
 if __FILE__ == $PROGRAM_NAME
 
   player_wins = 0
@@ -191,11 +201,5 @@ if __FILE__ == $PROGRAM_NAME
     system 'clear'
   end
 
-  if player_wins == 5
-    prompt("Player reached 5 wins first!")
-  elsif dealer_wins == 5
-    prompt("Dealer reached 5 wins first!")
-  else
-    prompt("No one reached 5 wins")
-  end
+  who_won?(player_wins, dealer_wins)
 end
