@@ -176,6 +176,7 @@ if __FILE__ == $0
     if !busted?(player_hand)
       dealer_turn!(deck, dealer_hand)
     end
+    system 'clear'
     winner = display_result(player_hand, dealer_hand)
     display_final_hands(dealer_hand, player_hand)
     if winner == :dealer || winner == :player_busted
