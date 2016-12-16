@@ -1,7 +1,7 @@
 require 'pry'
 
-SUITS = ['H', 'D', 'C', 'S']
-VALUES = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+SUITS = ['H', 'D', 'C', 'S'].freeze
+VALUES = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'].freeze
 
 def prompt(msg)
   puts "=> #{msg}"
@@ -18,11 +18,11 @@ def make_deck
 end
 
 def values(hand)
-  values = hand.map { |card| card[1] }
+  hand.map { |card| card[1] }
 end
 
 def correct_for_aces(hand, sum)
-  aces = values(hand).select { |val| val == 'A' }.count 
+  aces = values(hand).select { |val| val == 'A' }.count
   aces.times do 
     sum -= 10 if sum > 21
   end
@@ -33,7 +33,7 @@ def total(hand)
   sum = 0
 
   values(hand).each do |val|
-    if ('2'..'10').to_a.include?(val)  
+    if ('2'..'10').to_a.include?(val)
       sum += val.to_i
     elsif !!/[JQK]/.match(val)
       sum += 10
@@ -42,7 +42,7 @@ def total(hand)
     end
   end
 
-  sum = correct_for_aces(hand, sum) 
+  sum = correct_for_aces(hand, sum)
 end
 
 def deal_card!(deck, hand)
@@ -66,9 +66,9 @@ end
 
 def display_dealer(hand) 
   puts "-----------------------------------------"
-  if hand.count == 2 
-    visible_card = hand.sample[1]
-    prompt("Dealer Hand: #{visible_card + '-X'}")
+  if hand.count == 2
+    visible_card = hand.sample
+    prompt("Dealer Hand: #{visible_card[1] + '-X'}")
     prompt("Dealer Total: #{total([visible_card])}")
   else
     prompt("Dealer Hand: #{hand.map { |card| card[1] }.join('-')}")
@@ -77,22 +77,22 @@ def display_dealer(hand)
 end
 
 def busted?(hand)
-  total(hand) > 21 
+  total(hand) > 21
 end
 
 def player_turn!(deck, hand)
   answer = nil
 
-  loop do 
+  loop do
     puts "-------------------------------------"
     prompt("hit or stay?")
-    answer = gets.chomp 
+    answer = gets.chomp
 
     while answer != 'hit' && answer != 'stay'
       prompt("Please enter hit or stay!")
-      answer = gets.chomp 
+      answer = gets.chomp
     end
-    break if answer == 'stay' 
+    break if answer == 'stay'
 
     deal_card!(deck, hand)
     display_player(hand)
@@ -103,18 +103,42 @@ end
 def dealer_turn!(deck, hand)
   while total(hand) < 17 
     deal_card!(deck, hand)
-    display_dealer(hand)
   end
 end
 
-def compare_cards(player_hand, dealer_hand)
-  if total(player_hand) > total(dealer_hand)
-    return "player"
-  elsif total(player_hand) < total(dealer_hand)
-    return "dealer"
+def detect_result(player_hand, dealer_hand)
+  player_total = total(player_hand)
+  dealer_total = total(dealer_hand)
+
+  if player_total > 21 
+    :player_busted 
+  elsif dealer_total > 21
+    :dealer_busted
+  elsif dealer_total < player_total
+    :player
+  elsif dealer_total > player_total
+    :dealer
   else
-    return "tie"
+    :tie
   end
+end
+
+def display_result(player_hand, dealer_hand)
+  result = detect_result(player_hand, dealer_hand)
+
+  case result
+  when :player_busted
+    prompt "You busted! Dealer wins!"
+  when :dealer_busted
+    prompt "Dealer busted! You win!"
+  when :player
+    prompt "You win!"
+  when :dealer
+    prompt "Dealer wins!"
+  when :tie
+    prompt "It's a tie!"
+  end
+  result
 end
 
 def display_final_hands(dealer_hand, player_hand)
@@ -130,7 +154,7 @@ def play_again?
    puts "--------------------"
    prompt("Would you like to play again?")
    ans = gets.chomp 
-   ans.downcase.start_with('y')
+   ans.downcase.start_with?('y')
 end
 
 if __FILE__ == $0
@@ -141,42 +165,26 @@ if __FILE__ == $0
   prompt("Welcome to Twenty-One!")
   loop do
     prompt("Player wins: #{player_wins}, Dealer wins: #{dealer_wins}")
-    # Initialize decks and hands
     deck = make_deck
     player_hand = []
     dealer_hand = []
-
     deal_initial_cards!(deck, player_hand, dealer_hand)
     display_dealer(dealer_hand)
     display_player(player_hand)
 
-    # Player turn
     player_turn!(deck, player_hand)
-
-    if busted?(player_hand)
-      # Don't continue to Dealer
-      prompt("Player BUSTED, Dealer wins!")
-      dealer_wins += 1
-    else
-      # Dealer can proceed with hand
+    if !busted?(player_hand)
       dealer_turn!(deck, dealer_hand)
-      if busted?(dealer_hand)
-        prompt("DEALER BUSTED!, Player wins!")
-        player_wins += 1
-      else
-        winner = compare_cards(player_hand, dealer_hand)
-        system 'clear'
-        display_final_hands(dealer_hand, player_hand)
-        prompt("The winner is: #{winner}!") 
-        if winner == 'dealer'
-          dealer_wins += 1
-        elsif winner == 'player'
-          player_wins += 1 
-        end
-      end
     end
-    break unless play_again? 
+    winner = display_result(player_hand, dealer_hand)
+    display_final_hands(dealer_hand, player_hand)
+    if winner == :dealer || winner == :player_busted
+      dealer_wins += 1
+    elsif winner == :player || winner == :dealer_busted
+      player_wins += 1
+    end
+    break unless play_again?
     system 'clear'
   end
-      
+
 end
