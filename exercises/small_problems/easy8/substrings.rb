@@ -9,11 +9,12 @@ def substrings(str)
   substrings.flatten
 end
 
-p substrings('abcde')
-# == [
-#  'a', 'ab', 'abc', 'abcd', 'abcde', 
-#  'b', 'bc', 'bcd', 'bcde',
-#  'c', 'cd', 'cde',
-#  'd', 'de',
-#  'e'
-#  ]
+if __FILE__ == $0
+  p substrings('abcde') == [
+    'a', 'ab', 'abc', 'abcd', 'abcde', 
+    'b', 'bc', 'bcd', 'bcde',
+    'c', 'cd', 'cde',
+    'd', 'de',
+    'e'
+]
+end
