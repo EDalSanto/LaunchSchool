@@ -1,17 +1,20 @@
-def print_top(width)
-  mid_idx = width / 2 
-  left_idx = 0
-  right_idx = width - 1
-  while left_idx < right_idx 
-    width.times do |i|
-      
-    end
+def print_top(width, max_gap)
+  max_gap.downto(0) do |gap_size|
+    puts Array.new(3, '*').join(' ' * gap_size).center(width)
+  end
+end
+
+def print_bottom(width, max_gap)
+  0.upto(max_gap) do |gap_size|
+    puts Array.new(3, '*').join(' ' * gap_size).center(width)
   end
 end
 
 def star(width)
-  print_top(width)
+  max_gap = (width - 3) / 2
+  print_top(width, max_gap)
+  puts "*" * width
+  print_bottom(width, max_gap)
 end
 
-star(7)
-star(9)
+star(21)
