@@ -1,10 +1,5 @@
 module Hand
   MAX_VALUE = 21
-  DEALER_LIMIT = 17
-
-  def hit(new_card)
-    hand << new_card   
-  end
 
   def busted?
     total > MAX_VALUE 

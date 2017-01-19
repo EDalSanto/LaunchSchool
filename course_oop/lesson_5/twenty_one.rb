@@ -69,13 +69,12 @@ end
 
 class Game
   attr_reader :player, :dealer, :deck
+  DEALER_LIMIT = 17
 
   def initialize
     @player = Player.new("Jim")
     @dealer = Dealer.new("Bob")
     @deck = Deck.new
-    @player_score = nil
-    @dealer_score = nil
   end
 
   def deal_cards
@@ -88,9 +87,15 @@ class Game
     puts "Your Total: #{player.total}"
   end
 
-  def display_dealer_cards
-    puts "Dealer Cards: #{@dealer.hand[0]}, FACE_DOWN_CARD"
-    puts "Dealer Total: #{@dealer.total}"
+  def display_dealer_cards(first: true)
+    if :first
+      puts "Dealer Cards: #{@dealer.hand[0]}, FACE_DOWN_CARD"
+      puts "Dealer Total: #{@dealer.hand[0].value.to_i}"
+    else
+      puts "Dealer Cards: #{@dealer.hand.map { |card| card.to_s }.join(", ")}"
+      puts "Dealer Total: #{@dealer.total}"
+    end
+
   end
 
 
@@ -123,11 +128,18 @@ class Game
       @deck.deal_card(player)
       display_player_cards
 
-      break if player.busted?
+      if player.busted?
+        puts "O noo, you busted! Dealer wins!"
+        break
+      end
     end
   end
 
   def dealer_turn
+    while dealer.total < DEALER_LIMIT 
+      @deck.deal_card(dealer)
+    end
+    display_dealer_cards
   end
 
   def show_result
