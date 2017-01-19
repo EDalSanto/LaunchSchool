@@ -103,7 +103,9 @@ class TTTGame
   INFINITY = 1.0 / 0
 
   attr_reader :board, :human, :computer
-  attr_accessor :current_marker, :wins, :winning_marker
+  attr_accessor :current_marker, :winning_marker
+
+  @@wins = { human: 0, computer: 0 }
 
   def initialize
     @board = Board.new
@@ -111,7 +113,6 @@ class TTTGame
     @computer = Player.new(COMPUTER_MARKER)
     @current_marker = FIRST_TO_MOVE
     @winning_marker = nil
-    @wins = { human: 0, computer: 0 }
   end
   
   def play
@@ -144,23 +145,23 @@ class TTTGame
 
     def winner_detected?
       if board.someone_won?
-        @winning_marker = @current_marker
+        self.winning_marker = current_marker
         return true
       end
       false
     end
 
     def update_wins
-      if @winning_marker == HUMAN_MARKER
-        @wins[:human] += 1
-      elsif @winning_marker == COMPUTER_MARKER
-        @wins[:computer] += 1
+      if winning_marker == HUMAN_MARKER
+        @@wins[:human] += 1
+      elsif winning_marker == COMPUTER_MARKER
+        @@wins[:computer] += 1
       end
     end
    
     def display_wins
       puts ""
-      puts "Your wins: #{wins[:human]}, Computer wins: #{wins[:computer]}"
+      puts "Your wins: #{@@wins[:human]}, Computer wins: #{@@wins[:computer]}"
       puts ""
     end
 
@@ -171,7 +172,7 @@ class TTTGame
     end
 
     def five_wins?
-      @wins.has_value? 5
+      @@wins.has_value? 5
     end
 
     def display_welcome_message
@@ -247,14 +248,14 @@ class TTTGame
     end
    
     def undo_minimax_move(cell)
-      @board[cell] = Square::INITIAL_MARKER
+      board[cell] = Square::INITIAL_MARKER
       swap_current_player
     end
 
     def maximizer_best_move(depth)
       best = -INFINITY
       # Play each spot that is empty
-      @board.squares.each do |cell, square|
+      board.squares.each do |cell, square|
         if square.unmarked?
           @board[cell] = COMPUTER_MARKER 
           swap_current_player
@@ -269,7 +270,7 @@ class TTTGame
     def minimizer_best_move(depth)
       best = INFINITY
       # Play each spot that is empty
-      @board.squares.each do |cell, square|
+      board.squares.each do |cell, square|
         if square.unmarked?
           @board[cell] = HUMAN_MARKER 
           swap_current_player
@@ -304,7 +305,15 @@ class TTTGame
         return minimizer_best_move(depth)
       end
     end
-   
+  
+    def simulate_computer_move(cell)
+      board[cell] = COMPUTER_MARKER
+      swap_current_player
+      move_val = minimax(0)
+      undo_minimax_move(cell)
+      move_val
+    end
+
     # For each possible move, run minimax on that path to find best move
     def find_best_move
     
@@ -315,12 +324,9 @@ class TTTGame
       best_val = -INFINITY
       best_move = nil
     
-      @board.squares.each do |cell, square|
+      board.squares.each do |cell, square|
         if square.unmarked? 
-          @board[cell] = COMPUTER_MARKER
-          swap_current_player
-          move_val = minimax(0)
-          undo_minimax_move(cell)
+          move_val = simulate_computer_move(cell)
           if move_val > best_val
             best_val = move_val
             best_move = cell
@@ -367,15 +373,15 @@ class TTTGame
     end
 
     def swap_current_player
-      if @current_marker == HUMAN_MARKER
-        @current_marker = COMPUTER_MARKER
+      if current_marker == HUMAN_MARKER
+        self.current_marker = COMPUTER_MARKER
       else
-        @current_marker = HUMAN_MARKER
+        self.current_marker = HUMAN_MARKER
       end
     end
 
     def human_turn?
-      @current_marker == HUMAN_MARKER
+      current_marker == HUMAN_MARKER
     end
 
 end
