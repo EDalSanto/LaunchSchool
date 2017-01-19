@@ -1,5 +1,3 @@
-require 'pry'
-
 class Board
   attr_reader :squares
 
@@ -99,10 +97,11 @@ class Player
 end
 
 class TTTGame
-  HUMAN_MARKER = "X"
+  HUMAN_MARKER = "X" 
   COMPUTER_MARKER = "O"
   FIRST_TO_MOVE = HUMAN_MARKER
   INFINITY = 1.0 / 0
+
   attr_reader :board, :human, :computer
   attr_accessor :current_marker, :wins, :winning_marker
 
@@ -114,7 +113,6 @@ class TTTGame
     @winning_marker = nil
     @wins = { human: 0, computer: 0 }
   end
-
   
   def play
     display_welcome_message
@@ -237,7 +235,7 @@ class TTTGame
       # Returns array of possible square index
     end
 
-    def evaluate
+    def evaluate_move
       winning_marker = board.winning_marker 
       if winning_marker == HUMAN_MARKER
         return -10
@@ -247,10 +245,49 @@ class TTTGame
         return 0
       end
     end
-    
+   
+    def undo_minimax_move(cell)
+      @board[cell] = Square::INITIAL_MARKER
+      swap_current_player
+    end
+
+    def maximizer_best_move(depth)
+      best = -INFINITY
+      # Play each spot that is empty
+      @board.squares.each do |cell, square|
+        if square.unmarked?
+          @board[cell] = COMPUTER_MARKER 
+          swap_current_player
+          # Call minimax recursively and find the max value
+          best = [best, minimax(depth + 1)].max
+          undo_minimax_move(cell) 
+        end
+      end
+      best
+    end
+
+    def minimizer_best_move(depth)
+      best = INFINITY
+      # Play each spot that is empty
+      @board.squares.each do |cell, square|
+        if square.unmarked?
+          @board[cell] = HUMAN_MARKER 
+          swap_current_player
+          # Call minimax recursively and find the max value
+          best = [best, minimax(depth + 1)].min
+          undo_minimax_move(cell)
+        end
+      end
+      return best
+    end
+
+    def computer_turn?
+      @current_marker == COMPUTER_MARKER
+    end
+
     def minimax(depth)
     
-      score = evaluate
+      score = evaluate_move
      
       # If Computer has won, return score
       return score if score == 10
@@ -258,44 +295,16 @@ class TTTGame
       # If player has won, return score
       return score if score == -10
     
-      # NO more moves and no winners, so tie
+      # NO more moves and no winners, so it's a tie
       return 0 if board.full?
     
-      # maximizer's move
-      if @current_marker == COMPUTER_MARKER
-        best = -INFINITY
-        # Play each spot that is empty
-        @board.squares.each do |cell, square|
-          if square.unmarked?
-            @board[cell] = COMPUTER_MARKER 
-            swap_current_player
-            # Call minimax recursively and find the max value
-            best = [best, minimax(depth + 1)].max
-            # undo the move
-            @board[cell] = Square::INITIAL_MARKER
-            swap_current_player
-          end
-        end
-        return best
-      # minimizer's move
-      elsif @current_marker == HUMAN_MARKER 
-        best = INFINITY
-        # Play each spot that is empty
-        @board.squares.each do |cell, square|
-          if square.unmarked?
-            @board[cell] = HUMAN_MARKER 
-            swap_current_player
-            # Call minimax recursively and find the max value
-            best = [best, minimax(depth + 1)].min
-            # undo the move
-            @board[cell] = Square::INITIAL_MARKER
-            swap_current_player
-          end
-        end
-        return best
+      if computer_turn? 
+        return maximizer_best_move(depth)
+      elsif human_turn? 
+        return minimizer_best_move(depth)
       end
     end
-    
+   
     # For each possible move, run minimax on that path to find best move
     def find_best_move
     
@@ -311,8 +320,7 @@ class TTTGame
           @board[cell] = COMPUTER_MARKER
           swap_current_player
           move_val = minimax(0)
-          @board[cell] = Square::INITIAL_MARKER
-          swap_current_player
+          undo_minimax_move(cell)
           if move_val > best_val
             best_val = move_val
             best_move = cell
@@ -338,6 +346,11 @@ class TTTGame
       answer == 'y'
     end
 
+    def display_play_again_message
+      puts "Let's play again!"
+      puts ""
+    end
+
     def clear
       system 'clear'
     end
@@ -348,12 +361,7 @@ class TTTGame
       current_marker = FIRST_TO_MOVE
       winning_marker = nil
     end
-
-    def display_play_again_message
-      puts "Let's play again!"
-      puts ""
-    end
-
+    
     def current_player_moves
       human_turn? ? human_moves : computer_moves
     end
