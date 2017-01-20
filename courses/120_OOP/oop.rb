@@ -1,24 +1,32 @@
-class Student
+class GoodDog
 
-  def initialize(name, grade)
-    @name = name
-    @grade = grade
+  def initialize(h, w, n)
+    @height = h
+    @weight = w
+    @name = n
   end
 
-  def better_grade_than?(other_student)
-    get_grade > other_student.get_grade
+  def info
+    "I'm a GoodDog!"
   end
 
-  protected
+  def change_height
+    self
+  end
 
-    def get_grade
-      @grade
-    end
+  def to_s
+    info
+  end
 
+  def display_height
+    puts self.height
+  end
+
+  private
+
+    attr_accessor :height, :weight, :name
 end
 
-if __FILE__ == $0
-  joe = Student.new("Joe", 20)
-  bob = Student.new("Bob", 15)
-  puts "Well done!" if joe.better_grade_than?(bob)
-end
+dog = GoodDog.new(70, 100, "Joe")
+puts dog.change_height
+dog.display_height
