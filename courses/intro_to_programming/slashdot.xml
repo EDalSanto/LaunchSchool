@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:syn="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">
+
+<channel rdf:about="http://slashdot.org/">
+<title>Slashdot</title>
+<link>http://slashdot.org/</link>
+<description>News for nerds, stuff that matters</description>
+<dc:language>en-us</dc:language>
+<dc:rights>Copyright 1997-2015, DHI Group Inc. All Rights Reserved. Slashdot is a DHI service</dc:rights>
+<dc:date>2015-05-31T21:00:18+00:00</dc:date>
+<dc:publisher>Dice</dc:publisher>
+<dc:creator>help@slashdot.org</dc:creator>
+<dc:subject>Technology</dc:subject>
+<syn:updateBase>1970-01-01T00:00+00:00</syn:updateBase>
+<syn:updateFrequency>1</syn:updateFrequency>
+<syn:updatePeriod>hourly</syn:updatePeriod>
+<items>
+ <rdf:Seq>
+  <rdf:li rdf:resource="http://tech.slashdot.org/story/15/05/31/206230/future-of-employment-how-susceptible-are-jobs-to-computerization?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://tech.slashdot.org/story/15/05/31/1841245/windows-10-rtm-in-6-weeks?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://ask.slashdot.org/story/15/05/30/2242213/ask-slashdot-best-test-case-manager-plugin-for-jira?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://yro.slashdot.org/story/15/05/31/1618255/scientists-study-crime-in-progress-in-a-vr-simulated-environment?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://science.slashdot.org/story/15/05/31/1616235/lhc-season-2-is-about-to-start-testing-the-frontiers-of-physics?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://hardware.slashdot.org/story/15/05/31/1421223/mystery-woman-recycles-200000-apple-i-computer?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://developers.slashdot.org/story/15/05/31/1311254/mingw-and-msvcrt-conflict-causes-floating-point-value-corruption?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://yro.slashdot.org/story/15/05/31/045246/how-elon-musks-growing-empire-is-fueled-by-government-subsidies?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://science.slashdot.org/story/15/05/31/0443244/rosetta-team-proposes-landing-on-comet-to-finish-mission?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://science.slashdot.org/story/15/05/30/2249256/there-is-a-finite-limit-on-how-long-intelligence-can-exist-in-our-universe?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://science.slashdot.org/story/15/05/31/0430213/ground-crew-back-in-touch-with-lightsail-solar-spacecraft?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://yro.slashdot.org/story/15/05/30/2233246/steve-albini-the-music-industry-is-a-parasite----and-copyright-is-dead?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://tech.slashdot.org/story/15/05/30/2224238/google-calendar-ends-sms-notifications?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://yro.slashdot.org/story/15/05/30/226246/orange-county-public-schools-to-monitor-students-on-social-media?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+  <rdf:li rdf:resource="http://hardware.slashdot.org/story/15/05/30/2145249/artist-uses-3d-printing-to-preserve-artifacts-destroyed-by-isis?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" />
+ </rdf:Seq>
+</items>
+<image rdf:resource="http://a.fsdn.com/sd/topics/topicslashdot.gif" />
+<textinput rdf:resource="http://slashdot.org/search.pl" />
+<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rdf+xml" href="http://rss.slashdot.org/Slashdot/slashdot" /><feedburner:info uri="slashdot/slashdot" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /></channel>
+<image rdf:about="http://a.fsdn.com/sd/topics/topicslashdot.gif">
+<title>Slashdot</title>
+<url>http://a.fsdn.com/sd/topics/topicslashdot.gif</url>
+<link>http://slashdot.org/</link>
+</image>
+<item rdf:about="http://tech.slashdot.org/story/15/05/31/206230/future-of-employment-how-susceptible-are-jobs-to-computerization?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Future of Employment: How Susceptible Are Jobs To Computerization?</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/C2Wz_6Ku6OA/future-of-employment-how-susceptible-are-jobs-to-computerization</link>
+<description>turkeydance writes: What job is hardest for a robot to do? Mental health and substance abuse social workers (found under community and social services). This job has a 0.3 percent chance of being automated. That's because it's ranked high in cleverness, negotiation, and helping others. The job most likely to be done by a robot? Telemarketers. No surprise; it's already happening. The researchers admit that these estimates are rough and likely to be wrong. But consider this a snapshot of what some smart people think the future might look like. If it says your job will likely be replaced by a machine, you've been warned.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Future+of+Employment%3A+How+Susceptible+Are+Jobs+To+Computerization%3F%3A+http%3A%2F%2Fbit.ly%2F1GeaIe2"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Ftech.slashdot.org%2Fstory%2F15%2F05%2F31%2F206230%2Ffuture-of-employment-how-susceptible-are-jobs-to-computerization%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+&lt;a class="nobg" href="http://plus.google.com/share?url=http://tech.slashdot.org/story/15/05/31/206230/future-of-employment-how-susceptible-are-jobs-to-computerization?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;                                                                                                                                                                              
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://tech.slashdot.org/story/15/05/31/206230/future-of-employment-how-susceptible-are-jobs-to-computerization?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=7488169&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/C2Wz_6Ku6OA" height="1" width="1" alt=""/&gt;</description>
+<dc:creator>timothy</dc:creator>
+<dc:date>2015-05-31T20:01:00+00:00</dc:date>
+<dc:subject>ai</dc:subject>
+<slash:department>ask-an-elevator-operator-or-a-pin-boy</slash:department>
+<slash:section>technology</slash:section>
+<slash:comments>36</slash:comments>
+<slash:hit_parade>36,34,18,14,4,1,0</slash:hit_parade>
+<feedburner:origLink>http://tech.slashdot.org/story/15/05/31/206230/future-of-employment-how-susceptible-are-jobs-to-computerization?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://tech.slashdot.org/story/15/05/31/1841245/windows-10-rtm-in-6-weeks?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Windows 10 RTM In 6 Weeks</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/9cqsp6tbxkQ/windows-10-rtm-in-6-weeks</link>
+<description>Billly Gates writes: Arstechnica has the scoop on a new build with less flat icons and a confirmation of a mid July release date. While Microsoft is in a hurry to fix the damage done by the Windows 8 versions of its operating system, the next question is, is ready for prime time? On Neowin there's a list of problems already mentioned by MS and its users with this latest release, including Wi-Fi and sound not working without a reboot, and users complaining about tiles and apps not working in the new start menu.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Windows+10+RTM+In+6+Weeks%3A+http%3A%2F%2Fbit.ly%2F1SOv412"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Ftech.slashdot.org%2Fstory%2F15%2F05%2F31%2F1841245%2Fwindows-10-rtm-in-6-weeks%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+&lt;a class="nobg" href="http://plus.google.com/share?url=http://tech.slashdot.org/story/15/05/31/1841245/windows-10-rtm-in-6-weeks?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;                                                                                                                                                                              
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://tech.slashdot.org/story/15/05/31/1841245/windows-10-rtm-in-6-weeks?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=7488073&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/9cqsp6tbxkQ" height="1" width="1" alt=""/&gt;</description>
+<dc:creator>timothy</dc:creator>
+<dc:date>2015-05-31T18:43:00+00:00</dc:date>
+<dc:subject>microsoft</dc:subject>
+<slash:department>but-apple's-had-10-for-years</slash:department>
+<slash:section>technology</slash:section>
+<slash:comments>70</slash:comments>
+<slash:hit_parade>70,68,46,40,14,2,1</slash:hit_parade>
+<feedburner:origLink>http://tech.slashdot.org/story/15/05/31/1841245/windows-10-rtm-in-6-weeks?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://ask.slashdot.org/story/15/05/30/2242213/ask-slashdot-best-test-case-manager-plugin-for-jira?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Ask Slashdot: Best Test Case Manager Plugin For JIRA?</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/nSVwGS4ZXSk/ask-slashdot-best-test-case-manager-plugin-for-jira</link>
+<description>Bomarc writes: I've been working with software testing ... for a few years now. And there seems to be a serious lack of QA &amp;mdash; Test Case Management (TCM) tools. The company that I'm working for needs a good test case manager. Currently JIRA is the tool of choice for other aspects of project management. I'm not asking to jump ship from JIRA, but the Atlassian TCM "Zephyr" has several problems, some of the key ones include: It does not have (any) matrix capabilities, no test case suite capabilities, if you change one test case (including assignments) the system changes all of the runs from that test case, the integration between the defect tracker and the TCM is archaic (at best), the number of actions to pass/fail a step (or test case) are annoying (way to many). Whoever designed it doesn't use it. If you watch the "Introduction" for Zephyr &amp;ndash; it is amusing to see how the person performing he demo skips over and fumbles when dealing with the flaws I've mentioned above.
+
+I have used the product "TestLog" which is a well-thought-out product; has test matrix capabilities (and other good features); however it does not have any integration with JIRA. (Hint, hint: Atlassian, this is what you need!). 
+
+Is there any company that makes a "plug-in" for JIRA with a similar features to TestLog &amp;ndash; test case management that is well thought out, not just an afterthought?&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Ask+Slashdot%3A+Best+Test+Case+Manager+Plugin+For+JIRA%3F%3A+http%3A%2F%2Fbit.ly%2F1QjsZ9l"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fask.slashdot.org%2Fstory%2F15%2F05%2F30%2F2242213%2Fask-slashdot-best-test-case-manager-plugin-for-jira%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+&lt;a class="nobg" href="http://plus.google.com/share?url=http://ask.slashdot.org/story/15/05/30/2242213/ask-slashdot-best-test-case-manager-plugin-for-jira?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;                                                                                                                                                                              
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://ask.slashdot.org/story/15/05/30/2242213/ask-slashdot-best-test-case-manager-plugin-for-jira?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=7486429&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/nSVwGS4ZXSk" height="1" width="1" alt=""/&gt;</description>
+<dc:creator>timothy</dc:creator>
+<dc:date>2015-05-31T17:31:00+00:00</dc:date>
+<dc:subject>programming</dc:subject>
+<slash:department>tell-us-how-you-really-feel</slash:department>
+<slash:section>askslashdot</slash:section>
+<slash:comments>23</slash:comments>
+<slash:hit_parade>23,19,15,10,2,1,1</slash:hit_parade>
+<feedburner:origLink>http://ask.slashdot.org/story/15/05/30/2242213/ask-slashdot-best-test-case-manager-plugin-for-jira?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://yro.slashdot.org/story/15/05/31/1618255/scientists-study-crime-in-progress-in-a-vr-simulated-environment?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Scientists Study Crime In Progress In a VR Simulated Environment</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/G6oKqPHKye0/scientists-study-crime-in-progress-in-a-vr-simulated-environment</link>
+<description>HughPickens.com writes: Claire Nee writes in the NYT that for psychologists, it's best to observe actual behavior, in real time, and afterward interview research participants. Yet for obvious ethical and safety reasons, it's almost never possible to observe a crime as it happens. Now psychologists have devised a simulated environment that can be navigated using a mouse or a game controller. and had willing, experienced ex-burglars to commit a mock burglary in it. Ex-burglars approached the task in a dramatically different way from a comparison group of postgraduate students, of a similar age as our experienced ex-burglars. Burglars entered and exited the house at the rear, while students, unaware of the cover that the side and rear of the house afforded, entered at the exposed front. Burglars spent significantly more time in areas of the house with high-value items and navigated it much more systematically than the students did. They also showed greater discernment, by stealing fewer but more valuable items. Most important, all participants burgled the real and the simulated houses almost identically (PDF). We concluded that using simulations can be a robust way to study crime, and in studying it this way, we will not be limited to just burglary. "A better understanding of criminal behavior will help us reduce opportunities for crime in our neighborhoods," concludes Nee. "By knowing what the burglar is looking for &amp;mdash; what signals wealth, occupancy, ease of access and security in properties &amp;mdash; we can make adjustments in awareness and protection."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Scientists+Study+Crime+In+Progress+In+a+VR+Simulated+Environment%3A+http%3A%2F%2Fbit.ly%2F1K2BAgQ"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fyro.slashdot.org%2Fstory%2F15%2F05%2F31%2F1618255%2Fscientists-study-crime-in-progress-in-a-vr-simulated-environment%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+&lt;a class="nobg" href="http://plus.google.com/share?url=http://yro.slashdot.org/story/15/05/31/1618255/scientists-study-crime-in-progress-in-a-vr-simulated-environment?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;                                                                                                                                                                              
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://yro.slashdot.org/story/15/05/31/1618255/scientists-study-crime-in-progress-in-a-vr-simulated-environment?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=7487681&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/G6oKqPHKye0" height="1" width="1" alt=""/&gt;</description>
+<dc:creator>timothy</dc:creator>
+<dc:date>2015-05-31T16:28:00+00:00</dc:date>
+<dc:subject>crime</dc:subject>
+<slash:department>what-would-g-gordon-liddy-do?</slash:department>
+<slash:section>yro</slash:section>
+<slash:comments>48</slash:comments>
+<slash:hit_parade>48,47,32,29,6,3,1</slash:hit_parade>
+<feedburner:origLink>http://yro.slashdot.org/story/15/05/31/1618255/scientists-study-crime-in-progress-in-a-vr-simulated-environment?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://science.slashdot.org/story/15/05/31/1616235/lhc-season-2-is-about-to-start-testing-the-frontiers-of-physics?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>LHC Season 2 Is About To Start Testing the Frontiers of Physics</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/gMbyUvaWmUY/lhc-season-2-is-about-to-start-testing-the-frontiers-of-physics</link>
+<description>An anonymous reader writes: The final preparations for the second run of the Large Hadron Collider (LHC) are in place. This week, it is expected to start taking new data with collisions at the record-breaking energy of 13 teraelectronvolts (TeV). There are a lot of expectations about this new LHC season. In one of CERN's articles physicists tell of their hopes for new discoveries during the LHC's second run. "They speak of dark matter,supersymmetry, the Higgs boson, antimatter, current theory in particle physics and its limits as well as new theoretical models that could extend it."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=LHC+Season+2+Is+About+To+Start+Testing+the+Frontiers+of+Physics%3A+http%3A%2F%2Fbit.ly%2F1FjqMED"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fscience.slashdot.org%2Fstory%2F15%2F05%2F31%2F1616235%2Flhc-season-2-is-about-to-start-testing-the-frontiers-of-physics%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+&lt;a class="nobg" href="http://plus.google.com/share?url=http://science.slashdot.org/story/15/05/31/1616235/lhc-season-2-is-about-to-start-testing-the-frontiers-of-physics?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;                                                                                                                                                                              
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://science.slashdot.org/story/15/05/31/1616235/lhc-season-2-is-about-to-start-testing-the-frontiers-of-physics?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=7487675&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/gMbyUvaWmUY" height="1" width="1" alt=""/&gt;</description>
+<dc:creator>timothy</dc:creator>
+<dc:date>2015-05-31T15:33:00+00:00</dc:date>
+<dc:subject>science</dc:subject>
+<slash:department>particularly-good</slash:department>
+<slash:section>science</slash:section>
+<slash:comments>36</slash:comments>
+<slash:hit_parade>36,34,15,12,7,0,0</slash:hit_parade>
+<feedburner:origLink>http://science.slashdot.org/story/15/05/31/1616235/lhc-season-2-is-about-to-start-testing-the-frontiers-of-physics?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://hardware.slashdot.org/story/15/05/31/1421223/mystery-woman-recycles-200000-apple-i-computer?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Mystery Woman Recycles $200,000 Apple I Computer</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/JD72ZoI4zlA/mystery-woman-recycles-200000-apple-i-computer</link>
+<description>Dave Knott writes: A recycling centre in the Silicon Valley is looking for a woman who dropped off an old computer for recycling. The computer was apparently inside boxes of electronics that she had cleaned out from her garage after her husband died. This would be nothing unusual, except that the recycled computer was an Apple I,. The recycling firm eventually sold the Apple I for $200,000 to a private collection, and because the company gives 50 per cent of the proceeds from sold items back to the original owner, they wish to split the proceeds with the mystery donor.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Mystery+Woman+Recycles+%24200%2C000+Apple+I+Computer%3A+http%3A%2F%2Fbit.ly%2F1QjiuTz"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fhardware.slashdot.org%2Fstory%2F15%2F05%2F31%2F1421223%2Fmystery-woman-recycles-200000-apple-i-computer%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+&lt;a class="nobg" href="http://plus.google.com/share?url=http://hardware.slashdot.org/story/15/05/31/1421223/mystery-woman-recycles-200000-apple-i-computer?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;                                                                                                                                                                              
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://hardware.slashdot.org/story/15/05/31/1421223/mystery-woman-recycles-200000-apple-i-computer?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=7487487&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/JD72ZoI4zlA" height="1" width="1" alt=""/&gt;</description>
+<dc:creator>timothy</dc:creator>
+<dc:date>2015-05-31T14:23:00+00:00</dc:date>
+<dc:subject>money</dc:subject>
+<slash:department>oh-this-old-thing</slash:department>
+<slash:section>hardware</slash:section>
+<slash:comments>87</slash:comments>
+<slash:hit_parade>87,85,56,46,11,4,3</slash:hit_parade>
+<feedburner:origLink>http://hardware.slashdot.org/story/15/05/31/1421223/mystery-woman-recycles-200000-apple-i-computer?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://developers.slashdot.org/story/15/05/31/1311254/mingw-and-msvcrt-conflict-causes-floating-point-value-corruption?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>MinGW and MSVCRT Conflict Causes Floating-Point Value Corruption</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/hGBrBWP6QT4/mingw-and-msvcrt-conflict-causes-floating-point-value-corruption</link>
+<description>jones_supa writes: If you are working on a C++ program where you need very accurate floating point numbers, you might have decided to use long double data type for the extra precision. After a few calculations, you happen to print your number. To your shock, instead of the number being 123.456789, it is printed out as -6.518427 &amp;#215; 10^264 (or 2.745563 depending on your computer). This is actually a bug in some versions of MinGW g++ 4.8.1 (MinGW is a port of GNU programming tools for Windows). Microsoft's C++ runtime library reserves 80 bits for double and long double. When MinGW uses the Microsoft DLL to print out the value, the number is interpreted as using only 64 bits. This discrepancy causes garbage results to be output.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=MinGW+and+MSVCRT+Conflict+Causes+Floating-Point+Value+Corruption%3A+http%3A%2F%2Fbit.ly%2F1FmDeog"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fdevelopers.slashdot.org%2Fstory%2F15%2F05%2F31%2F1311254%2Fmingw-and-msvcrt-conflict-causes-floating-point-value-corruption%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+&lt;a class="nobg" href="http://plus.google.com/share?url=http://developers.slashdot.org/story/15/05/31/1311254/mingw-and-msvcrt-conflict-causes-floating-point-value-corruption?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;                                                                                                                                                                              
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://developers.slashdot.org/story/15/05/31/1311254/mingw-and-msvcrt-conflict-causes-floating-point-value-corruption?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=7487387&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/hGBrBWP6QT4" height="1" width="1" alt=""/&gt;</description>
+<dc:creator>timothy</dc:creator>
+<dc:date>2015-05-31T13:22:00+00:00</dc:date>
+<dc:subject>opensource</dc:subject>
+<slash:department>internal-conflict</slash:department>
+<slash:section>developers</slash:section>
+<slash:comments>73</slash:comments>
+<slash:hit_parade>73,68,36,25,11,4,3</slash:hit_parade>
+<feedburner:origLink>http://developers.slashdot.org/story/15/05/31/1311254/mingw-and-msvcrt-conflict-causes-floating-point-value-corruption?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://yro.slashdot.org/story/15/05/31/045246/how-elon-musks-growing-empire-is-fueled-by-government-subsidies?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>How Elon Musk's Growing Empire is Fueled By Government Subsidies</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/LZ_t0ZT9vc0/how-elon-musks-growing-empire-is-fueled-by-government-subsidies</link>
+<description>theodp writes: By the Los Angeles Times' reckoning, Elon Musk's Tesla Motors, SolarCity, and SpaceX together have benefited from an estimated $4.9 billion in government support. The figure compiled by The Times, explains reporter Jerry Hirsch, comprises a variety of government incentives, including grants, tax breaks, factory construction, discounted loans and environmental credits that Tesla can sell. It also includes tax credits and rebates to buyers of solar panels and electric cars. "He definitely goes where there is government money," said an equity research analyst. "Musk and his companies' investors enjoy most of the financial upside of the government support, while taxpayers shoulder the cost," Hirsch adds. "The payoff for the public would come in the form of major pollution reductions, but only if solar panels and electric cars break through as viable mass-market products. For now, both remain niche products for mostly well-heeled customers." And as Musk moves into a new industry &amp;mdash; battery-based home energy storage &amp;mdash; Hirsch notes Tesla has already secured a commitment of $126 million in California subsidies to companies developing energy storage technology.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=How+Elon+Musk's+Growing+Empire+is+Fueled+By+Government+Subsidies%3A+http%3A%2F%2Fbit.ly%2F1AFE8PQ"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fyro.slashdot.org%2Fstory%2F15%2F05%2F31%2F045246%2Fhow-elon-musks-growing-empire-is-fueled-by-government-subsidies%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+&lt;a class="nobg" href="http://plus.google.com/share?url=http://yro.slashdot.org/story/15/05/31/045246/how-elon-musks-growing-empire-is-fueled-by-government-subsidies?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;                                                                                                                                                                              
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://yro.slashdot.org/story/15/05/31/045246/how-elon-musks-growing-empire-is-fueled-by-government-subsidies?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=7486699&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/LZ_t0ZT9vc0" height="1" width="1" alt=""/&gt;</description>
+<dc:creator>timothy</dc:creator>
+<dc:date>2015-05-31T12:24:00+00:00</dc:date>
+<dc:subject>business</dc:subject>
+<slash:department>damned-if-you-don't</slash:department>
+<slash:section>yro</slash:section>
+<slash:comments>231</slash:comments>
+<slash:hit_parade>231,223,151,135,51,36,21</slash:hit_parade>
+<feedburner:origLink>http://yro.slashdot.org/story/15/05/31/045246/how-elon-musks-growing-empire-is-fueled-by-government-subsidies?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://science.slashdot.org/story/15/05/31/0443244/rosetta-team-proposes-landing-on-comet-to-finish-mission?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Rosetta Team Proposes Landing On Comet To Finish Mission</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/AGfxgtGafzU/rosetta-team-proposes-landing-on-comet-to-finish-mission</link>
+<description>schwit1 writes: Rather than simply turn off the spacecraft when its funding runs out at the end of 2015, Rosetta's science team have proposed that the mission get a nine month extension, during which they will slowly spiral into the comet and gently land. Their proposal is similar to what American scientists did with their NEAR spacecraft, which hadn't been designed to land on an asteroid but was successfully eased onto the surface of Eros, where it operated for a very short time.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Rosetta+Team+Proposes+Landing+On+Comet+To+Finish+Mission%3A+http%3A%2F%2Fbit.ly%2F1Fmmmhp"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fscience.slashdot.org%2Fstory%2F15%2F05%2F31%2F0443244%2Frosetta-team-proposes-landing-on-comet-to-finish-mission%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+&lt;a class="nobg" href="http://plus.google.com/share?url=http://science.slashdot.org/story/15/05/31/0443244/rosetta-team-proposes-landing-on-comet-to-finish-mission?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;                                                                                                                                                                              
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://science.slashdot.org/story/15/05/31/0443244/rosetta-team-proposes-landing-on-comet-to-finish-mission?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=7486743&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/AGfxgtGafzU" height="1" width="1" alt=""/&gt;</description>
+<dc:creator>timothy</dc:creator>
+<dc:date>2015-05-31T10:32:00+00:00</dc:date>
+<dc:subject>eu</dc:subject>
+<slash:department>just-like-land-or-whatever</slash:department>
+<slash:section>science</slash:section>
+<slash:comments>20</slash:comments>
+<slash:hit_parade>20,15,9,6,2,2,1</slash:hit_parade>
+<feedburner:origLink>http://science.slashdot.org/story/15/05/31/0443244/rosetta-team-proposes-landing-on-comet-to-finish-mission?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://science.slashdot.org/story/15/05/30/2249256/there-is-a-finite-limit-on-how-long-intelligence-can-exist-in-our-universe?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>There Is a Finite Limit On How Long Intelligence Can Exist In Our Universe</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/dBcIc5nqKpQ/there-is-a-finite-limit-on-how-long-intelligence-can-exist-in-our-universe</link>
+<description>StartsWithABang writes: The heat death of the Universe is the idea that increasing entropy will eventually cause the Universe to arrive at a uniformly, maximally disordered state. Every piece of evidence we have points towards our unfortunate, inevitable trending towards that end, with every burning star, every gravitational merger, and even every breath we, ourselves, take. Yet even while we head towards this fate, it may be possible for intelligence in an artificial form to continue in the Universe for an extraordinarily long time: possibly for as long as a googol years, but not quite indefinitely. Eventually, it all must end.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=There+Is+a+Finite+Limit+On+How+Long+Intelligence+Can+Exist+In+Our+Universe%3A+http%3A%2F%2Fbit.ly%2F1LUvwp7"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fscience.slashdot.org%2Fstory%2F15%2F05%2F30%2F2249256%2Fthere-is-a-finite-limit-on-how-long-intelligence-can-exist-in-our-universe%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+&lt;a class="nobg" href="http://plus.google.com/share?url=http://science.slashdot.org/story/15/05/30/2249256/there-is-a-finite-limit-on-how-long-intelligence-can-exist-in-our-universe?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;                                                                                                                                                                              
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://science.slashdot.org/story/15/05/30/2249256/there-is-a-finite-limit-on-how-long-intelligence-can-exist-in-our-universe?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=7486437&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/dBcIc5nqKpQ" height="1" width="1" alt=""/&gt;</description>
+<dc:creator>timothy</dc:creator>
+<dc:date>2015-05-31T07:43:00+00:00</dc:date>
+<dc:subject>science</dc:subject>
+<slash:department>never-outlives-the-ballot-box</slash:department>
+<slash:section>science</slash:section>
+<slash:comments>159</slash:comments>
+<slash:hit_parade>159,158,106,80,26,14,12</slash:hit_parade>
+<feedburner:origLink>http://science.slashdot.org/story/15/05/30/2249256/there-is-a-finite-limit-on-how-long-intelligence-can-exist-in-our-universe?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://science.slashdot.org/story/15/05/31/0430213/ground-crew-back-in-touch-with-lightsail-solar-spacecraft?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Ground Crew Back In Touch With LightSail Solar Spacecraft </title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/mrTrU7mTx1M/ground-crew-back-in-touch-with-lightsail-solar-spacecraft</link>
+<description>Yesterday, we noted that the Planetary Society's solar-sail powered craft had lost radio contact with its controllers here on Earth; Engadget reports that the group has issued an update, and the news is good. From the Society's release:
+
+"The solar sailing spacecraft test mission, a precursor to a 2016 mission, has now resumed contact after a suspected software glitch affected communications. The LightSail team will soon determine when to attempt deployment of the spacecraft&amp;rsquo;s Mylar solar sails."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Ground+Crew+Back+In+Touch+With+LightSail+Solar+Spacecraft+%3A+http%3A%2F%2Fbit.ly%2F1SJgzeX"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fscience.slashdot.org%2Fstory%2F15%2F05%2F31%2F0430213%2Fground-crew-back-in-touch-with-lightsail-solar-spacecraft%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+&lt;a class="nobg" href="http://plus.google.com/share?url=http://science.slashdot.org/story/15/05/31/0430213/ground-crew-back-in-touch-with-lightsail-solar-spacecraft?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;                                                                                                                                                                              
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://science.slashdot.org/story/15/05/31/0430213/ground-crew-back-in-touch-with-lightsail-solar-spacecraft?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=7486733&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/mrTrU7mTx1M" height="1" width="1" alt=""/&gt;</description>
+<dc:creator>timothy</dc:creator>
+<dc:date>2015-05-31T04:57:00+00:00</dc:date>
+<dc:subject>communications</dc:subject>
+<slash:department>non-silent-treatment</slash:department>
+<slash:section>science</slash:section>
+<slash:comments>47</slash:comments>
+<slash:hit_parade>47,44,30,19,7,6,3</slash:hit_parade>
+<feedburner:origLink>http://science.slashdot.org/story/15/05/31/0430213/ground-crew-back-in-touch-with-lightsail-solar-spacecraft?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://yro.slashdot.org/story/15/05/30/2233246/steve-albini-the-music-industry-is-a-parasite----and-copyright-is-dead?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Steve Albini: The Music Industry Is a Parasite -- and Copyright Is Dead</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/zDJtCTE602E/steve-albini-the-music-industry-is-a-parasite----and-copyright-is-dead</link>
+<description>journovampire sends word of another thought-provoking rant from Steve Albini (mentioned here last a few years back for his
+paean to the beauty of analog tape for recording): The veteran producer addressed an audience in Barcelona on Saturday: "The old copyright model &amp;ndash; the person who creates something owns it and anyone else that wants to use it or see it has to pay them &amp;ndash; has expired."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Steve+Albini%3A+The+Music+Industry+Is+a+Parasite+--+and+Copyright+Is+Dead%3A+http%3A%2F%2Fbit.ly%2F1dDWQNS"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fyro.slashdot.org%2Fstory%2F15%2F05%2F30%2F2233246%2Fsteve-albini-the-music-industry-is-a-parasite----and-copyright-is-dead%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+&lt;a class="nobg" href="http://plus.google.com/share?url=http://yro.slashdot.org/story/15/05/30/2233246/steve-albini-the-music-industry-is-a-parasite----and-copyright-is-dead?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;                                                                                                                                                                              
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://yro.slashdot.org/story/15/05/30/2233246/steve-albini-the-music-industry-is-a-parasite----and-copyright-is-dead?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=7486425&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/zDJtCTE602E" height="1" width="1" alt=""/&gt;</description>
+<dc:creator>timothy</dc:creator>
+<dc:date>2015-05-31T01:52:00+00:00</dc:date>
+<dc:subject>business</dc:subject>
+<slash:department>but-how's-the-marrow?</slash:department>
+<slash:section>yro</slash:section>
+<slash:comments>145</slash:comments>
+<slash:hit_parade>145,137,86,63,24,15,11</slash:hit_parade>
+<feedburner:origLink>http://yro.slashdot.org/story/15/05/30/2233246/steve-albini-the-music-industry-is-a-parasite----and-copyright-is-dead?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://tech.slashdot.org/story/15/05/30/2224238/google-calendar-ends-sms-notifications?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Google Calendar Ends SMS Notifications</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/Ux3uynApyzo/google-calendar-ends-sms-notifications</link>
+<description>LuserOnFire writes: Google has sent out an email this morning that says in part: "Starting on June 27th, 2015, SMS notifications from Google Calendar will no longer be sent. SMS notifications launched before smartphones were available. Now, in a world with smartphones and notifications, you can get richer, more reliable experience on your mobile device, even offline." You can find the announcement on Google's support pages as well. "Richer" may be accurate, but I'm not sure that "more reliable" describes web-based notifications; that may be why the announcement linked does not apply for Google's "Work, Education and Government customers."&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Google+Calendar+Ends+SMS+Notifications%3A+http%3A%2F%2Fbit.ly%2F1EJ4ZWq"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Ftech.slashdot.org%2Fstory%2F15%2F05%2F30%2F2224238%2Fgoogle-calendar-ends-sms-notifications%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+&lt;a class="nobg" href="http://plus.google.com/share?url=http://tech.slashdot.org/story/15/05/30/2224238/google-calendar-ends-sms-notifications?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;                                                                                                                                                                              
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://tech.slashdot.org/story/15/05/30/2224238/google-calendar-ends-sms-notifications?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=7486415&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/Ux3uynApyzo" height="1" width="1" alt=""/&gt;</description>
+<dc:creator>timothy</dc:creator>
+<dc:date>2015-05-30T23:40:00+00:00</dc:date>
+<dc:subject>google</dc:subject>
+<slash:department>giveth-and-taketh-away</slash:department>
+<slash:section>technology</slash:section>
+<slash:comments>94</slash:comments>
+<slash:hit_parade>94,89,64,53,14,4,3</slash:hit_parade>
+<feedburner:origLink>http://tech.slashdot.org/story/15/05/30/2224238/google-calendar-ends-sms-notifications?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://yro.slashdot.org/story/15/05/30/226246/orange-county-public-schools-to-monitor-students-on-social-media?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Orange County Public Schools To Monitor Students On Social Media</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/bpqpOxmom6M/orange-county-public-schools-to-monitor-students-on-social-media</link>
+<description>The Orlando Sentinel reports that Orange County, Florida, is undertaking a sweeping effort to snoop on the social media communications of the county's public school students and staff, for the nebulous task of "[ensuring] safe school operations," and say they will use the software (at a license cost of about $13,000 per year) "to conduct routine monitoring for purposes of prevention or early intervention of potential issues where students or staff could be at risk to themselves or to others." The software they're using is from Snaptrends, which offers "location-based social media discovery." According to one of the comments attached to the linked story, there are monthly fees, in addition to the annual licensing cost.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Orange+County+Public+Schools+To+Monitor+Students+On+Social+Media%3A+http%3A%2F%2Fbit.ly%2F1HCXceM"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fyro.slashdot.org%2Fstory%2F15%2F05%2F30%2F226246%2Forange-county-public-schools-to-monitor-students-on-social-media%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+&lt;a class="nobg" href="http://plus.google.com/share?url=http://yro.slashdot.org/story/15/05/30/226246/orange-county-public-schools-to-monitor-students-on-social-media?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;                                                                                                                                                                              
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://yro.slashdot.org/story/15/05/30/226246/orange-county-public-schools-to-monitor-students-on-social-media?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=7486397&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/bpqpOxmom6M" height="1" width="1" alt=""/&gt;</description>
+<dc:creator>timothy</dc:creator>
+<dc:date>2015-05-30T22:41:00+00:00</dc:date>
+<dc:subject>communications</dc:subject>
+<slash:department>well-that's-air-tight</slash:department>
+<slash:section>yro</slash:section>
+<slash:comments>156</slash:comments>
+<slash:hit_parade>156,153,104,82,20,10,7</slash:hit_parade>
+<feedburner:origLink>http://yro.slashdot.org/story/15/05/30/226246/orange-county-public-schools-to-monitor-students-on-social-media?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<item rdf:about="http://hardware.slashdot.org/story/15/05/30/2145249/artist-uses-3d-printing-to-preserve-artifacts-destroyed-by-isis?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+<title>Artist Uses 3D Printing To Preserve Artifacts Destroyed By ISIS</title>
+<link>http://rss.slashdot.org/~r/Slashdot/slashdot/~3/4ldBbeC2urw/artist-uses-3d-printing-to-preserve-artifacts-destroyed-by-isis</link>
+<description>tedlistens writes: "From the burning of the Library of Alexandria to the destruction of the Buddhas of Bamiyan in Afghanistan by the Taliban, to the Nazi's battle to burn as much "degenerate art" as they could find, mobs and soldiers have been quick to destroy what took societies centuries to create; what museums and collectors spent decades collecting, preserving, and documenting for the public." However, as noted by Motherboard in an article to which tedlistens links, "The digital era looks different: files can be cheaply hosted in data centers spread across several states or continents to ensure permanence. Morehshin Allahyari, an Iranian born artist, educator, and activist, wants to apply that duplicability to the artifacts that ISIS has destroyed. Now, Allahyari is working on digitally fabricating the sculptures for a series called "Material Speculation" as part of a residency in Autodesk's Pier 9 program. The first in the series is "Material Speculation: ISIS," which, through intense research, is modeling and reproducing statues destroyed by ISIS in 2015. Allahyari isn't just interested in replicating lost objects but making it possible for anyone to do the same: Embedded within each semi-translucent copy is a flash drive with Allahyari's research about the artifacts, and an online version is coming.&lt;p&gt;&lt;div class="share_submission" style="position:relative;"&gt;
+&lt;a class="slashpop" href="http://twitter.com/home?status=Artist+Uses+3D+Printing+To+Preserve+Artifacts+Destroyed+By+ISIS%3A+http%3A%2F%2Fbit.ly%2F1AEKC1r"&gt;&lt;img src="http://a.fsdn.com/sd/twitter_icon_large.png"&gt;&lt;/a&gt;
+&lt;a class="slashpop" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fhardware.slashdot.org%2Fstory%2F15%2F05%2F30%2F2145249%2Fartist-uses-3d-printing-to-preserve-artifacts-destroyed-by-isis%3Futm_source%3Dslashdot%26utm_medium%3Dfacebook"&gt;&lt;img src="http://a.fsdn.com/sd/facebook_icon_large.png"&gt;&lt;/a&gt;
+
+&lt;a class="nobg" href="http://plus.google.com/share?url=http://hardware.slashdot.org/story/15/05/30/2145249/artist-uses-3d-printing-to-preserve-artifacts-destroyed-by-isis?utm_source=slashdot&amp;amp;utm_medium=googleplus" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"&gt;&lt;img src="http://www.gstatic.com/images/icons/gplus-16.png" alt="Share on Google+"/&gt;&lt;/a&gt;                                                                                                                                                                              
+
+
+
+&lt;/div&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="http://hardware.slashdot.org/story/15/05/30/2145249/artist-uses-3d-printing-to-preserve-artifacts-destroyed-by-isis?utm_source=rss1.0moreanon&amp;amp;utm_medium=feed"&gt;Read more of this story&lt;/a&gt; at Slashdot.&lt;/p&gt;&lt;iframe src="http://slashdot.org/slashdot-it.pl?op=discuss&amp;amp;id=7486375&amp;amp;smallembed=1" style="height: 300px; width: 100%; border: none;"&gt;&lt;/iframe&gt;&lt;img src="http://feeds.feedburner.com/~r/Slashdot/slashdot/~4/4ldBbeC2urw" height="1" width="1" alt=""/&gt;</description>
+<dc:creator>timothy</dc:creator>
+<dc:date>2015-05-30T21:42:00+00:00</dc:date>
+<dc:subject>censorship</dc:subject>
+<slash:department>not-quite-the-same</slash:department>
+<slash:section>hardware</slash:section>
+<slash:comments>71</slash:comments>
+<slash:hit_parade>71,67,39,31,10,6,2</slash:hit_parade>
+<feedburner:origLink>http://hardware.slashdot.org/story/15/05/30/2145249/artist-uses-3d-printing-to-preserve-artifacts-destroyed-by-isis?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed</feedburner:origLink></item>
+<textinput rdf:about="http://slashdot.org/search.pl">
+<title>Search Slashdot</title>
+<description>Search Slashdot stories</description>
+<name>query</name>
+<link>http://slashdot.org/search.pl</link>
+</textinput>
+</rdf:RDF>
