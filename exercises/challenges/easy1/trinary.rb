@@ -9,7 +9,7 @@ class Trinary
   def to_decimal
     return 0 unless all_valid_trinary_digits
 
-    calculate_decimal
+    convert_number
   end
 
   def all_valid_trinary_digits
@@ -20,11 +20,15 @@ class Trinary
     @trinary_chars.size - index - 1
   end
 
-  def calculate_decimal
+  def convert_number
     res = 0
-    @trinary_chars.each_with_index do |octdigit, index|
-      res += (BASE**current_power(index)) * octdigit.to_i
+    @trinary_chars.each_with_index do |tridigit, index|
+      res += convert_digit(index, tridigit)
     end
     res
+  end
+
+  def convert_digit(index, tridigit)
+    (BASE**current_power(index)) * tridigit.to_i
   end
 end

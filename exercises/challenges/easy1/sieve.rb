@@ -4,19 +4,21 @@
 # can iterate over the same array in this case!
 
 class Sieve
-  attr_reader :range
+  attr_reader :nums
 
   def initialize(limit)
-    @range = (2..limit).to_a
+    @nums = (2..limit).to_a
   end
 
   def primes
-    range.each do |prime_num|
-      range.reject! do |candidate_prime|
-        next if prime_num == candidate_prime
-        (candidate_prime % prime_num).zero?
-      end
+    nums.each { |prime_num| remove_multiples(prime_num) }
+  end
+
+  def remove_multiples(prime_num)
+    nums.reject! do |candidate_prime|
+      next if prime_num == candidate_prime
+
+      (candidate_prime % prime_num).zero?
     end
-    range
   end
 end
