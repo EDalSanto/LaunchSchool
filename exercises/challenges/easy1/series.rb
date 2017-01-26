@@ -1,5 +1,5 @@
 class Series
-  
+ 
   def initialize(string_of_digits)
     @string_of_digits = string_of_digits
   end
