@@ -32,19 +32,32 @@ end
 
 class Atbash
   ENCODER = Encoder.new
+  ALPHA = /[a-z]/
+  NUMBER = /\d/
+
+  def initialize
+    @transformed = ''
+  end
 
   def self.encode(word)
-    transformed = ''
+    Atbash.new.encode(word)
+  end
+
+  def encode(word)
     word.chars.each do |letter|
       letter.downcase!
       next unless ENCODER.valid_input?(letter)
-      if letter =~ /[a-z]/
-        transformed += ENCODER.transform(letter)
-      elsif letter =~ /\d/
-        transformed += letter
-      end
-      ENCODER.add_space(transformed) if ENCODER.five_token?(transformed)
+      encode_letter(letter)
+      ENCODER.add_space(@transformed) if ENCODER.five_token?(@transformed)
     end
-    transformed.strip
+    @transformed.strip
+  end
+
+  def encode_letter(letter)
+    if letter =~ ALPHA
+      @transformed << ENCODER.transform(letter)
+    elsif letter =~ NUMBER
+      @transformed << letter
+    end
   end
 end
