@@ -15,7 +15,15 @@ end
 helpers do
   def in_paragraphs(chapter_contents)
     paragraphs = chapter_contents.split("\n\n")
-    paragraphs.map { |line| "<p>#{line}</p>" }.join
+
+    # Add id to each paragraph index which makes each one accessible and redirects to it after anchor tag
+    paragraphs.each_with_index.map do |line, index| 
+      "<p id=paragraph#{index}>#{line}</p>"
+    end.join
+  end
+
+  def highlight_query(text, query)
+    text.gsub!(query, "<strong>#{query}</strong>")
   end
 end
 
@@ -42,6 +50,15 @@ def each_chapter(&block)
   end
 end
 
+def find_matching_paragraphs(chapter_contents, query)
+  matches = {}
+  paragraphs = chapter_contents.split("\n\n")
+  paragraphs.each_with_index do |paragraph, index|
+    matches[index] = highlight_query(paragraph, query) if paragraph.include?(query) 
+  end
+  matches
+end
+
 def chapters_matching(query)
   results = []
 
@@ -51,16 +68,15 @@ def chapters_matching(query)
   # local block variables are binded to block which is passed as argument to
   # each_chapter
   each_chapter do |number, name, contents|
-    results << { number: number, name: name } if contents.include? query  
+    matches = find_matching_paragraphs(contents, query)
+    results << { number: number, name: name, paragraphs: matches }  
   end
-
-  # returns array of hashes, each hash containing matching chapter's number and
-  # name
-  results
+  
+  results 
 end
 
 get '/search' do
-  @results = chapters_matching(params[:query])  
+  @chapters = chapters_matching(params[:query])  
 
   erb :search
 end

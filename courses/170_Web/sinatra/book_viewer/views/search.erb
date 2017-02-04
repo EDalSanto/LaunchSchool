@@ -6,13 +6,16 @@
 </form>
 
 <% if params[:query] %>
-  <% if @results.empty? %>
+  <% if @chapters.empty? %>
     <p>Sorry, no matches were found</p>
   <% else %>
     <h3>Results for '<%= params[:query] %>'</h3>
     <ul>
-      <% @results.each do |match| %>
-        <li><a href="/chapters/<%= match[:number] %>"><%= match[:name] %></a></li>
+      <% @chapters.each do |chapter| %>
+        <% chapter[:paragraphs].each do |index, text| %>
+          <li><a href="/chapters/<%= chapter[:number] %>#paragraph<%= index %>"><%= chapter[:name] %></a></li>
+            <p><%= text %></p>
+        <% end %>
       <% end %>
     </ul>
   <% end %>
