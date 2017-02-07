@@ -1,7 +1,11 @@
+<% content_for :header_links do %>
+  <a href="/list"s>All Lists</a>
+<% end %>
+
 <form action="/lists" method="post">
   <dl>
     <dt>
-      <label for="list_name">Enter the name for your new list:</label>
+      <label for="list_name">Enter the new name for your new list:</label>
     </dt>
     <dd>
       <input name="list_name" placeholder="List Name" type="text" value="">
