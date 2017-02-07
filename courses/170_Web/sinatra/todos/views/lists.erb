@@ -1,14 +1,18 @@
 <ul id="lists">
   <% @lists.each_with_index do |list, index| %>
-    <li>
-    <a href="/lists/<%= index %>">
+    <% if list_done? %>
+      <li class="complete">
+    <% else %>
+      <li>
+    <% end %>
+      <a href="/lists/<%= index %>">
         <h2><%= list[:name] %></h2>
-        <p><%= list[:todos].size %></p>
+        <p><%= "#{todos_left} / #{list[:todos].size}" %></p>
       </a>
     </li>
   <% end %>
 </ul>
 
 <% content_for :header_links do %>
-  <a href="/lists/new">New List</a>
+  <a class="add" href="/lists/new">New List</a>
 <% end %>

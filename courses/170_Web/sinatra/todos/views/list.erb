@@ -1,31 +1,53 @@
+<% if list_done? %>
+<section id="todos" class="complete">
+<% else %>
 <section id="todos">
+<% end %>
   <header>
     <h2><%= @list[:name] %></h2>
     <ul>
-      <li><a class="edit" href="/lists/<%= params[:id] %>/edit">Edit List</a></li>
+      <li>
+        <form action="/lists/<%= @list_id %>/todos/patch" method="post">
+          <button class="check" type="submit">Complete All</button>
+        </form>
+      </li>
+      <li><a class="edit" href="/lists/<%= @list_id %>/edit">Edit List</a></li>
     </ul>
   </header>
 
   <ul>
     <% @list[:todos].each_with_index do |todo, index| %>
-      <li>
-        <%= todo[:name] %>
+      <% if todo[:completed] %>
+        <li class="complete">
+      <% else %>
+        <li>
+      <% end %>
+
+        <form action="/lists/<%= @list_id %>/todos/<%= index %>/patch" method="post" class="check">
+          <input type="hidden" name="completed" value="<%= !todo[:completed] %>" />
+          <button type="submit">Complete</button>
+        </form
+
+        <h3><%= todo[:name] %></h3>
+        <form action="/lists/<%= @list_id %>/todos/<%= index %>/destroy" method="post" class="delete">
+          <button type="submit">Delete</button>
+        </form>
       </li>
     <% end %>
   </ul>
 </section>
 
 <% content_for :header_links do %>
-  <a href="/lists">All Lists</a>
+  <a class="list" href="/lists">All Lists</a>
 <% end %>
 
-<form action="/lists/<%= @id %>/todos" method="post">
+<form action="/lists/<%= @list_id %>/todos" method="post">
   <dl>
     <dt>
       <label for="todo">Enter a new todo item:</label>
     </dt>
     <dd>
-      <input name="todo" placeholder="Something to do" type="text" value="">
+    <input name="todo" placeholder="Something to do" type="text" value="<%= params[:todo] %>">
     </dd>
   </dl>
   <fieldset class="actions">

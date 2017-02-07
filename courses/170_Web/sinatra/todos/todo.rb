@@ -15,7 +15,7 @@ end
 before do
   session[:lists] ||= []
   @list = find_current_list
-  @id = session[:lists].index(@list)
+  @list_id = session[:lists].index(@list)
 end
 
 helpers do
@@ -44,6 +44,14 @@ helpers do
   def find_current_list
     id = params[:id].to_i
     session[:lists][id]
+  end
+
+  def list_done?
+    @list[:todos].all? { |todo| todo[:completed] == true }
+  end
+
+  def todos_left
+    @list[:todos].select { |todo| todo[:completed] == false }.size
   end
 end
 
@@ -98,7 +106,7 @@ post "/lists/:id" do
   else
     @list[:name] = list_name
     session[:success] = "The list has been updated."
-    redirect "/lists/#{@id}"
+    redirect "/lists/#{@list_id}"
   end
 end
 
@@ -123,6 +131,39 @@ post "/lists/:list_id/todos" do
   else
     @list[:todos] << { name: params[:todo], completed: false }
     session[:success] = "Todo was added!"
-    redirect "/lists/#{@id}"
+    redirect "/lists/#{@list_id}"
   end
+end
+
+# Delete a todo element
+post "/lists/:list_id/todos/:index/destroy" do
+  todo_id = params[:index].to_i
+  todo = @list[:todos][todo_id]
+
+  @list[:todos].delete(todo)
+
+  session[:success] = "The todo #{todo[:name]} was deleted!"
+  redirect "/lists/#{@list_id}"
+end
+
+# Mark a todo as done
+post "/lists/:list_id/todos/:index/patch" do
+  todo_id = params[:index].to_i
+  todo = @list[:todos][todo_id]
+
+  is_completed = params[:completed] == "true"
+  todo[:completed] = is_completed
+
+  session[:success] = "The todo has been updated."
+  redirect "/lists/#{@list_id}"
+
+end
+
+# Mark all todos as done
+post "/lists/:list_id/todos/patch" do
+  @list[:todos].each { |todo| todo[:completed] = true }
+
+  session[:success] = "All todos have been marked true."
+  redirect "/lists/#{@list_id}"
+
 end
