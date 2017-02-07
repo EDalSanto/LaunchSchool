@@ -1,10 +1,6 @@
-<% if list_done? %>
-<section id="todos" class="complete">
-<% else %>
-<section id="todos">
-<% end %>
+<section id="todos" class="<%= list_class(@list) %>">
   <header>
-    <h2><%= @list[:name] %></h2>
+    <h2><%= params[:id] %></h2>
     <ul>
       <li>
         <form action="/lists/<%= @list_id %>/todos/patch" method="post">
@@ -20,14 +16,12 @@
       <% if todo[:completed] %>
         <li class="complete">
       <% else %>
-        <li>
+        <li >
       <% end %>
-
         <form action="/lists/<%= @list_id %>/todos/<%= index %>/patch" method="post" class="check">
           <input type="hidden" name="completed" value="<%= !todo[:completed] %>" />
           <button type="submit">Complete</button>
-        </form
-
+        </form>
         <h3><%= todo[:name] %></h3>
         <form action="/lists/<%= @list_id %>/todos/<%= index %>/destroy" method="post" class="delete">
           <button type="submit">Delete</button>

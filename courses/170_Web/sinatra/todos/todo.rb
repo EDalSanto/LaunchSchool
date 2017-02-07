@@ -42,16 +42,25 @@ helpers do
   end
 
   def find_current_list
-    id = params[:id].to_i
+    id = params[:index].to_i
     session[:lists][id]
   end
 
-  def list_done?
-    @list[:todos].all? { |todo| todo[:completed] == true }
+  def list_done?(list)
+    list[:todos].all? { |todo| todo[:completed] == true } &&
+      list[:todos].size >= 1
   end
 
-  def todos_left
-    @list[:todos].select { |todo| todo[:completed] == false }.size
+  def todos_left(list)
+    list[:todos].select { |todo| todo[:completed] == false }.size
+  end
+
+  def todos_count(list)
+    list[:todos].size
+  end
+
+  def list_class(list)
+    "complete" if list_done?(list)
   end
 end
 
