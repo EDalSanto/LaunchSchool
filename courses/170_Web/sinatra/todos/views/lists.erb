@@ -3,7 +3,7 @@
     <li class="<%= list_class(list) %>">
       <a href="/lists/<%= index %>">
         <h2><%= list[:name] %></h2>
-        <p><%= "#{todos_left(list)} / #{todos_count(list)}" %></p>
+        <p><%= "#{todos_done(list)} / #{todos_count(list)}" %></p>
       </a>
     </li>
   <% end %>

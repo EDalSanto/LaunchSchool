@@ -1,6 +1,6 @@
 <section id="todos" class="<%= list_class(@list) %>">
   <header>
-    <h2><%= params[:id] %></h2>
+    <h2><%= @list[:name] %></h2>
     <ul>
       <li>
         <form action="/lists/<%= @list_id %>/todos/patch" method="post">
@@ -35,7 +35,7 @@
   <a class="list" href="/lists">All Lists</a>
 <% end %>
 
-<form action="/lists/<%= @list_id %>/todos" method="post">
+<form action="/lists/<%= params[:list_id] %>/todos" method="post">
   <dl>
     <dt>
       <label for="todo">Enter a new todo item:</label>
