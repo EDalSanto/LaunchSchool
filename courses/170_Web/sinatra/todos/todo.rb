@@ -17,6 +17,15 @@ before do
 end
 
 helpers do
+
+  def todo_class(todo)
+    "complete" if todo[:completed] 
+  end
+
+  def list_class(list)
+    "complete" if list_done?(list)
+  end
+
   def valid_name_size?(text)
     text.size.between?(1,100)
   end
@@ -40,22 +49,17 @@ helpers do
   end
 
   def list_done?(list)
-    list[:todos].all? { |todo| todo[:completed] == true } &&
-      list[:todos].size >= 1
+    (todos_remaining(list).zero?) && (total_todos(list) >= 1)
   end
 
-  def todos_done(list)
-    list[:todos].count { |todo| todo[:completed] }
+  def todos_remaining(list)
+    list[:todos].count { |todo| !todo[:completed] }
   end
 
   def total_todos(list)
     list[:todos].size
   end
-
-  def list_class(list)
-    "complete" if list_done?(list)
-  end
-
+  
   def load_list(list_id)
     list = session[:lists][list_id]
     return list if list
@@ -64,6 +68,23 @@ helpers do
     redirect "/lists"
     halt
   end
+
+  def sort_lists(lists, &block)
+    sorted_lists = lists.sort_by { |list| list_done?(list) ? 1 : 0 }
+    sorted_lists.each do |list|
+      index = lists.index(list)
+      yield(list, index)
+    end
+  end
+
+  def sort_todos(todos, &block)
+    sorted_todos = todos.sort_by { |todo| todo[:completed] ? 1 : 0 }
+    sorted_todos.each do |todo|
+      index = todos.index(todo)
+      yield(todo, index)
+    end
+  end
+
 end
 
 get "/" do

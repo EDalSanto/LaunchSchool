@@ -1,9 +1,9 @@
 <ul id="lists">
-  <% @lists.each_with_index do |list, index| %>
+  <% sort_lists(@lists) do |list, index| %>
     <li class="<%= list_class(list) %>">
       <a href="/lists/<%= index %>">
         <h2><%= list[:name] %></h2>
-        <p><%= "#{todos_done(list)} / #{todos_count(list)}" %></p>
+        <p><%= "#{total_todos(list) - todos_remaining(list)} / #{total_todos(list)}" %></p>
       </a>
     </li>
   <% end %>
