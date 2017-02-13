@@ -6,10 +6,7 @@ require "tilt/erubis"
 configure do
   enable :sessions
   set :session_secret, 'secret'
-  #disable :protection
-  #use Rack::Session::Cookie, :key => 'rack.session',
-  #                           :path => '/',
-  #                           :secret => 'secret'
+  set :erb, :escape_html => true
 end
 
 before do
