@@ -3,23 +3,23 @@
     <h2><%= @list[:name] %></h2>
     <ul>
       <li>
-        <form action="/lists/<%= @list_id %>/todos/patch" method="post">
+        <form action="/lists/<%= @list[:id] %>/todos/patch" method="post">
           <button class="check" type="submit">Complete All</button>
         </form>
       </li>
-      <li><a class="edit" href="/lists/<%= @list_id %>/edit">Edit List</a></li>
+      <li><a class="edit" href="/lists/<%= @list[:id] %>/edit">Edit List</a></li>
     </ul>
   </header>
 
   <ul>
-    <% sort_todos(@list[:todos]) do |todo, index| %>
+    <% sort_todos(@list[:todos]) do |todo| %>
 	  <li class="<%= todo_class(todo)%>">
-        <form action="/lists/<%= @list_id %>/todos/<%= index %>/patch" method="post" class="check">
+        <form action="/lists/<%= @list[:id] %>/todos/<%= todo[:id] %>/patch" method="post" class="check">
           <input type="hidden" name="completed" value="<%= !todo[:completed] %>" />
           <button type="submit">Complete</button>
         </form>
         <h3><%= todo[:name] %></h3>
-        <form action="/lists/<%= @list_id %>/todos/<%= index %>/destroy" method="post" class="delete">
+        <form action="/lists/<%= @list[:id] %>/todos/<%= todo[:id] %>/destroy" method="post" class="delete">
           <button type="submit">Delete</button>
         </form>
       </li>
