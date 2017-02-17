@@ -6,13 +6,16 @@
       <form action="/<%= file %>/destroy" method="post" class="inline">
         <button type="submit">Delete</button>
       </form>
+      <form action="/create_file" method="post" class="inline">
+        <button name="new_filename" value="<%= file %>" type="submit">Duplicate</button>
+      </form>
     </li>
   <% end %>
 </ul>
 
 <p><a href="/new">New Document</a></p>
 
-<% if session[:signed_in] %>
+<% if session[:username] %>
   <form action="/users/signout" method="post">
     <p class="user-status">
       Signed in as <%= session[:username] %>.

@@ -3,6 +3,8 @@ require 'sinatra/reloader'
 require 'tilt/erubis'
 require 'redcarpet'
 require 'fileutils'
+require 'bcrypt'
+require 'yaml'
 
 configure do
   enable :sessions
@@ -12,12 +14,32 @@ configure do
                              :secret => 'super secret'
 end
 
+def valid_credentials?(username, password)
+  credentials = load_users_credentials
+
+  if credentials.key?(username)
+    bcrypt_password = BCrypt::Password.new(credentials[username]) 
+    bcrypt_password == password
+  else
+    false
+  end
+end
+
 def data_path
   if ENV["RACK_ENV"] == "test"
     File.expand_path("test/data", __dir__)
   else
     File.expand_path("data", __dir__)
   end
+end
+
+def load_users_credentials
+  credentials_path = if ENV["RACK_ENV"] == "test"
+    File.expand_path("test/users.yml", __dir__)
+  else
+    File.expand_path("users.yml", __dir__)
+  end
+  YAML.load_file(credentials_path)
 end
 
 def render_markdown(text)
@@ -33,6 +55,17 @@ def load_file_content(path)
     content
   when ".md"
     erb render_markdown(content)
+  end
+end
+
+def signed_in?
+  session.key?(:username)
+end
+
+def require_signed_in_user
+  unless signed_in?
+    session[:message] = "You must be signed in to do that."
+    redirect "/"
   end
 end
 
@@ -61,6 +94,8 @@ get "/:filename" do
 end
 
 get "/:filename/edit" do
+  require_signed_in_user
+
   file_path = File.join(data_path, params[:filename])
 
   @filename = params[:filename]
@@ -70,6 +105,8 @@ get "/:filename/edit" do
 end
 
 post "/create_file" do
+  require_signed_in_user
+
   new_filename = params[:new_filename].to_s
   extname = File.extname(new_filename)
 
@@ -93,6 +130,8 @@ post "/create_file" do
 end
 
 post "/:filename" do
+  require_signed_in_user
+
   file_path = File.join(data_path, params[:filename])
 
   File.write(file_path, params[:content])
@@ -102,6 +141,8 @@ post "/:filename" do
 end
 
 post "/:filename/destroy" do
+  require_signed_in_user
+
   file_path = File.join(data_path, params[:filename])
   
   File.delete(file_path)
@@ -115,7 +156,10 @@ get "/users/signin" do
 end
 
 post "/users/signin" do
-  if params[:username] == "admin" && params[:password] == "secret"
+  username = params[:username]
+  password = params[:password]
+
+  if valid_credentials?(username, password) 
     session[:username] = params[:username] 
     session[:message] = "Welcome!"
     redirect "/"
