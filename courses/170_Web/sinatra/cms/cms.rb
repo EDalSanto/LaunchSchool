@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'tilt/erubis'
 require 'redcarpet'
+require 'fileutils'
 
 configure do
   enable :sessions
@@ -10,8 +11,6 @@ configure do
                              :path => '/',
                              :secret => 'super secret'
 end
-
-root = File.expand_path("..", __FILE__)
 
 def data_path
   if ENV["RACK_ENV"] == "test"
@@ -33,17 +32,21 @@ def load_file_content(path)
     headers["Content-Type"] = "text/plain"
     content
   when ".md"
-    render_markdown(content)
+    erb render_markdown(content)
   end
 end
 
 get "/" do
-  pattern = File.join(data_path, "/")
+  pattern = File.join(data_path, "/*")
   @files = Dir.glob(pattern).map do |path|
     File.basename(path)
   end
 
   erb :index
+end
+
+get "/new" do
+  erb :new
 end
 
 get "/:filename" do
@@ -66,11 +69,65 @@ get "/:filename/edit" do
   erb :edit
 end
 
+post "/create_file" do
+  new_filename = params[:new_filename].to_s
+  extname = File.extname(new_filename)
+
+
+  if new_filename.size.zero?
+    session[:message] = "No name provided for file. Please provide a filename."
+    status 422
+    erb :new
+  elsif extname != ".txt" && extname != ".md"
+    session[:message] = "Improper file extension. Please provide a .txt or .md"
+    status 422
+    erb :new
+  else
+    file_path = File.join(data_path, new_filename)
+
+    File.write(file_path, "")
+    session[:message] = "#{new_filename} was successfully created!"
+
+    redirect "/"
+  end
+end
+
 post "/:filename" do
   file_path = File.join(data_path, params[:filename])
 
   File.write(file_path, params[:content])
 
   session[:message] = "File #{params[:filename]} has been updated."
+  redirect "/"
+end
+
+post "/:filename/destroy" do
+  file_path = File.join(data_path, params[:filename])
+  
+  File.delete(file_path)
+
+  session[:message] = "#{params[:filename]} was deleted."
+  redirect "/"
+end
+
+get "/users/signin" do
+  erb :signin
+end
+
+post "/users/signin" do
+  if params[:username] == "admin" && params[:password] == "secret"
+    session[:username] = params[:username] 
+    session[:message] = "Welcome!"
+    redirect "/"
+  else
+    session[:message] = "Invalid Credentials"
+    status 422
+    erb :signin
+  end
+end
+
+post "/users/signout" do
+  session.delete(:username)
+  session[:message] = "You have been signed out."
   redirect "/"
 end
