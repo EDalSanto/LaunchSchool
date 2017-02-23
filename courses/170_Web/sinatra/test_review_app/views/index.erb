@@ -1,0 +1,14 @@
+<% if session[:message] %>
+  <h3><%= session[:message] %></h3>
+<% end %>
+
+<h3>Here are all the numbers so far:</h3>
+<ul>
+  <% session[:numbers].each do |num| %>
+    <li><%= num %></li>
+  <% end %>
+</ul>
+
+<h3>That gives us a total of: <%= numbers_sum %>!</h3>
+
+<p><a href="/new_number">Click here</a> to add a new number</p>
