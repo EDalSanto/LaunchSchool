@@ -19,6 +19,7 @@ def valid_credentials?(username, password)
 
   if credentials.key?(username)
     bcrypt_password = BCrypt::Password.new(credentials[username]) 
+    # Bcrypt #== overrides standard #== do hash password and do comparison
     bcrypt_password == password
   else
     false
@@ -33,12 +34,15 @@ def data_path
   end
 end
 
-def load_users_credentials
-  credentials_path = if ENV["RACK_ENV"] == "test"
+def credentials_path
+  if ENV["RACK_ENV"] == "test"
     File.expand_path("test/users.yml", __dir__)
   else
     File.expand_path("users.yml", __dir__)
   end
+end
+
+def load_users_credentials
   YAML.load_file(credentials_path)
 end
 
@@ -110,7 +114,6 @@ post "/create_file" do
   new_filename = params[:new_filename].to_s
   extname = File.extname(new_filename)
 
-
   if new_filename.size.zero?
     session[:message] = "No name provided for file. Please provide a filename."
     status 422
@@ -121,7 +124,6 @@ post "/create_file" do
     erb :new
   else
     file_path = File.join(data_path, new_filename)
-
     File.write(file_path, "")
     session[:message] = "#{new_filename} was successfully created!"
 
@@ -174,4 +176,25 @@ post "/users/signout" do
   session.delete(:username)
   session[:message] = "You have been signed out."
   redirect "/"
+end
+
+get "/users/signup" do
+  erb :signup
+end
+
+post "/users/create" do
+  credentials = load_users_credentials
+
+  new_username = params[:new_username]
+  new_password = params[:new_password]
+
+  unless credentials.key?(new_username)
+    credentials[new_username] = BCrypt::Password.create(new_password).to_s
+    File.open(credentials_path, 'w') { |f| f.write credentials.to_yaml }
+    session[:message] = "New user #{new_username} created successfully!"
+    redirect "/"
+  else
+    session[:message] = "Username already exists!"
+    redirect "/users/signup"
+  end
 end

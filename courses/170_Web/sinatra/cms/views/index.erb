@@ -7,7 +7,8 @@
         <button type="submit">Delete</button>
       </form>
       <form action="/create_file" method="post" class="inline">
-        <button name="new_filename" value="<%= file %>" type="submit">Duplicate</button>
+        <button name="new_filename" type="submit">Duplicate</button>
+        <input name="new_filename" value="Duplicate!" />
       </form>
     </li>
   <% end %>
@@ -24,4 +25,5 @@
   </form>
 <% else %>
   <p class="user-status"><a href="/users/signin">Sign In</a></p>
+  <p class="user-status"><a href="/users/signup">Sign Up</a></p>
 <% end %>
