@@ -1,0 +1,11 @@
+<h1>So sorry, you have lost all your money!</h1>
+
+<% if session[:message] %>
+  <p class="message"><%= session.delete(:message) %></p>
+<% end %>
+
+<form action="/new_game" method="post">
+  <p>
+    <button name="bet" type="text">New Game?</button>
+  </p>
+</form>

@@ -4,8 +4,10 @@ require "sinatra/reloader"
 require "tilt/erubis"
 
 configure do
-  enable :sessions
-  set :session_secret, 'secret'
+   enable :sessions
+  use Rack::Session::Cookie, :key => 'rack.session',
+                             :path => '/',
+                             :secret => 'super_secret'
   set :erb, :escape_html => true
 end
 
