@@ -2,7 +2,7 @@ require "sinatra"
 require "sinatra/content_for"
 require "tilt/erubis"
 
-require_relative "database_persistence"
+require_relative "sequel_persistence"
 
 configure do
   enable :sessions
@@ -12,7 +12,7 @@ end
 
 configure(:development) do
   require "sinatra/reloader"
-  also_reload 'database_persistence.rb'
+  also_reload 'sequel_persistence.rb'
 end
 
 helpers do
@@ -22,14 +22,6 @@ helpers do
 
   def list_class(list)
     "complete" if list_complete?(list)
-  end
-
-  def todos_count(list)
-    list[:todos].size
-  end
-
-  def todos_remaining_count(list)
-    list[:todos].count { |todo| !todo[:completed] }
   end
 
   def sort_lists(lists, &block)
@@ -75,7 +67,7 @@ end
 
 
 before do
-  @storage = DatabasePersistence.new(logger)
+  @storage = SequelPersistence.new(logger)
 end
 
 get "/" do
@@ -113,6 +105,7 @@ end
 get "/lists/:id" do
   @list_id = params[:id].to_i
   @list = load_list(@list_id)
+  @todos = @storage.list_todos(@list_id)
   erb :list, layout: :layout
 end
 
