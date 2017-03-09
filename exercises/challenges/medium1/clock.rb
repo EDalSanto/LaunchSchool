@@ -3,18 +3,12 @@ class Clock
   MINUTES_IN_HOUR = 60
   MINUTES_IN_DAY = 1440
   
-  def initialize
-    @total_minutes = 0
+  def initialize(total_minutes)
+    @total_minutes = total_minutes 
   end
 
   def self.at(hours, minutes=0)
-    new_clock = Clock.new
-    new_clock.set_time(hours, minutes)
-    new_clock
-  end
-
-  def set_time(hours, minutes)
-    self.total_minutes = (hours * MINUTES_IN_HOUR) + minutes
+    new(hours * MINUTES_IN_HOUR + minutes)
   end
 
   def hours 
@@ -25,26 +19,26 @@ class Clock
     total_minutes % MINUTES_IN_HOUR
   end
 
-  def+(minutes_to_add)
-    self.total_minutes += minutes_to_add
-    self.total_minutes = self.total_minutes % MINUTES_IN_DAY
-
-    self
+  def +(minutes_to_add)
+    Clock.new((self.total_minutes + minutes_to_add) % MINUTES_IN_DAY)
   end
 
-  def-(minutes_to_subtract)
-    self.total_minutes -= minutes_to_subtract
-    self.total_minutes = (self.total_minutes + MINUTES_IN_DAY) % MINUTES_IN_DAY 
-
-    self
+  def -(minutes_to_subtract)
+    Clock.new((self.total_minutes - minutes_to_subtract) % MINUTES_IN_DAY)
   end
 
-  def==(other)
+  def ==(other)
     self.to_s == other.to_s 
   end
 
 
   def to_s
-    "#{format('%02i', hours)}:#{format('%02i', minutes)}"
+    format_minutes
   end
+
+  private
+    
+    def format_minutes
+      "#{format('%02i', hours)}:#{format('%02i', minutes)}"
+    end
 end
