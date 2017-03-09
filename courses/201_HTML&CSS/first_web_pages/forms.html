@@ -22,8 +22,40 @@
         <input type="reset" value="Clear" />
       </fieldset>
     </form>
-    <form>
-     
+    <form action="" method="post">
+      <fieldset> 
+        <label for="search">Search for</label>
+        <input type="search" id="search" name="search" />
+        <label><input type="radio" name="media" value="TV" />TV</label>
+        <label><input type="radio" name="media" value="Movies" />Movies</label>
+        <label><input type="radio" name="media" value="Music" />Music</label>
+        <input type="submit" value="Search" />
+      </fieldset>
+    </form>
+    <form action="" method"post">
+      <fieldset>
+        <dl>
+          <dt><label for="movie">Movie</label></dt>
+          <dd>
+            <select name="movie" id="movie">
+              <label><option value="Looper">Looper</label> 
+              <label><option value="Frozen">Frozen</label> 
+              <label><option value="Tommy Boy">Tommy Boy</label>
+            </select>
+          </dd>
+          <dt><label for="rating">Rating</label></dt>
+          <dd>
+            <input type="range" id="rating" name="range" min="1" max="5" /> 
+          </dd>
+        </dl>
+        <div>
+          <label>
+            <input type="checkbox" id="favorites" name="favorites" />
+            Add to my favorites
+          </label>
+        </div>
+        <input type="submit" value="Rate movie" />
+      </fieldset>
     </form>
   </body>
 </html> 
