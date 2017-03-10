@@ -5,6 +5,277 @@
     <meta charset="UTF-8">
   </head>
   <body>
-
+    <div id="lesson">
+      <section>
+        <h1>Inline Elements</h1>
+        <p>
+          Inline elements occupies only the space of the content. It does not
+          take width and height values.
+        </p>
+        <p class="bold">Example:</p>
+        <p>
+          Anchor tags are normally inline elements, you see they only take up the width of 
+          their content and not the whole width of the page then the next anchor tags follow right after it.
+        </p>
+        <div class="border">
+          <a href="#">Home</a>
+          <a href="#">Portfolio</a>
+          <a href="#">Contact</a>
+        </div>
+        <p class="bold">What happens if we set a margin property on an inline level element?</p>
+        <p>Inline elements will only take left and right margin values.</p>
+        <div class="border inline-margin">
+          <a href="#">Home</a>
+          <a href="#">Portfolio</a>
+          <a href="#">Contact</a>
+        </div>
+        <p>
+          In the example I put a margin of 30px on all sides, as you can see if
+          you check the anchor tag in the developer tools only the left and right
+          side of the contents are affected by the margin.
+        </p>
+        <p class="bold">What about padding?</p>
+        <div class="border inline-padding">
+          <a href="#">Home</a>
+          <a href="#">Portfolio</a>
+          <a href="#">Contact</a>
+        </div>
+        <p>Inline elements accept padding values on all sides.</p>
+        <p class="bold">Floating Inline Elements</p>
+        <div class="border floating-inline">
+          <a href="#">Home</a>
+          <a href="#">Portfolio</a>
+          <a href="#">Contact</a>
+        </div>
+      </section>
+      <section class="block">
+        <h1>Block Elements</h1>
+        <p>
+          Block level elements take up the entire width of the page and always
+          start in a new line.It can have margin/s and padding/s. If no width is
+          set it will expand naturally to fill its parent container. If no height
+          is set, it will expand to fit its content.
+        </p>
+        <p class="bold">
+          Example: (Div elements are naturally block level elements)
+        </p>  
+        <div class="wrapper">
+          <div class="box-1">
+            This is a div with no width and height set.
+          </div>
+          <div class="box-2">
+            This a div with no width but with a height of 60px, with a padding and margin of 20px around it.
+          </div>
+          <div class="box-3">
+            This a div with a width of 90px and no height set.
+          </div>
+        </div>
+        <p>
+          In the first example, the div fills the entire width, and uses just enough
+          height to fill its content. In the second box, we didn't set a width, but it
+          still filled the entire width (counting the padding and margin); it also uses
+          60px of height plus the margin and padding. For the third box, we set the width
+          to 90px, and as expected, it took just enough height to fill its content. The
+          text was squished because of the reduced width, so the browser expanded the
+          height to accommodate the content.
+        </p>
+        <p class="bold">
+          Floating Block Elements
+        </p>
+        <p class="bold">
+          Floating block elements with no width and height set.
+        </p>
+        <div class="wrapper">
+          <div class="box-1 float-left">
+            Box - 1 - Floated Left
+          </div>
+          <div class="box-1 float-right">
+            Box - 2 - Floated Right
+          </div>
+        </div>
+        <p>
+          It floated our elements to the left and right on the same block. It
+          shrunk to the widest element within each div, in our case the texts
+          inside, since we didn't set a specific width for each
+        </p>
+        <p class="bold">
+          Floating block elements with width and height set.
+        </p>
+        <div class="wrapper">
+          <div class="box-2 float-left">
+            Box - 1 - Floated Left
+          </div>
+          <div class="box-2 float-right">
+            Box - 2 - Floated Right 
+          </div>
+        </div>
+        <p class="bold">Can we change an inline element into a block element?</p>
+        <p>Let's use the anchor tag as an example.</p>
+        <div class="wrapper">
+          <a href="#" class="bl-a">Home</a>
+          <a href="#" class="bl-a">Portfolio</a>
+          <a href="#" class="bl-a">Contact</a>
+        </div>
+        <p>
+          Yes, we can change display values from a block element to inline
+          element and vice versa.Display values can be overwritten by another
+          display value.
+        </p>
+      </section>            
+      <section class="inline-block">
+        <h1>Inline-Block</h1>
+        <p>
+          Inline-block elements are inline elements that can take block elements properties, 
+          such as width and height. It acts similarly to a float minus the clear property.
+        </p>
+        <p class="bold">Example: Let's use inline-block to create a navigation.</p>
+        <div class="nav">
+          <a href="#">Home</a>
+          <a href="#">Portfolio</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+        <p>
+          We achieved the same results as to when we float the anchor elements to give them the 
+          block elements' properties. It's you get two elements in just one, you get to have the 
+          properties of inline elements and at the same time get the properties of block elements.
+        </p>
+      </section>
+      <section class="floats-postions">
+        <h1>Floats</h1>
+        <p>
+          A floated element is taken out of the normal flow then shifted left
+          or right.When you float a content it becomes a block-level element.
+        </p>
+        <p class="bold">Example</p>
+        <div class="wrapper">
+          <div class="flbx1">
+            Box 1
+          </div>
+          <div class="flbx2">
+            Box 2
+          </div>
+          <div class="flbx3">
+            Box 3
+          </div>
+        </div>
+        <p>
+          Elements following a floated element will wrap around the floated
+          element, we do not want this to happen, so I applied the 'clear: both'
+          property to the third div, there are 2 other properties for clear,
+          that's the left and the right. I chose to clear both, just to be sure.
+        </p>
+        <p>
+          There are other methods to clear floats, one of these methods is the
+          clearfix method:
+        </p>
+        <pre>
+          <code>
+            elementName::after {
+                content: " ";
+                display:block;
+                clear: both;
+            }
+          </code>
+        </pre>
+        <p>
+          Basically, you just put the ::after pseudo-element on the containing
+          parent element of the floated contents.
+        </p>
+      </section>
+      <section class="pos">
+        <h1>Positioning</h1>
+        <p>
+          Every now and then we want to position things the way we want it to
+          be and move it around the page, and floats simply cannot do this as it
+          can only take an element to position left or right of the page. This is
+          where positioning comes in. There are four types of positiong:
+        </p>
+        <ul>
+          <li>Static</li>
+          <li>Fixed</li>
+          <li>Relative</li>
+          <li>Absolute</li>
+        </ul>
+      </section>
+      <section class="pos-static">
+        <h1>Static Position</h1>
+        <p>
+          The element renders normally on the page - this is the default
+          position of elements on the page.
+        </p>
+      </section>
+      <section class="pos-fixed">
+        <h1>Fixed Position</h1>
+        <p>
+          This will allow you to put an element in the same place even when
+          the page is scrolled. Top, Right, Bottom and Left properties are used
+          to position this property.
+        </p>
+        <p>
+          Fixed positioned elements are taken out of the flow and does not leave a gap 
+          in the location of the page where you originally put it.
+        </p>
+        <p>
+          Notice the blue box on the bottom left side of the page. It is a fixed position element.
+        </p>
+        <div class="fixed-box">"
+          "I'm positioned fix"
+        </div>
+      </section>
+      <section class="pos-rel">
+        <h1>Position Relative</h1>
+        <p>
+          Positioned relative to its normal position. Setting the offset values
+          will cause the element to move away from its normal position according
+          to the values you've set. However, its position in the normal flow of
+          the document will be preserved and following texts will not wrap around
+          it.
+        </p>
+        <p>
+          When we position an element with offset values it moves on top of the next
+          text/elements rather than pushing it down as to what padding and margin element
+          would do.
+        </p>
+        <div class="rel-box">
+          I'm a relatively positioned box! 
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non cumque
+          repellat sapiente vitae nihil debitis accusamus, odit, tempore id
+          reiciendis consequatur necessitatibus veritatis, distinctio vel, cum
+          repellendus numquam blanditiis perferendis?
+        </p>
+      </section>
+      <section class="pos-abs">
+        <h1>Position Absolute</h1>
+        <div class="abs-box">
+          Abosolutely Positioned Box
+        </div>
+        <p>
+          When the element is positioned absolute it is taken out of the normal
+          flow and the original space of that element in the document will not be
+          preserved.
+        </p>
+        <p>
+          Absolutely positioned elements are moved in relation to their closest relatively
+          positioned parent element. Should a relatively positioned parent element not
+          exist, the absolutely positioned element will be positioned in relation to the
+          <body> element.
+        </p>
+        <p>
+          Let's get some examples:
+        </p>
+        <p>
+          I will set the position of the section with the class of
+          "pos-absolute" to position: relative so that the absolutely positioned
+          element will be basing its offset values on the whole section
+          element.
+        </p>
+        <p>
+          Notice the green box beside the Position Absolute title, it is an absolutely positioned element.
+        </p>
+      </section>
+    </div>
   </body>
 </html>
