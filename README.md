@@ -7,4 +7,5 @@
 * Throughout the program, founder Chris Lee and staff give technical interviews to student to assert they're progressing and truly mastering the topic. 
 * The end goal of this program is be a full-stack engineer who truly understands the underpinnings of the web, and not just how to use a specific tool or two. 
 * Since I've already programmed in Python, Ruby/Rails, and C since the end of 2015, I've making fast progress and still going really deep into the material and should be prepared for anything. 
-* For more info checkout Launch School https://launchschool.com and their open book shelf: https://launchschool.com/books/
+* For more info checkout [Launch School](https://launchschool.com) and their [open book shelf](https://launchschool.com/books/)
+* Here's a link to the repo page for my most recent bring project with LS: [Sinatra todo web app](https://github.com/EDalSanto/LaunchSchool/tree/master/courses/180_Databases/todos)
