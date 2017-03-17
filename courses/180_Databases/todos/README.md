@@ -9,5 +9,4 @@
 * The schemas for each table are included in raw SQL in scehma.sql
 
 ##### How To Run
-* Install code locally and start up server with ``` bundle exec ruby todo.rb
-  ```, and head on over to localhost:4567
+* Install code locally and start up server with ``` bundle exec ruby todo.rb ```, and head on over to localhost:4567
