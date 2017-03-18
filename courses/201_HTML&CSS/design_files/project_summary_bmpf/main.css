@@ -158,23 +158,80 @@
 #lesson .flp-1 .wrapper {
   color: white;
   text-align: center;
+  vertical-align: middle;
 }
 
 #lesson .flp-1 .wrapper .flbx-1 {
   width: 45%;
+  height: 100px;
+  line-height: 100px;
   background: red;
   float: left;
-  padding: 30px 40px;
 }
 
 #lesson .flp-1 .wrapper .flbx-2 {
   width: 55%;
   background: blue;
-  float: left;
-  padding: 30px;
+  float: right;
+  height: 100px;
+  line-height: 100px;
 }
 
 #lesson .flp-1 .wrapper .flbx-3 {
   background: green;
-  padding: 20px;
+  height: 50px;
+  line-height: 50px;
+  clear: both;
+}
+
+#lesson .pos ul {
+  margin: 0 0 45px 40px;
+}
+
+#lesson .pos ul li {
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+#lesson .pos-fixed .fixed-box {
+  background: blue;
+  color: white;
+  width: 200px;
+  height: 75px;
+  position: fixed;
+  bottom: 130px;
+  right: 20px;
+  border-radius: 5%;
+  text-align: center;
+  line-height: 75px;
+}
+
+#lesson .pos-rel .rel-box {
+  background: red;
+  color: white;
+  width: 200px;
+  height: 75px;
+  position: relative;
+  top: 30px;
+  right: 20px;
+  border-radius: 5%;
+  text-align: center;
+  line-height: 75px;
+}
+
+#lesson .pos-abs {
+  position: relative;
+}
+
+#lesson .pos-abs .abs-box {
+  background: green;
+  color: white;
+  width: 200px;
+  height: 75px;
+  position: absolute;
+  border-radius: 5%;
+  text-align: center;
+  line-height: 75px;
+  top: -30px;
+  left: 250px;
 }
