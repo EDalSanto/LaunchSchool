@@ -3,6 +3,7 @@
   <head>
     <title>Box Model Examples</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css" />
   </head>
   <body>
     <div id="lesson">
@@ -42,7 +43,7 @@
         </div>
         <p>Inline elements accept padding values on all sides.</p>
         <p class="bold">Floating Inline Elements</p>
-        <div class="border floating-inline">
+        <div class="border inline-float cf">
           <a href="#">Home</a>
           <a href="#">Portfolio</a>
           <a href="#">Contact</a>
@@ -85,7 +86,7 @@
         <p class="bold">
           Floating block elements with no width and height set.
         </p>
-        <div class="wrapper">
+        <div class="wrapper cf">
           <div class="box-1 float-left">
             Box - 1 - Floated Left
           </div>
@@ -101,11 +102,11 @@
         <p class="bold">
           Floating block elements with width and height set.
         </p>
-        <div class="wrapper">
-          <div class="box-2 float-left">
+        <div class="wrapper cf">
+          <div class="fl-l">
             Box - 1 - Floated Left
           </div>
-          <div class="box-2 float-right">
+          <div class="fl-r">
             Box - 2 - Floated Right 
           </div>
         </div>
@@ -122,8 +123,8 @@
           display value.
         </p>
       </section>            
-      <section class="inline-block">
-        <h1>Inline-Block</h1>
+      <section class="in-bl">
+        <h1>Inline-Block Elements</h1>
         <p>
           Inline-block elements are inline elements that can take block elements properties, 
           such as width and height. It acts similarly to a float minus the clear property.
@@ -141,7 +142,8 @@
           properties of inline elements and at the same time get the properties of block elements.
         </p>
       </section>
-      <section class="floats-postions">
+      <section class="flp-1">
+        <h1 class="title">Floats and Positioning Elements</h1>
         <h1>Floats</h1>
         <p>
           A floated element is taken out of the normal flow then shifted left
@@ -149,13 +151,13 @@
         </p>
         <p class="bold">Example</p>
         <div class="wrapper">
-          <div class="flbx1">
+          <div class="flbx-1">
             Box 1
           </div>
-          <div class="flbx2">
+          <div class="flbx-2">
             Box 2
           </div>
-          <div class="flbx3">
+          <div class="flbx-3">
             Box 3
           </div>
         </div>
