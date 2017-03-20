@@ -1,16 +1,11 @@
-# normalize => remove spaces and pucntuation and downcase
-#
-# rows => perfect square of num characters or next greatest perfect
-
 class Crypto
-  attr_accessor :original_text
-
   def initialize(original_text)
     @original_text = original_text
+    @normalized_plaintext = original_text.gsub(/[^\w]/, '').downcase
   end
 
   def normalize_plaintext
-    original_text.gsub(/[^\w\d]/, '').downcase
+    @normalized_plaintext
   end
 
   def size
@@ -18,31 +13,23 @@ class Crypto
   end
 
   def plaintext_segments
-    normalize_plaintext.scan(/\w{#{size}}|\w+|\d+/)
+    normalize_plaintext.scan(/.{1,#{size}}/)
   end
 
   def ciphertext
-    res = ''
-    segments = plaintext_segments
-    0.upto(size - 1) do |index|
-      segments.each do |segment|
-        next unless segment[index]
-        res << segment[index] 
-      end
-    end
-    res
-  end
-
-  def num_segments_for_ciphertext 
-    Math.sqrt(ciphertext.size).ceil
-  end
-
-  def max_segment_size
-    (ciphertext.size / num_segments_for_ciphertext).ceil
+    encode_plaintext
   end
 
   def normalize_ciphertext
-    res = ''
-    res
+    encode_plaintext(' ')
+  end
+
+  def encode_plaintext(delimeter='')
+    padded_segments = plaintext_segments.map { |seg| right_pad(seg) }
+    padded_segments.map(&:chars).transpose.map(&:join).map(&:strip).join(delimeter)
+  end
+
+  def right_pad(seg)
+    seg + (' ' * (size - seg.size))
   end
 end
