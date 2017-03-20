@@ -1,0 +1,237 @@
+.cf:before, .cf:after {
+  display: block;
+  content: "";
+}
+
+.cf:after {
+  clear: both;
+}
+
+#lesson {
+  border: 1px solid #999;
+  width: 75%;
+  margin: 0px auto;
+  padding: 20px;
+  color: #545459;
+  font: normal 16px Helvetica, Arial, sans-serif;
+}
+
+#lesson * {
+  box-sizing: border-box;
+}
+
+#lesson section h1 {
+  color: #ce4a4a;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+#lesson section p {
+  line-height: 35px;
+  margin-bottom: 25px;
+}
+
+#lesson section .bold {
+  font-weight: bold;
+}
+
+#lesson section .border {
+  border: 1px dashed #999;
+  padding: 30px;
+  margin: 45px;
+  width: 60%;
+}
+
+#lesson section .border a {
+  text-decoration: none;
+  color: #545459;
+}
+
+#lesson section .inline-margin a {
+  margin: 30px;
+}
+
+#lesson section .inline-padding a {
+  padding: 30px;
+  background: #008000;
+  color: white;
+}
+
+#lesson section .inline-float a {
+  text-align: center;
+  float: left;
+  padding: 25px;
+  background: #008000;
+  color: white;
+  margin: 15px;
+  width: 120px;
+  border: 3px solid #004d00;
+}
+
+#lesson section .wrapper .box-1 {
+  background: #0099ff;
+  color: white;
+}
+
+#lesson section .wrapper .box-2 {
+  background: #008000;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+}
+
+#lesson section .wrapper .box-3 {
+  background: red;
+  color: white;
+  width: 90px;
+}
+
+#lesson section .wrapper .float-left {
+  float: left;
+  border: 1px solid red;
+}
+
+#lesson section .wrapper .float-right {
+  float: right;
+  border: 1px solid red;
+}
+
+#lesson section .wrapper .fl-l {
+  float: left;
+  background: red;
+  color: white;
+  width: 40%;
+  height: 70px;
+  line-height: 70px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#lesson section .wrapper .fl-r {
+  float: right;
+  background: #0099ff;
+  height: 70px;
+  line-height: 70px;
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+  width: 50%;
+}
+
+#lesson section .wrapper .bl-a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background: #0099ff;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+#lesson section .nav {
+  text-align: center;
+}
+
+#lesson section .nav a {
+  display: inline-block;
+  background: #0099ff;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  width: 180px;
+  padding: 20px; 30px;
+  margin: 20px 10px;
+}
+
+#lesson .in-bl::after {
+  display: block;
+  content: "";
+  padding-top: 30px;
+  border-bottom: 2px dashed #545459;
+  width: 100%;
+} 
+
+#lesson .flp-1 .title {
+  margin: 30px;
+  text-align: center;
+}
+
+#lesson .flp-1 .wrapper {
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#lesson .flp-1 .wrapper .flbx-1 {
+  width: 45%;
+  height: 100px;
+  line-height: 100px;
+  background: red;
+  float: left;
+}
+
+#lesson .flp-1 .wrapper .flbx-2 {
+  width: 55%;
+  background: blue;
+  float: right;
+  height: 100px;
+  line-height: 100px;
+}
+
+#lesson .flp-1 .wrapper .flbx-3 {
+  background: green;
+  height: 50px;
+  line-height: 50px;
+  clear: both;
+}
+
+#lesson .pos ul {
+  margin: 0 0 45px 40px;
+}
+
+#lesson .pos ul li {
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+#lesson .pos-fixed .fixed-box {
+  background: blue;
+  color: white;
+  width: 200px;
+  height: 75px;
+  position: fixed;
+  bottom: 130px;
+  right: 20px;
+  border-radius: 5%;
+  text-align: center;
+  line-height: 75px;
+}
+
+#lesson .pos-rel .rel-box {
+  background: red;
+  color: white;
+  width: 200px;
+  height: 75px;
+  position: relative;
+  top: 30px;
+  right: 20px;
+  border-radius: 5%;
+  text-align: center;
+  line-height: 75px;
+}
+
+#lesson .pos-abs {
+  position: relative;
+}
+
+#lesson .pos-abs .abs-box {
+  background: green;
+  color: white;
+  width: 200px;
+  height: 75px;
+  position: absolute;
+  border-radius: 5%;
+  text-align: center;
+  line-height: 75px;
+  top: -30px;
+  left: 250px;
+}
