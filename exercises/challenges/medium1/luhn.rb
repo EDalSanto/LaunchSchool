@@ -38,18 +38,19 @@ class Luhn
     reversed_addends.reverse
   end
 
-  def transform(num)
-    transformed = num * 2
-    transformed -= 9 if transformed >= 10
-    transformed
-  end
-
+  
   def checksum
     addends.reduce(&:+)
   end
 
   def valid?
     (checksum % 10).zero?
+  end
+
+  def transform(num)
+    transformed = num * 2
+    transformed -= 9 if transformed >= 10
+    transformed
   end
 
   def self.create(invalid_number)
@@ -61,5 +62,4 @@ class Luhn
       new_base_number + (10 - remainder)
     end
   end
-
 end
