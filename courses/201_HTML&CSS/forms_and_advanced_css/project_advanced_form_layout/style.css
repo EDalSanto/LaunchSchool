@@ -1,0 +1,136 @@
+/* undohtml.css */
+/* (CC) 2004 Tantek Celik. Some Rights Reserved.                  */
+/* http://creativecommons.org/licenses/by/2.0                     */
+/* This style sheet is licensed under a Creative Commons License. */
+/* Purpose: undo some of the default styling of common (X)HTML browsers */
+
+/* 
+   link underlines tend to make hypertext less readable, 
+   because underlines obscure the shapes of the lower halves 
+   of words 
+*/
+:link,:visited { text-decoration:none }
+
+/* 
+   no list-markers by default, since lists are 
+   used more often for semantics 
+*/
+ul,ol { list-style:none }
+
+/* avoid browser default inconsistent heading font-sizes */
+/* and pre/code too */
+h1,h2,h3,h4,h5,h6,pre,code { font-size:1em; }
+
+/* remove the inconsistent (among browsers) default ul,ol padding or margin  */
+/* the default spacing on headings does not match nor align with 
+   normal interline spacing at all, so let's get rid of it. */
+/* zero out the spacing around pre, form, body, html, p, blockquote as well */
+/* form elements are oddly inconsistent, and not quite CSS emulatable. */
+/*  nonetheless strip their margin and padding as well */
+ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input, dd, dt, dl
+{ margin:0; padding:0 }
+
+/* whoever thought blue linked image borders were a good idea? */
+a img,:link img,:visited img { border:none }
+
+/* de-italicize address */
+address { font-style:normal }
+
+body {
+  color: #282828;
+  font: normal 16px Helvetica, Arial, Sans-Serif;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 22px;
+  padding-bottom: 25px;
+}
+
+form {
+  padding: 1.5em;
+  margin: 0 auto;
+}
+
+fieldset {
+  padding: 20px 35px;
+  background: #ececec;
+  border: none;
+  border-left: 4px solid #cdcccb;
+  margin-bottom: 2px;
+}
+
+dt {
+  color: #676767;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+label.checkbox {
+  display: inline-block;
+  padding-bottom: 15px;
+  color: #676767;
+}
+
+input[type="text"], 
+input[type="email"],
+input[type="number"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  height: 50px;
+  color: #282827;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 2px solid #2e67b2;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+input[name*="name"] {
+  width: 49%;
+}
+
+input[name="last_name"] {
+  margin-left: 5px;
+}
+
+textarea{
+  height: auto;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background: #2e67b2;
+  color: white;
+  display: block;
+  padding: 15px 30px;
+  border-radius: 8px;
+  border: 1px solid;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:hover {
+  background: #6095cb;
+}
+
+dl.third {
+  width: 33%;
+}
+
+dl.partial {
+  display: inline-block;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+
+dl.halve {
+  width: 50%;
+}

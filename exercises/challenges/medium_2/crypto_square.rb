@@ -12,6 +12,7 @@ class Crypto
     Math.sqrt(normalize_plaintext.size).ceil
   end
 
+  # Greedily selects up to size each time
   def plaintext_segments
     normalize_plaintext.scan(/.{1,#{size}}/)
   end
@@ -29,6 +30,7 @@ class Crypto
     padded_segments.map(&:chars).transpose.map(&:join).map(&:strip).join(delimeter)
   end
 
+  # Used to enable transpose to work
   def right_pad(seg)
     seg + (' ' * (size - seg.size))
   end

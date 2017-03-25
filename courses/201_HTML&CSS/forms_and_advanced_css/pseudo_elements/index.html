@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Adding Pseudo Elements</title>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        margin: 0;
+        font: normal 18px Helvetica, Arial, sans-serif;
+        color: #333333;
+      }
+      h1 {
+        margin-top: 0;
+        font-size: 24px;
+      }
+      h2 {
+        margin-top: 0;
+        font-size: 20px;
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      #column {
+        margin: 0 120px 0 160px;
+      }
+
+      header {
+        float: left;
+        width: 160px;
+        height: 100vh;
+        padding: 15px;
+        margin-left: -160px;
+        font-size: 14px;
+        background: #2c3e50;
+        box-sizing: border-box;
+      }
+      header a {
+        text-decoration: none;
+        color: #ecf0f1;
+      }
+      header ul a:before {
+        display: inline-block;
+        height: 26px;
+        width: 27px;
+        vertical-align: middle;
+        margin-right: 5px;
+        background: transparent url('icons_nav.png') 0 0 no-repeat; 
+        content: "";
+      }
+      header a.home:hover:before {
+        background-position: 100% 0;
+      }
+      header a.photos:hover:before {
+        background-position: 100% -26px;
+      }
+      header a.photos:before {
+        height: 20px;
+        background-position: 0 -26px;        
+      }
+      header a.contact:hover:before {
+        background-position: 100% -46px;
+      }
+      header a.contact:before {
+        height: 16px;
+        background-position: 0 -46px;        
+      }
+      header li {
+        padding-bottom: 15px;
+      }
+
+      main {
+        float: left;
+        width: 100%;
+        padding: 25px;
+        box-sizing: border-box;
+      }
+
+      footer {
+        float: right;
+        width: 130px;
+        height: 100vh;
+        padding: 15px;
+        margin-right: -130px;
+        font-size: 12px;
+        background: #e74c3c;
+        box-sizing: border-box;
+      }
+      footer li {
+        padding-bottom: 10px;
+      }
+      footer a {
+        display: block;
+        padding: 5px;
+        text-decoration: none;
+        color: #2980b9;
+        background: #ffffff;
+      }
+      footer a:before {
+        display: inline-block;
+        height: 24px;
+        width: 24px;
+        content: ""; 
+        background: transparent url('icons_social.png') 0 0 no-repeat; 
+        margin: 0 5px 0 0;
+        background-size: 24px;
+        vertical-align: middle;
+      }
+      footer a.facebook:before {
+        background-position: 0 -24px;
+      }
+      footer a.instagram:before {
+        background-position: 0 -48px;
+      }
+      footer a:hover:before {
+        background-color: #00bf8f
+      }
+    </style>
+  </head>
+  <body>
+    <div id="column">
+      <header>
+        <h1><a href="#">My Blog</a></h1>
+        <nav>
+          <ul>
+            <li>
+              <a class="home" href="#">Home</a>
+            </li>
+            <li>
+              <a class="photos" href="#">My Photos</a>
+            </li>
+            <li>
+              <a class="contact" href="#">Contact Me</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <h2>Welcome!</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, turpis tristique aliquet sollicitudin, ipsum orci tempus sem, nec semper ipsum odio eget lacus. In hac habitasse platea dictumst. Vivamus hendrerit leo a nunc convallis gravida. Nunc lobortis tincidunt massa, id pulvinar ante blandit a. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc in vulputate nibh, vel aliquet arcu. Cras sed ipsum mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed turpis urna, lacinia ut tincidunt at, venenatis a ex. Etiam velit felis, eleifend id lobortis vitae, finibus id sapien. Nullam suscipit consectetur metus, vitae tristique leo lacinia ac. Curabitur varius urna malesuada, condimentum erat non, cursus dolor. Pellentesque nibh libero, gravida id ante ut, feugiat imperdiet est.</p>
+        <p>Nam eu lacus lacinia, imperdiet odio sed, pretium magna. Suspendisse et rutrum magna. Quisque semper, velit eu posuere bibendum, leo metus viverra ligula, ac rutrum neque neque in diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur venenatis sollicitudin vulputate. Vestibulum congue cursus lacus, at fringilla ex rutrum in. Donec sapien risus, pharetra id odio quis, dignissim sodales nisl. Sed elementum venenatis tortor id porta. Nunc ex orci, dignissim sit amet dui at, rhoncus pharetra lorem. Suspendisse venenatis pharetra lectus vitae pharetra. Ut tempor justo vitae quam gravida, in tempus elit laoreet. Fusce ac ante ac metus vestibulum maximus eu nec turpis. Ut sed feugiat ante.</p>
+      </main>
+
+      <footer>
+        <ul>
+          <li><a class="twitter" href="#">Twitter</a></li>
+          <li><a class="facebook" href="#">Facebook</a></li>
+          <li><a class="instagram" href="#">Instagram</a></li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>
