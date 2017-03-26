@@ -1,0 +1,162 @@
+/* undohtml.css */
+/* (CC) 2004 Tantek Celik. Some Rights Reserved.                  */
+/* http://creativecommons.org/licenses/by/2.0                     */
+/* This style sheet is licensed under a Creative Commons License. */
+/* Purpose: undo some of the default styling of common (X)HTML browsers */
+
+/* link underlines tend to make hypertext less readable, 
+   because underlines obscure the shapes of the lower halves of words */
+:link,:visited { text-decoration:none }
+
+/* no list-markers by default, since lists are used more often for semantics */
+ul,ol { list-style:none }
+
+/* avoid browser default inconsistent heading font-sizes */
+/* and pre/code too */
+h1,h2,h3,h4,h5,h6,pre,code { font-size:1em; }
+
+/* remove the inconsistent (among browsers) default ul,ol padding or margin  */
+/* the default spacing on headings does not match nor align with 
+   normal interline spacing at all, so let's get rid of it. */
+/* zero out the spacing around pre, form, body, html, p, blockquote as well */
+/* form elements are oddly inconsistent, and not quite CSS emulatable. */
+/*  nonetheless strip their margin and padding as well */
+ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input,dl,dt,dd
+{ margin:0; padding:0 }
+
+/* whoever thought blue linked image borders were a good idea? */
+a img,:link img,:visited img { border:none }
+
+/* de-italicize address */
+address { font-style:normal }
+
+/* more varnish stripping as necessary... */
+
+
+body {
+  padding-top: 135px;
+  text-align: center;  
+  font: normal 20px Helvetica, Arial, sans-serif;
+  background: #2f2840 url('images/bg_body.gif') 50% 0 repeat;
+}
+
+header h1 {
+  padding-bottom: 75px;
+}
+
+nav {
+  padding-top: 25px;
+  padding-bottom: 50px;
+}
+
+nav ul {
+  word-spacing: 85px;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav li a {
+  color: #cacaca;
+  font-size: 26px;
+  text-transform: uppercase;
+}
+
+nav li a.active {
+  color: #4f79aa;
+  font-weight: bold;
+}
+
+main {
+  padding-top: 100px;
+  background: #fff;
+}
+
+.column {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+article {
+  padding: 0 100px 100px 100px;
+}
+
+article h2 {
+  padding-bottom: 45px;  
+  color: #45494d;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+article h3 {
+  color: #3e59b2;
+  font-size: 24px;
+  padding-bottom: 25px;
+}
+
+footer {
+  background: #e7e7e7;
+  padding: 70px;
+  border-top: 2px solid #2f2840;
+}
+
+footer p {
+  color: #b2b2b2;
+  font-size: 20px;
+  padding-bottom: 45px;
+}
+
+footer li {
+  display: inline-block;
+}
+
+footer ul {
+  word-spacing: 120px;
+}
+
+footer li a {
+  display: block;
+  width: 46px;
+  height: 46px;
+  text-indent: -8685px;
+  background: transparent url('images/icons_social-media.png') 0 0;
+}
+
+footer li a.facebook { background-position: 0 -46px; }
+footer li a.email { background-position: 0 -92px; }
+footer li a.instagram { background-position: 0 -138px; }
+
+#projects {
+  padding: 0 100px;
+}
+
+#projects article {
+  padding: 0 0 80px 0;
+}
+
+#projects img {
+  padding-bottom: 50px;
+}
+
+#projects p {
+  padding: 0px 100px;
+}
+
+#team article p {
+  padding: 0 0 100px 0;
+}
+
+#team article li {
+  display: inline-block;
+}
+
+#team article ul {
+  word-spacing: 60px;
+  padding: 0 0 200px 0;
+}
+
+#team article li a img {
+  display: block;
+  padding: 0 0 30px 0;
+}
