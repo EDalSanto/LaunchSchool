@@ -74,7 +74,7 @@ main {
 }
 
 .column {
-  width: 1000px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -93,6 +93,10 @@ article h3 {
   color: #3e59b2;
   font-size: 24px;
   padding-bottom: 25px;
+}
+
+article p {
+  text-align: justify;
 }
 
 footer {
@@ -132,19 +136,39 @@ footer li a.instagram { background-position: 0 -138px; }
 }
 
 #projects article {
-  padding: 0 0 80px 0;
+  padding: 40px 0 80px 0;
 }
 
-#projects img {
-  padding-bottom: 50px;
+#projects article + article {
+  border-top: 1px solid #ccc;
+  padding-top: 70px;
+}
+
+#projects figure {
+  margin: 0;
+  padding: 0 30px 30px 30px;
+}
+
+#projects h3 {
+  padding: 30px 0;
+}
+
+#projects figure img {
+  display: block;
+  width: 100%;
 }
 
 #projects p {
   padding: 0px 100px;
+  line-height: 25px;
+}
+
+#team article {
+  padding: 0 0 100px 0;
 }
 
 #team article p {
-  padding: 0 0 100px 0;
+  padding: 0 110px 100px 110px;
 }
 
 #team article li {
@@ -153,10 +177,80 @@ footer li a.instagram { background-position: 0 -138px; }
 
 #team article ul {
   word-spacing: 60px;
-  padding: 0 0 200px 0;
+  padding: 0 0 125px 0;
 }
 
 #team article li a img {
   display: block;
   padding: 0 0 30px 0;
+}
+
+@media (max-width: 875px) {
+  #team article li {
+    width: 45%;
+    padding-bottom: 20px;
+  }
+
+  #team article li a img {
+    margin: 0 auto;
+    padding-bottom: 20px;
+  }
+
+  #team article li a {
+    padding-bottom: 15px;
+  }
+
+  #team article ul {
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 786px) {
+  footer ul { word-spacing: 60px; }
+  article { 
+    padding: 40px 50px 60px 50px;
+  }
+  main { padding-top: 40px }
+  body {
+    padding-top: 45px;
+  }
+  header h1 {
+    width: 223px;
+    height: 182px;
+    margin: 0 auto;
+    padding: 20px 0 10px 0;
+  }
+  header img {
+    width: 100%;
+  }
+  header nav {
+    padding-bottom: 30px;
+  }
+  #projects {
+    padding: 0; 
+  }
+
+  #projects p {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  footer ul { word-spacing: 25px; }
+  header img {
+    width: 200px;
+  }
+  header h1 {
+    float: left;
+  }
+  header nav {
+    text-align: right;
+  }
+
+  header nav li {
+    display: block;
+  }
+  body {
+    text-align: center;
+  }
 }
