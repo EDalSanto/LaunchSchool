@@ -1,0 +1,30 @@
+body {
+  background: black;
+}
+
+#column {
+  min-width: 600px;
+  max-width: 1000px;
+  background: grey;
+}
+
+main figure {
+  width: 100%;
+  text-align: center;
+}
+
+main figure figcaption {
+  font-color: white;
+}
+
+main figure img {
+  width: 100%;
+  border: 20px white solid;
+  margin: 0 auto;
+}
+
+main li img {
+  width: 25%;
+  display: inline-block;
+  border: 3px white solid;
+}
