@@ -1,30 +1,50 @@
 body {
-  background: black;
+  margin: 0px;
+  font: normal 16px Helvetica, Arial, sans-serif;
+  color: #f0f0f0;
+  background: #141414;
 }
 
-#column {
+main {
   min-width: 600px;
   max-width: 1000px;
-  background: grey;
+  background: #333;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-main figure {
-  width: 100%;
+h1 {
   text-align: center;
 }
 
-main figure figcaption {
-  font-color: white;
-}
-
-main figure img {
+img { 
+  display: block;
   width: 100%;
-  border: 20px white solid;
-  margin: 0 auto;
 }
 
-main li img {
-  width: 25%;
+figure {
+  padding: 0 0 30px 0;
+  margin: 0;
+}
+
+figure img {
+  border: 15px solid white;
+  box-sizing: border-box;
+}
+
+figcaption {
+  margin-top: 10px;
+}
+
+body ul {
+  font-size: 0;
+  padding: 0;
+  margin: 0 -15px;
+}
+
+body li {
   display: inline-block;
-  border: 3px white solid;
+  width: 25%;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
