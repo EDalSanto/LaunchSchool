@@ -1,0 +1,134 @@
+html, body {
+  font: 28px Helvetica, Arial, sans-serif;
+  background: #fff;
+}
+
+article {
+  border: 2px solid black;
+  width: 680px;
+  padding: 10px 15px 15px 15px;; 
+  box-sizing: border-box;
+}
+
+header {
+  border-bottom: 15px solid black;
+  margin: 0 0 10px 0;
+}
+
+header h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 2em;
+}
+
+header p {
+  margin: 0;
+}
+
+header h2 {
+  border-top: 30px solid black;
+  margin: 5px 0 1px 0;
+  padding: 10px 0;
+  font-size: 1em;
+  border-bottom: 1px solid black;
+}
+
+dl,dt,dd {
+  display: inline-block;
+  margin: 0;
+}
+
+dt {
+  font-weight: 600;
+}
+
+header dl {
+  width: 50%;
+}
+
+header dl dt {
+  font-weight: bold;
+}
+
+header dl + dl dt {
+  font-weight: 500;
+}
+
+header dl + dl { text-align: right; }
+
+sup {
+  vertical-align: 3px;
+}
+
+table {
+  width: 100%; 
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+thead th { text-align: right; }
+
+tbody th {
+  font-weight: normal;
+  text-align: left;
+  border-top: 1px solid black;
+  padding: 2px 0;
+}
+
+tbody td {
+  border-top: 1px solid black;
+  padding: 2px 0;
+}
+
+tr td:last-of-type {
+  text-align: right;
+  font-weight: bold;
+}
+
+td.indent {
+  width: 1rem;
+  border-top: none;
+}
+
+td dt { font-weight: normal; }
+
+tbody + tbody tr:first-of-type td { border-top: 20px solid black; } 
+tbody + tbody tr td:last-of-type { font-weight: normal; }
+
+tfoot tr td:last-of-type { 
+  text-align: left; 
+  text-indent: -13px;
+  font-weight: normal;
+  border-top: 1px solid black;
+  padding: 14px 0 14px 12px;
+  font-size: 24px;
+}
+
+table + table { 
+  font-size: 22px; 
+}
+table + table thead th { 
+  font-weight: normal; 
+  border-bottom: 1px solid black;
+  text-align: left;
+}
+table + table tbody td {
+  text-align: left;
+  border-top: none;
+}
+
+table + table tbody td:last-of-type {
+  text-align: left;
+}
+
+table + table tbody td:first-child {
+  width: 37%;
+}
+
+table + table tbody td:last-child {
+  font-weight: normal;
+}
+
+table + table td.indent {
+  text-indent: 1.2rem;
+}
