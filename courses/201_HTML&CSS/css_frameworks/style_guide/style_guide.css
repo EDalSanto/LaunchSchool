@@ -1,0 +1,20 @@
+body {
+  font: normal 14px Helvetica, Arial, sans-serif;
+  background: #c0c0c0; }
+main {
+  padding: 20px 25px;
+  background: #ffffff;
+}
+ul.row li {
+  padding: 8px 15px;
+  text-align: center;
+  border-radius: 8px;
+  background: #ececec;
+}
+
+.demo_height {
+  height: 400px;
+  line-height: 400px;
+  text-align: center;
+  background: #ececec;
+}

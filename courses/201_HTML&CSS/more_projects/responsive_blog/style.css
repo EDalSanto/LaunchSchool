@@ -3,6 +3,7 @@
 body {
   font: 16px normal Helvetica, Arial, sans-serif;
   padding-bottom: 50px;
+  margin: 0;
 }
 
 body > header {
@@ -18,6 +19,10 @@ body > header h1 {
   margin-bottom: 40px;
 }
 
+body > header ul {
+  text-align: center;
+}
+
 body > header h1 a { color: #fff; }
 
 a { text-decoration: none; }
@@ -26,24 +31,24 @@ body > header img {
   margin-bottom: 130px;
 }
 
-body > header ul {
-  word-spacing: 50px;
+nav ul { text-align: center; }
+
+nav li {
+  display: inline;
+  padding: 0 25px;
+  text-transform: uppercase;
 }
 
-body > header li {
-  display: inline-block;
+nav a {
+  color: #fff;
 }
 
-body > header li a {
-  color: white;
-  font-size: 20px;
+nav a.active {
+  color: #50c3af;
 }
 
-body > header li a:hover { color: yellow; }
-
-body > header a.active {
-  color: #4a9f8f;
-  font-weight: bold;
+nav a:hover {
+  color: #f5dc39;
 }
 
 main {
@@ -117,6 +122,7 @@ a.button.disabled {
   margin: 0 25px 0 0; 
   font-size: 14px;
   border: none;
+  cursor: pointer;
 }
 
 footer {
@@ -147,4 +153,90 @@ input[type="email"] {
   margin-bottom: 10px;
 }
 
-textarea { margin-bottom: 15px; }
+textarea { 
+  margin-bottom: 15px; 
+  resize: none;
+}
+
+/**** Responsive Design ****/
+
+@media (max-width: 768px) {
+  body > header {
+    padding: 20px 0 10px 0;
+  }
+
+  body > header h1 {
+    font-size: 48px;
+  }
+
+  body > header img {
+    margin-bottom: 100px;
+  }
+
+  main {
+    padding: 50px 0 90px 0;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  div#content {
+    float: none;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  div.block {
+    float: left;
+    width: 50%;
+  }
+
+  div.sidebar {
+    padding: 25px 45px;
+  }
+
+  div.sidebar ul {
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  body > header img {
+    width: 90%; 
+  }
+
+  body > header h1 {
+    margin: 20px 0;
+  }
+  
+  nav li {
+    display: inline-block;
+    width: 49%;
+    padding: 10px 0;
+    box-sizing: border-box;
+  }
+
+  div.block {
+    float: none;
+    background: #ccc;
+    width: 100%;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+
+  div.sidebar {
+    margin: 0 auto;
+    padding: 0 25px;
+    background: transparent;
+  }
+
+  body {
+    padding-bottom: 20px;
+  }
+}
+
