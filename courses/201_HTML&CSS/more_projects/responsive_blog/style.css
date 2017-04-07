@@ -1,0 +1,150 @@
+@import url("/Users/ejds001/whitespace_reset.css");
+
+body {
+  font: 16px normal Helvetica, Arial, sans-serif;
+  padding-bottom: 50px;
+}
+
+body > header {
+  background: #3d3d3d;
+  text-align: center;
+  padding: 130px 0 50px 0;
+}
+
+body > header h1 {
+  font: 68px normal Helvetica, Arial, sans-serif;
+  letter-spacing: 20px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+body > header h1 a { color: #fff; }
+
+a { text-decoration: none; }
+
+body > header img {
+  margin-bottom: 130px;
+}
+
+body > header ul {
+  word-spacing: 50px;
+}
+
+body > header li {
+  display: inline-block;
+}
+
+body > header li a {
+  color: white;
+  font-size: 20px;
+}
+
+body > header li a:hover { color: yellow; }
+
+body > header a.active {
+  color: #4a9f8f;
+  font-weight: bold;
+}
+
+main {
+  max-width: 1000px;
+  padding: 80px 0 90px 0;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+#content {
+  width: 65%;
+  float: left;
+  margin-right: 11.5%;
+}
+
+#content article {
+  margin-bottom: 70px;
+}
+
+#content article header {
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 36px;
+  color: #45494d;
+  margin-bottom: 20px;
+}
+
+#content p {
+  font-size: 20px;
+  line-height: 30px;
+  text-align: justify;
+  color: #45494d;
+}
+
+#content article p a {
+  color: #4a9f8f;
+}
+
+.sidebar {
+  background: #f6f7f8;
+  padding: 35px;
+  overflow: hidden;
+}
+
+.sidebar h3 {
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  margin-bottom: 110px;
+  list-style: url("images/blt_ul.png");
+  font-size: 14px;
+  padding-left: 20px;
+}
+
+a {
+  color: inherit;
+}
+
+a.button.disabled {
+  background: #d2d5da;
+}
+
+.button {
+  padding: 5px 25px;
+  border-radius: 20px;
+  background: #50c3af;
+  color: white;
+  margin: 0 25px 0 0; 
+  font-size: 14px;
+  border: none;
+}
+
+footer {
+  max-width: 1000px;
+  padding: 15px 0 0 0;
+  border-top: 1px solid #d0d0d0;
+  margin: 0 auto;
+  font: 12px normal Helvetica, Arial, sans-serif;
+  color: #7e8287;
+}
+
+p {
+  line-height; 150%;
+}
+
+/**** Post ****/
+
+input[type="name"],
+input[type="email"],
+textarea {
+  padding: 10px 0 10px 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+input[type="name"],
+input[type="email"] {
+  margin-bottom: 10px;
+}
+
+textarea { margin-bottom: 15px; }

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Blog</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1><a href="index.html">Blog Title</a></h1> 
+      <img src="images/logo.png" alt="logo">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="index.html" class="active">HTML</a></li>
+        <li><a href="index.html">CSS</a></li>
+        <li><a href="index.html">JAVASCRIPT</a></li>
+        <li><a href="index.html">ABOUT</a></li>
+      </ul>
+    </header>
+    <main>
+      <div id="content">
+        <article>
+          <header>
+            <h2><a href="post.html">Post Headline</a></h2>
+            <p>
+              Written by <a href="post.html">Shane Riley</a> on <time datetime="2014-02-15">Feb. 15, 2014</time>
+            </p>
+          </header>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut alquip
+          ex ea commodo consequat. Duis aute irure dolor in rprehenderit in
+          voluptate velit esse culpa qui officia deserunt mollit.</p>
+        </article>
+        <section class="comments">
+          <h2>Comments</h2>
+          <article>
+            <header>
+              <p>Kevin on <time datetime="2014-02-15">Feb,15,2014</time></p>
+            </header>
+            <p>
+Lorem   ipsum dolor sit amet, consectetur adipiscing elit, sed do eusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+            </p>
+          </article>
+          <article>
+            <header>
+              <p>Kevin on <time datetime="2014-02-15">Feb,15,2014</time></p>
+            </header>
+            <p>
+Lorem   ipsum dolor sit amet, consectetur adipiscing elit, sed do eusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+            </p>
+          </article>
+        </section>
+        <form action="/create-comments" method="post">
+          <fieldset>
+            <h2>Post Comments</h2>
+            <dl>
+              <dt>
+                <label for="name">Your Name</label>
+              </dt>
+              <dd>
+                <input type="name" id="name" value="name" placeholder="Enter your Name"> 
+              </dd>
+              <dt>
+                <label for="email">Email Address</label>
+              </dt>
+              <dd>
+                <input type="email" id="email" value="email" placeholder="Enter your Email"> 
+              </dd>
+              <dt>
+                <label for="comment">Comment</label>
+              </dt>
+              <dd>
+                <textarea rows="6" cols="80" id="comment" name="comment"></textarea>
+              </dd>
+            </dl>
+            <input type="submit" value="Submit" class="button">
+          </fieldset>
+        </form>
+      </div>
+      <div class="sidebar">
+        <div class="block">
+          <h3>CATEGORIES</h3>
+          <ul>
+            <li>
+              HTML
+            </li>
+            <li>
+              CSS 
+            </li>
+            <li>
+              Javascript 
+            </li>
+            <li>
+              Other 
+            </li>
+          </ul>
+        </div>
+        <div class="block">
+          <h3>About</h3>
+          <p>Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quisq.</p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2014 Blog Title</p>
+    </footer>
+  </body>
+</html>

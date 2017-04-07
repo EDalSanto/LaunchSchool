@@ -1,0 +1,90 @@
+@import url("whitespace_reset.css");
+
+body {
+  background: #ffd505;
+  font: 16px normal Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+header {
+  background: #047ec1;
+  padding: 30px 0;
+  width: 900px;
+  margin: 0 auto 30px auto;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+h1 {
+  color: white;
+  padding-left: 20px;
+  font-size: 32px;
+}
+
+main {
+  box-sizing: border-box;
+  background: #ececec;
+  padding: 25px 20px;
+  width: 900px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+h2 {
+  color: black;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+li {
+  width: 23.5%;
+  float: left;
+  padding: 15px;
+  margin: 0 0 2% 2%;
+  background: white;
+  box-sizing: border-box;
+}
+
+li:nth-of-type(4n+1) {
+  margin-left: 0;
+}
+
+img {
+  height: 140px;
+  width: auto;
+}
+
+figure {
+  text-align: center;
+  height: 160px;
+}
+
+h3 {
+  padding-top: 15px;
+  font-size: 18px;
+}
+
+input:checked + figure img {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  width: 400px;
+  height: auto;
+  margin: 0 0 0 -200px;
+  z-index: 2;
+}
+
+input:checked + figure:before {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
+  background: rgba(0,0,0,.4);
+}
