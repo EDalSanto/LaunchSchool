@@ -93,8 +93,13 @@ main {
 
 #hamburger {
   content: url('images/img_hamburger.png');
-  padding-bottom: 36px;
+  padding: 0 0 36px 0;
   visibility: hidden;
+  display: block;
+}
+
+#nav-toggle {
+  display: none;
 }
 
 main > header {
@@ -171,4 +176,18 @@ main li {
   cursor: pointer;
   background: transparent url('images/img_trash_can.png') no-repeat;
   border: none;
+}
+
+/*** Narrower Screens ****/
+
+@media (min-width: 768px) {
+  nav {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  #hamburger {
+    visibility: visible;
+  }
 }
