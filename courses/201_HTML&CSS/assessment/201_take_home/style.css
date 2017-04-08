@@ -2,16 +2,21 @@
 
 body {
   font: normal 16px Helvetica, Arial, sans-serif;
+  overflow: hidden;
 }
 
-.content {
+#content {
   max-width: 1200px;
+  overflow: hidden;
 }
 
 nav {
   padding: 70px 30px 0 100px;
   background: #464f77;
-  width: 28%;
+  width: 330px;
+  float: left;
+  box-sizing: border-box;
+  min-height: 100vh;
 }
 
 nav h2 {
@@ -19,6 +24,10 @@ nav h2 {
   font: normal 18px Helvetica, Arial, sans-serif;
   padding-bottom: 20px;
   color: #d8d9e0;
+}
+
+.all-todos h2 {
+  padding-right: 55px;
 }
 
 nav ul {
@@ -45,5 +54,30 @@ nav li {
 }
 
 h1 {
-  font-size: 21px;
+  font: 21px normal Helvetica, Arial, sans-serif;
+  display: inline-block;
+  padding-right: 15px;
+}
+
+main {
+  padding: 70px 90px 0 30px;
+  float: left;
+}
+
+main > header {
+  padding-bottom: 40px;
+}
+
+a.add {
+  color: #148fd5;
+  text-decoration: none;
+}
+
+#plus {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+p {
+  display: inline-block;
 }
