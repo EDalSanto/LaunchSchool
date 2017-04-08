@@ -21,11 +21,11 @@ nav {
 }
 
 nav header {
-  padding: 0 30px 0 100px;
+  padding: 0 30px 0 95px;
 }
 
 nav header img {
-  padding-right: 5px;
+  padding-right: 8px;
 }
 
 nav h2 {
@@ -33,6 +33,7 @@ nav h2 {
   font: normal 18px Helvetica, Arial, sans-serif;
   padding-bottom: 20px;
   color: #d8d9e0;
+  vertical-align: middle;
 }
 
 .all-todos h2 {
@@ -49,22 +50,29 @@ nav li {
   text-decoration: line-through;
 }
 
+.circle {
+  border-radius: 100%;
+  padding: 2px 6px 2px 6px;
+}
+
 nav .circle {
   float: right;
+  background: rgba(205, 207, 216, .3);
+  margin-top: -3px;
 }
 
 #all-count {
-  line-height: 40px;
+  margin-top: 3px;
 }
 
 .selected {
   background: #383f5f;
-  padding: 10px 30px 10px 135px;
+  padding: 13px 30px 10px 135px;
   color: #fff;
 }
 
 .selected .circle {
-
+  background: #148fd5; 
 }
 
 .all-todos {
@@ -86,18 +94,21 @@ main {
 #hamburger {
   content: url('images/img_hamburger.png');
   padding-bottom: 36px;
+  visibility: hidden;
 }
 
 main > header {
   padding-bottom: 40px;
 }
 
+main > header time {
+  letter-spacing: 2px;
+}
+
 main div.circle {
   display: inline-block;
   background: #148fd5;
   color: #fff;
-  border-radius: 100%;
-  padding: 2px 6px 2px 6px;
 }
 
 a.add {
