@@ -10,8 +10,9 @@ main {
   min-height: 100vh;
   background-color: #fff; 
   z-index: 1;
-  padding: 50px 90px 0 30px;
+  padding: 70px 90px 0 30px;
   position: relative;
+  margin-left: 330px;
 }
 
 nav {
@@ -34,14 +35,17 @@ nav {
 }
 
 label[for="nav-trigger"] {
+  visibility: hidden;
   position: fixed;
+  top: 20px;
+  left: 30px;
   z-index: 2;
   cursor: pointer;
   background-size: contain;
 }
 
 .nav-trigger:checked + label[for="nav-trigger"] {
-  margin-left: 360px;
+  left: 360px;
 }
 
 .nav-trigger:checked ~ main {
@@ -194,16 +198,12 @@ main li {
 
 /*** Narrower Screens ****/
 
-@media (min-width: 768px) {
-  nav {
-    display: block;
-  }
-}
-
 @media (max-width: 768px) {
-  #hamburger {
+  label[for="nav-trigger"] {
     visibility: visible;
   }
+
+  body main {
+    margin-left: 0px;
+  }
 }
-
-
