@@ -64,12 +64,13 @@
       </nav>
       <main>
         <header>
+          <div id="hamburger"></div>
           <h1><time datetime="2016-02">02/16</time></h1>
           <div class="circle">8</div>
         </header>
-        <img id="plus" src="images/img_plus.png" alt="Add Todo">
         <p>
           <a href="#" class="add">
+            <img id="plus" src="images/img_plus.png" alt="Add Todo">
             Add new to do
           </a>
         </p>
@@ -77,6 +78,9 @@
           <li>
             <input type="checkbox" value="done" name="item1" id="item1">
             <label for="item1">Item 1</label>
+            <form action="#" method="post" class="delete">
+              <button type="submit">Delete</button>
+            </form>
           </li>
         </ul>
       </main>
