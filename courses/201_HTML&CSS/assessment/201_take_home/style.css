@@ -11,12 +11,20 @@ body {
 }
 
 nav {
-  padding: 70px 30px 0 100px;
   background: #464f77;
   width: 330px;
   float: left;
   box-sizing: border-box;
-  min-height: 100vh;
+  height: 100vh;
+  padding-top: 70px;
+}
+
+nav header {
+  padding-left: 100px;
+}
+
+nav header img {
+  padding-right: 5px;
 }
 
 nav h2 {
@@ -30,13 +38,10 @@ nav h2 {
   padding-right: 55px;
 }
 
-nav ul {
-  padding-left: 30px;
-}
-
 nav li {
   margin-bottom: 15px;
   color: #9a9eb1;
+  padding-left: 135px;
 }
 
 .circle {
@@ -45,7 +50,7 @@ nav li {
 
 .selected {
   background: #383f5f;
-  padding: 10px 0;
+  padding: 10px 0px 10px 135px;
   color: #fff;
 }
 
@@ -58,6 +63,8 @@ h1 {
   display: inline-block;
   padding-right: 15px;
 }
+
+/**** Items for Todo ****/
 
 main {
   padding: 70px 90px 0 30px;
@@ -80,4 +87,26 @@ a.add {
 
 p {
   display: inline-block;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+label:before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  border: 1px #ccc solid;
+}
+
+input[type="checkbox"]:checked + label:before {
+      content:"\2713";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 15px;
+    color: #f3f3f3;
+    text-align: center;
+    line-height: 15px;  
 }
