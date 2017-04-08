@@ -40,7 +40,7 @@ nav h2 {
 }
 
 nav li {
-  margin-bottom: 15px;
+  margin-bottom: 18px;
   color: #9a9eb1;
   padding: 0 30px 0 135px;
 }
@@ -94,6 +94,10 @@ main > header {
 
 main div.circle {
   display: inline-block;
+  background: #148fd5;
+  color: #fff;
+  border-radius: 100%;
+  padding: 2px 6px 2px 6px;
 }
 
 a.add {
@@ -130,17 +134,17 @@ label:before {
   padding-right: 15px;
 }
 
-input[type="checkbox"]:checked + label:before {
-    content: url('images/img_checked.png');
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
-    font-size: 15px;
-    color: #f3f3f3;
-    text-align: center;
-    line-height: 15px;  
+main li.checked input[type="checkbox"] + label:before {
+  content: url('images/img_checked.png');
+}
+
+main li.checked label {
+  text-decoration: line-through;
+  color: #c9c9c9;
 }
 
 main li {
-  padding: 18px 0;
+  padding: 15px 0;
   border-top: 1px solid #e7e7e7;
 }
 
