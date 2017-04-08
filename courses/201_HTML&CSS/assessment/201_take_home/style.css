@@ -17,10 +17,11 @@ nav {
   box-sizing: border-box;
   height: 100vh;
   padding-top: 70px;
+  color: #9da1b5;
 }
 
 nav header {
-  padding-left: 100px;
+  padding: 0 30px 0 100px;
 }
 
 nav header img {
@@ -41,17 +42,29 @@ nav h2 {
 nav li {
   margin-bottom: 15px;
   color: #9a9eb1;
-  padding-left: 135px;
+  padding: 0 30px 0 135px;
 }
 
-.circle {
-  display: inline-block;
+.completed li {
+  text-decoration: line-through;
+}
+
+nav .circle {
+  float: right;
+}
+
+#all-count {
+  line-height: 40px;
 }
 
 .selected {
   background: #383f5f;
-  padding: 10px 0px 10px 135px;
+  padding: 10px 30px 10px 135px;
   color: #fff;
+}
+
+.selected .circle {
+
 }
 
 .all-todos {
@@ -77,6 +90,10 @@ main {
 
 main > header {
   padding-bottom: 40px;
+}
+
+main div.circle {
+  display: inline-block;
 }
 
 a.add {
