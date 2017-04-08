@@ -1,0 +1,49 @@
+@import url('whitespace_reset.css');
+
+body {
+  font: normal 16px Helvetica, Arial, sans-serif;
+}
+
+.content {
+  max-width: 1200px;
+}
+
+nav {
+  padding: 70px 30px 0 100px;
+  background: #464f77;
+  width: 28%;
+}
+
+nav h2 {
+  display: inline-block;
+  font: normal 18px Helvetica, Arial, sans-serif;
+  padding-bottom: 20px;
+  color: #d8d9e0;
+}
+
+nav ul {
+  padding-left: 30px;
+}
+
+nav li {
+  margin-bottom: 15px;
+  color: #9a9eb1;
+}
+
+.circle {
+  display: inline-block;
+}
+
+.selected {
+  background: #383f5f;
+  padding: 10px 0;
+  color: #fff;
+}
+
+.all-todos {
+  padding-bottom: 60px;  
+}
+
+h1 {
+  font-size: 21px;
+}
