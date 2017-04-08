@@ -1,147 +1,143 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>Todo Tracker</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="content">
-      <nav>
-        <section class="all-todos">
-          <header>
-            <img src="images/img_all_todos.png" alt="All Todos">
-            <h2>All Todos</h2>
-            <div class="circle" id="all-count">18</div>
-          </header>
-          <ul>
-            <li class="selected">
-              <time datetime="2016-02">02/16</time>
-              <div class="circle">8</div>
-            </li>
-            <li>
-              <time datetime="2016-03">03/16</time>
-              <div class="circle">2</div>
-            </li>
-            <li>
-              <time datetime="2016-04">04/16</time>
-              <div class="circle">1</div>
-            </li>
-            <li>
-              <time datetime="2016-05">05/16</time>
-              <div class="circle">1</div>
-            </li>
-            <li>
-              <time datetime="2016-06">06/16</time>
-              <div class="circle">6</div>
-            </li>
-          </ul>
-        </section>
-        <section class="completed">
-          <header>
-            <img src="images/img_completed.png" alt="Completed Todos">
-            <h2>Completed</h2>
-          </header>
-          <ul>
-            <li>
-              <time datetime="2015-02">02/15</time>
-            </li>
-            <li>
-              <time datetime="2015-03">03/15</time>
-            </li>
-            <li>
-              <time datetime="2015-04">04/15</time>
-            </li>
-            <li>
-              <time datetime="2015-05">05/15</time>
-            </li>
-            <li>
-              <time datetime="2014-06">06/14</time>
-            </li>
-          </ul>
-        </section>
-      </nav>
-      <label id="hamburger">
-        <input type="checkbox" id="nav-toggle"/>
-      </label>
-      <main>
+    <nav>
+      <section class="all-todos">
         <header>
-          <!--<div id="hamburger"></div>-->
-          <h1><time datetime="2016-02">02/16</time></h1>
-          <div class="circle">8</div>
+          <img src="images/img_all_todos.png" alt="All Todos">
+          <h2>All Todos</h2>
+          <div class="circle" id="all-count">18</div>
         </header>
-        <p>
-          <a href="#" class="add">
-            <img id="plus" src="images/img_plus.png" alt="Add Todo">
-            Add new to do
-          </a>
-        </p>
         <ul>
-          <li>
-            <input type="checkbox" value="done" name="item1" id="item1">
-            <label for="item1">Item 1</label>
-            <form action="#" method="post" class="delete">
-              <button type="submit">Delete</button>
-            </form>
+          <li class="selected">
+            <time datetime="2016-02">02/16</time>
+            <div class="circle">8</div>
           </li>
           <li>
-            <input type="checkbox" value="done" name="item2" id="item2">
-            <label for="item2">Item 2</label>
-            <form action="#" method="post" class="delete">
-              <button type="submit">Delete</button>
-            </form>
-          </li>
-          <li class="checked">
-            <input type="checkbox" value="done" name="item3" id="item3">
-            <label for="item3">Item 3</label>
-            <form action="#" method="post" class="delete">
-              <button type="submit">Delete</button>
-            </form>
-          </li>
-          <li class="checked">
-            <input type="checkbox" value="done" name="item4" id="item4">
-            <label for="item4">Item 4</label>
-            <form action="#" method="post" class="delete">
-              <button type="submit">Delete</button>
-            </form>
-          </li>
-          <li class="checked">
-            <input type="checkbox" value="done" name="item5" id="item5">
-            <label for="item5">Item 5</label>
-            <form action="#" method="post" class="delete">
-              <button type="submit">Delete</button>
-            </form>
+            <time datetime="2016-03">03/16</time>
+            <div class="circle">2</div>
           </li>
           <li>
-            <input type="checkbox" value="done" name="item6" id="item6">
-            <label for="item6">Item 6</label>
-            <form action="#" method="post" class="delete">
-              <button type="submit">Delete</button>
-            </form>
+            <time datetime="2016-04">04/16</time>
+            <div class="circle">1</div>
           </li>
           <li>
-            <input type="checkbox" value="done" name="item7" id="item7">
-            <label for="item7">Item 7</label>
-            <form action="#" method="post" class="delete">
-              <button type="submit">Delete</button>
-            </form>
+            <time datetime="2016-05">05/16</time>
+            <div class="circle">1</div>
           </li>
           <li>
-            <input type="checkbox" value="done" name="item8" id="item8">
-            <label for="item8">Item 8</label>
-            <form action="#" method="post" class="delete">
-              <button type="submit">Delete</button>
-            </form>
-          </li>
-          <li>
-            <input type="checkbox" value="done" name="item9" id="item9">
-            <label for="item9">Item 9</label>
-            <form action="#" method="post" class="delete">
-              <button type="submit">Delete</button>
-            </form>
+            <time datetime="2016-06">06/16</time>
+            <div class="circle">6</div>
           </li>
         </ul>
-      </main>
-    </div>
+      </section>
+      <section class="completed">
+        <header>
+          <img src="images/img_completed.png" alt="Completed Todos">
+          <h2>Completed</h2>
+        </header>
+        <ul>
+          <li>
+            <time datetime="2015-02">02/15</time>
+          </li>
+          <li>
+            <time datetime="2015-03">03/15</time>
+          </li>
+          <li>
+            <time datetime="2015-04">04/15</time>
+          </li>
+          <li>
+            <time datetime="2015-05">05/15</time>
+          </li>
+          <li>
+            <time datetime="2014-06">06/14</time>
+          </li>
+        </ul>
+      </section>
+    </nav>
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" checked>
+      <label for="nav-trigger"><img src="images/img_hamburger.png" alt="Hamburger"></label>
+    <main>
+      <header>
+        <h1><time datetime="2016-02">02/16</time></h1>
+        <div class="circle">8</div>
+      </header>
+      <p>
+        <a href="#" class="add">
+          <img id="plus" src="images/img_plus.png" alt="Add Todo">
+          Add new to do
+        </a>
+      </p>
+      <ul>
+        <li>
+          <input type="checkbox" value="done" name="item1" id="item1">
+          <label for="item1">Item 1</label>
+          <form action="#" method="post" class="delete">
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+        <li>
+          <input type="checkbox" value="done" name="item2" id="item2">
+          <label for="item2">Item 2</label>
+          <form action="#" method="post" class="delete">
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+        <li class="checked">
+          <input type="checkbox" value="done" name="item3" id="item3">
+          <label for="item3">Item 3</label>
+          <form action="#" method="post" class="delete">
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+        <li class="checked">
+          <input type="checkbox" value="done" name="item4" id="item4">
+          <label for="item4">Item 4</label>
+          <form action="#" method="post" class="delete">
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+        <li class="checked">
+          <input type="checkbox" value="done" name="item5" id="item5">
+          <label for="item5">Item 5</label>
+          <form action="#" method="post" class="delete">
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+        <li>
+          <input type="checkbox" value="done" name="item6" id="item6">
+          <label for="item6">Item 6</label>
+          <form action="#" method="post" class="delete">
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+        <li>
+          <input type="checkbox" value="done" name="item7" id="item7">
+          <label for="item7">Item 7</label>
+          <form action="#" method="post" class="delete">
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+        <li>
+          <input type="checkbox" value="done" name="item8" id="item8">
+          <label for="item8">Item 8</label>
+          <form action="#" method="post" class="delete">
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+        <li>
+          <input type="checkbox" value="done" name="item9" id="item9">
+          <label for="item9">Item 9</label>
+          <form action="#" method="post" class="delete">
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+      </ul>
+    </main>
   </body>
 </html>

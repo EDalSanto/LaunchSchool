@@ -5,19 +5,47 @@ body {
   overflow: hidden;
 }
 
-#content {
+main {
   max-width: 1200px;
-  overflow: hidden;
+  min-height: 100vh;
+  background-color: #fff; 
+  z-index: 1;
+  padding: 50px 90px 0 30px;
+  position: relative;
 }
 
 nav {
   background: #464f77;
   width: 330px;
-  position: absolute;
-  box-sizing: border-box;
   height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
   padding-top: 70px;
   color: #9da1b5;
+}
+
+.nav-trigger {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+label[for="nav-trigger"] {
+  position: fixed;
+  z-index: 2;
+  cursor: pointer;
+  background-size: contain;
+}
+
+.nav-trigger:checked + label[for="nav-trigger"] {
+  margin-left: 360px;
+}
+
+.nav-trigger:checked ~ main {
+  margin-left: 330px;
 }
 
 nav header {
@@ -87,21 +115,6 @@ h1 {
 
 /**** Items for Todo ****/
 
-main {
-  padding: 23px 90px 0 360px;
-}
-
-#hamburger {
-  content: url('images/img_hamburger.png');
-  padding: 0 0 36px 0;
-  visibility: hidden;
-  display: block;
-}
-
-#nav-toggle {
-  display: none;
-}
-
 main > header {
   padding-bottom: 40px;
 }
@@ -131,19 +144,19 @@ p {
   padding-bottom: 14px;
 }
 
-input[type="checkbox"] {
+main input[type="checkbox"] {
   display: none;
 }
 
-label, label:before {
+main label, main label:before {
   cursor: pointer;
 }
 
-label:hover {
+main label:hover {
   color: #148fd5;
 }
 
-label:before {
+main label:before {
   content: url('images/img_not_checked.png');
   display: inline-block;
   background-color: #fff;
@@ -160,14 +173,15 @@ main li.checked label {
 }
 
 main li {
+  position: relative;
   padding: 15px 0;
   border-top: 1px solid #e7e7e7;
 }
 
 .delete {
-  float: right;
   height: 20px;
   width: 15px;
+  float: right;
 }
 
 .delete button {
@@ -191,3 +205,5 @@ main li {
     visibility: visible;
   }
 }
+
+
