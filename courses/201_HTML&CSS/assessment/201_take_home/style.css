@@ -197,36 +197,46 @@ main li {
 
 /**** Modal ****/
 
-textarea { 
-  resize: none; 
-  padding: 8px 0 0 8px;
-}
-
-textarea#description {
-  vertical-align: top;
-}
-
-input#edit-item {
-  display: none;
-}
-
-form.edit fieldset > input:nth-of-type(1) {
-  margin-left: 105px;
-}
-
-form.edit table td:nth-of-type(2) {
-  padding-left: 20px;
-}
-
 form.edit {
   display: none;
   box-sizing: border-box;
   padding: 35px;
 }
 
+form.edit input#title {
+  margin-left: 68px;
+}
+
+form.edit select#due-day {
+  margin-left: 30px;
+}
+
+form.edit textarea { 
+  resize: none; 
+  padding: 8px 0 0 8px;
+}
+
+form.edit textarea {
+  vertical-align: top;
+  margin-left: 18px;
+}
+
+form.edit input#edit-item {
+  display: none;
+}
+
+form.edit fieldset > input:nth-of-type(1) {
+  margin: 0 10px 0 100px;
+}
+
+form.edit table td:nth-of-type(2) {
+  padding-left: 20px;
+}
+
 form.edit label {
   color: #2c2c2c;
   display: inline-block;
+  width: 100%;
   padding-bottom: 25px;
 }
 
@@ -253,7 +263,8 @@ input#edit-item:checked + form.edit::before {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  bottom: 0;
+  z-index: -1;
   content: "";
 }
 
@@ -265,7 +276,6 @@ input#edit-item:checked + form.edit {
   position: absolute;
   top: 100px;
   left: 100px;
-  z-index: 2;
 }
 
 /*** Narrower Screens ****/
