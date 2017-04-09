@@ -84,7 +84,8 @@
                   Title
                   <input value="Item 2" type="text" id="title" name="title" placeholder="Item 2" required> 
                 </label>
-                <label for="due-date">Due Date</label>
+                <label for="due-date">
+                  Due Date
                   <select id="due-day" required>
                     <option value="16" selected>16</option>
                     <option value="1">1</option>
@@ -119,43 +120,36 @@
                     <option value="30">30</option>
                     <option value="31">31</option>
                   </select> /
-                  <dd>
-                    <select id="due-month" required>
-                      <option value="">Month</option>
-                      <option value="1">January</option>
-                      <option value="2">Febuary</option>
-                      <option value="3">March</option>
-                      <option value="4">April</option>
-                      <option value="5">May</option>
-                      <option value="6">June</option>
-                      <option value="7">July</option>
-                      <option value="8">August</option>
-                      <option value="9">September</option>
-                      <option value="10">October</option>
-                      <option value="11">November</option>
-                      <option value="12">December</option>
-                    </select> /
-                  </dd>
-                  <dd>
-                    <select id="due-year" required>
-                      <option value="">Year</option>
-                      <option value="2017">2017</option>
-                      <option value="2018">2018</option>
-                      <option value="2019">2019</option>
-                      <option value="2020">2020</option>
-                      <option value="2021">2021</option>
-                      <option value="2022">2022</option>
-                      <option value="2023">2023</option>
-                    </select>
-                  </dd>
-                </dl>
-                <dl>
-                  <dt>
-                    <label for="description">Description</label>
-                  </dt>
-                  <dd>
-                    <textarea id="description" name="description" rows="8"
-                      cols="50" placeholder="Description" required></textarea>
+                  <select id="due-month" required>
+                    <option value="">Month</option>
+                    <option value="1">January</option>
+                    <option value="2">Febuary</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                  </select> /
+                  <select id="due-year" required>
+                    <option value="">Year</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                  </select>
+                </label>
+                <label for="description">
+                  Description
+                  <textarea id="description" name="description" rows="8" cols="40" placeholder="Description" required></textarea>
+                </label>
                 <input type="submit" value="Save">
                 <input type="submit" value="Mark As Complete">
               </fieldset>

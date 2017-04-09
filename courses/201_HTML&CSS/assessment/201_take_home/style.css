@@ -202,12 +202,20 @@ textarea {
   padding: 8px 0 0 8px;
 }
 
-dd, dt {
-  display: inline-block;
+textarea#description {
+  vertical-align: top;
 }
 
 input#edit-item {
   display: none;
+}
+
+form.edit fieldset > input:nth-of-type(1) {
+  margin-left: 105px;
+}
+
+form.edit table td:nth-of-type(2) {
+  padding-left: 20px;
 }
 
 form.edit {
@@ -216,9 +224,10 @@ form.edit {
   padding: 35px;
 }
 
-form.edit label,
-form.edit dd {
+form.edit label {
   color: #2c2c2c;
+  display: inline-block;
+  padding-bottom: 25px;
 }
 
 form.edit input[type="submit"] {
@@ -250,7 +259,7 @@ input#edit-item:checked + form.edit::before {
 
 input#edit-item:checked + form.edit {
   height: 400px;
-  width: 525px;
+  width: 575px;
   background: #fff;
   display: block;
   position: absolute;
