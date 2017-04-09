@@ -256,6 +256,14 @@ form.edit input[type="submit"] {
   font-size: 18px;
 }
 
+form.edit .select-due-date {
+  margin-bottom: 25px;
+}
+
+form.edit .select-due-date label[for="due-day"] {
+  display: inline;
+}
+
 form.edit input#title,
 form.edit select#due-day,
 form.edit select#due-month,
@@ -263,7 +271,7 @@ form.edit select#due-year {
   padding: 8px 0 8px 8px;
 }
 
-input#edit-item:checked + form.edit::before {
+input#edit-item:checked + form.edit:before {
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
   top: 0;
