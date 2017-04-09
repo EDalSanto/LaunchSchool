@@ -160,10 +160,9 @@ main li > label:hover {
   color: #148fd5;
 }
 
-main li + label:before {
+main li input[type="checkbox"] + label:before {
   content: url('images/img_not_checked.png');
   display: inline-block;
-  background-color: #fff;
   padding-right: 15px;
 }
 
@@ -197,14 +196,21 @@ main li {
 
 /**** Modal ****/
 
+select {
+  -webkit-appearance: none;
+  color: #2c2c2c;
+  width: 24.5%;
+  border-radius: 0;
+  background: #ffffff;
+}
+
 form.edit {
   display: none;
-  box-sizing: border-box;
-  padding: 35px;
 }
 
 form.edit input#title {
   margin-left: 68px;
+  width: 76%
 }
 
 form.edit select#due-day {
@@ -253,13 +259,13 @@ form.edit input[type="submit"] {
 form.edit input#title,
 form.edit select#due-day,
 form.edit select#due-month,
-form.edit select #due-year {
+form.edit select#due-year {
   padding: 8px 0 8px 8px;
 }
 
 input#edit-item:checked + form.edit::before {
   position: fixed;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.45);
   top: 0;
   left: 0;
   right: 0;
@@ -276,6 +282,40 @@ input#edit-item:checked + form.edit {
   position: absolute;
   top: 100px;
   left: 100px;
+  box-sizing: border-box;
+  padding: 35px;
+}
+
+.up-arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 4px 4px 4px;
+  border-color: transparent transparent #2c2c2c transparent;
+  position: absolute;
+  top: 101px;
+  z-index: 0;
+}
+
+.down-arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 4px 0 4px;
+  border-color: #2c2c2c transparent transparent transparent;
+  position: absolute;
+  top: 110px;
+}
+
+.day-arrow {
+  left: 240px;
+}
+
+.month-arrow {
+  left: 375px; 
+}
+.year-arrow {
+  left: 515px;
 }
 
 /*** Narrower Screens ****/
