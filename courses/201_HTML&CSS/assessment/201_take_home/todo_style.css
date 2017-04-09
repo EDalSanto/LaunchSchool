@@ -5,31 +5,69 @@ body {
   overflow: hidden;
 }
 
-main {
-  max-width: 1200px;
-  min-height: 100vh;
-  background-color: #fff; 
-  z-index: 1;
-  padding: 70px 90px 0 30px;
-  position: relative;
-  margin-left: 330px;
-}
+/**** Nav ****/
 
 nav {
   background: #464f77;
+  color: #9da1b5;
   width: 330px;
   height: 100vh;
+  padding-top: 70px;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 0;
-  padding-top: 70px;
-  color: #9da1b5;
 }
 
+nav section.all-todos { padding-bottom: 60px; }
+
+nav header { padding: 0 30px 0 95px; }
+
+nav header img { padding-right: 8px; }
+
+nav h2 {
+  display: inline-block;
+  font: normal 18px Helvetica, Arial, sans-serif;
+  padding-bottom: 20px;
+  color: #d8d9e0;
+  vertical-align: middle;
+}
+
+nav .circle {
+  float: right;
+  background: rgba(205, 207, 216, .3);
+  margin-top: -3px;
+}
+
+.circle {
+  border-radius: 100%;
+  padding: 2px 6px 2px 6px;
+}
+
+nav #total-todos { margin-top: 3px; }
+
+nav li {
+  margin-bottom: 18px;
+  color: #9a9eb1;
+  padding: 0 30px 0 135px;
+}
+
+nav li.selected {
+  background: #383f5f;
+  padding: 13px 30px 10px 135px;
+  color: #fff;
+}
+
+nav li.selected .circle { background: #148fd5; }
+
+nav section.completed li { text-decoration: line-through; }
+
+/**** Hamburger Menu ****/
+
 .nav-trigger {
+  /* Hide checkbox */
   position: absolute;
   clip: rect(0, 0, 0, 0);
 }
@@ -44,82 +82,23 @@ label[for="nav-trigger"] {
   background-size: contain;
 }
 
-.nav-trigger:checked + label[for="nav-trigger"] {
-  left: 360px;
-}
+.nav-trigger:checked + label[for="nav-trigger"] { left: 360px; }
 
-.nav-trigger:checked ~ main {
+.nav-trigger:checked ~ main { margin-left: 330px; }
+
+/**** Main ****/
+
+main {
+  max-width: 1200px;
+  min-height: 100vh;
+  background-color: #fff; 
+  z-index: 1;
+  padding: 70px 90px 0 30px;
+  position: relative;
   margin-left: 330px;
 }
 
-nav header {
-  padding: 0 30px 0 95px;
-}
-
-nav header img {
-  padding-right: 8px;
-}
-
-nav h2 {
-  display: inline-block;
-  font: normal 18px Helvetica, Arial, sans-serif;
-  padding-bottom: 20px;
-  color: #d8d9e0;
-  vertical-align: middle;
-}
-
-.all-todos h2 {
-  padding-right: 55px;
-}
-
-nav li {
-  margin-bottom: 18px;
-  color: #9a9eb1;
-  padding: 0 30px 0 135px;
-}
-
-.completed li {
-  text-decoration: line-through;
-}
-
-.circle {
-  border-radius: 100%;
-  padding: 2px 6px 2px 6px;
-}
-
-nav .circle {
-  float: right;
-  background: rgba(205, 207, 216, .3);
-  margin-top: -3px;
-}
-
-#all-count {
-  margin-top: 3px;
-}
-
-.selected {
-  background: #383f5f;
-  padding: 13px 30px 10px 135px;
-  color: #fff;
-}
-
-.selected .circle {
-  background: #148fd5; 
-}
-
-.all-todos {
-  padding-bottom: 60px;  
-}
-
-h1 {
-  font: 21px normal Helvetica, Arial, sans-serif;
-  display: inline-block;
-  padding-right: 15px;
-}
-
-/**** Items for Todo ****/
-
-main > header {
+main header {
   padding-bottom: 40px;
 }
 
@@ -131,6 +110,12 @@ main div.circle {
   display: inline-block;
   background: #148fd5;
   color: #fff;
+}
+
+h1 {
+  font: 21px normal Helvetica, Arial, sans-serif;
+  display: inline-block;
+  padding-right: 15px;
 }
 
 a.add {
