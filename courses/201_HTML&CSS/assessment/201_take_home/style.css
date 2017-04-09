@@ -204,6 +204,11 @@ select {
   background: #ffffff;
 }
 
+select#due-month,
+select#due-year {
+  color: #9a9999;
+}
+
 form.edit {
   display: none;
 }
@@ -219,7 +224,6 @@ form.edit select#due-day {
 
 form.edit textarea { 
   resize: none; 
-  padding: 8px 0 0 8px;
 }
 
 form.edit textarea {
@@ -267,8 +271,10 @@ form.edit .select-due-date label[for="due-day"] {
 form.edit input#title,
 form.edit select#due-day,
 form.edit select#due-month,
-form.edit select#due-year {
+form.edit select#due-year,
+form.edit textarea {
   padding: 8px 0 8px 8px;
+  border: 1px solid #b3b3b3;
 }
 
 input#edit-item:checked + form.edit:before {
