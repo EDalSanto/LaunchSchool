@@ -196,9 +196,16 @@ main li {
   border: none;
 }
 
+/**** Modal ****/
+
+input#edit-item {
+  display: none;
+}
+
 /*** Narrower Screens ****/
 
 @media (max-width: 768px) {
+
   label[for="nav-trigger"] {
     visibility: visible;
   }
