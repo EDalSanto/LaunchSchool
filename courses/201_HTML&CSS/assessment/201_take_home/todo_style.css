@@ -21,7 +21,7 @@ nav {
   z-index: 0;
 }
 
-nav section.all-todos { padding-bottom: 60px; }
+.all-todos { padding-bottom: 50px; }
 
 nav header { padding: 0 30px 0 95px; }
 
@@ -30,7 +30,7 @@ nav header img { padding-right: 8px; }
 nav h2 {
   display: inline-block;
   font: normal 18px Helvetica, Arial, sans-serif;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   color: #d8d9e0;
   vertical-align: middle;
 }
@@ -42,22 +42,25 @@ nav .circle {
 }
 
 .circle {
-  border-radius: 100%;
-  padding: 2px 6px 2px 6px;
+  border-radius: 75%;
+  padding: 2px 5.5px;
+  font-size: 14px;
 }
 
-nav #total-todos { margin-top: 3px; }
+#total-todos { 
+  margin-top: 4.5px; 
+  padding: 2px 4px;
+  border-radius: 40%;
+}
 
 nav li {
-  margin-bottom: 18px;
   color: #9a9eb1;
-  padding: 0 30px 0 135px;
+  padding: 13px 30px 13px 135px;
 }
 
 nav li.selected {
   background: #383f5f;
-  padding: 13px 30px 10px 135px;
-  color: #fff;
+  color: #ffffff;
 }
 
 nav li.selected .circle { background: #148fd5; }
@@ -110,6 +113,8 @@ main > header div.circle {
   display: inline-block;
   background: #148fd5;
   color: #fff;
+  vertical-align: top;
+  margin-top: 1px;
 }
 
 main > header h1 {
@@ -123,57 +128,57 @@ main > p {
   padding-bottom: 14px;
 }
 
-main > p a.add {
+p a.add {
   color: #148fd5;
   text-decoration: none;
 }
 
-main > p img#plus {
+p img#plus {
   display: inline-block;
   padding-right: 15px;
 }
 
-main input[type="checkbox"] {
+input[type="checkbox"] {
   display: none;
 }
 
 main li {
-  padding: 15px 0;
-  border-top: 1px solid #e7e7e7;
+  padding: 18px 0;
+  border-top: 1px solid #c7c7c7;
 }
 
-main li.checked label {
+li.checked label {
   text-decoration: line-through;
   color: #c9c9c9;
 }
 
-main li > label, 
-main li > label:before,
-main > p a.add {
+li > label, 
+li > label:before,
+p a.add {
   cursor: pointer;
 }
 
-main li > label:hover {
+li > label:hover {
   color: #148fd5;
 }
 
-main li > input[type="checkbox"] + label:before {
+li > input[type="checkbox"] + label:before {
   content: url('images/img_not_checked.png');
   display: inline-block;
   padding-right: 15px;
 }
 
-main li.checked > input[type="checkbox"] + label:before {
+li.checked > input[type="checkbox"] + label:before {
   content: url('images/img_checked.png');
 }
 
-main li form.delete {
+form.delete {
   height: 20px;
   width: 15px;
   float: right;
 }
 
-main li form.delete button {
+form.delete button {
   display: inline-block;
   color: transparent;
   cursor: pointer;
@@ -183,102 +188,107 @@ main li form.delete button {
 
 /**** Form Styling ****/
 
-main li form.edit { display: none; }
+form.edit { 
+  display: none; 
+}
 
-main li form.edit label {
+form.edit label {
   color: #2c2c2c;
   display: inline-block;
-  width: 100%;
-  padding-bottom: 25px;
 }
 
-main li form.edit input#title {
+form.edit > fieldset label:nth-of-type(1) { padding-bottom: 25px; }
+
+form.edit input#title {
   margin-left: 68px;
-  width: 387px;
+  width: 391px;
 }
 
-main li form.edit div.selects {
+form.edit div.selects {
   display: inline;
   word-spacing: 4px;
 }
 
-main li form.edit fieldset.select-due-date { margin-bottom: 25px; }
+form.edit fieldset.select-due-date { margin-bottom: 25px; }
 
-main li form.edit fieldset.select-due-date label[for="due-day"] { display: inline; }
+form.edit fieldset.select-due-date label[for="due-day"] { display: inline; }
 
 /**** Overwrote Chrome's natural styling to better match psd ****/
-main li form.edit select {
+form.edit select {
   -webkit-appearance: none;
   color: #2c2c2c;
-  width: 118px;
+  width: 119.5px;
   border-radius: 0;
   background: #ffffff;
 }
 
-main li form.edit select#due-month,
-main li form.edit select#due-year {
+form.edit select#due-month,
+form.edit select#due-year {
   color: #9a9999;
 }
 
-main li form.edit select#due-day { margin-left: 30px; }
+form.edit select#due-day { margin-left: 30px; }
 
-main li form.edit fieldset input[type="submit"]:nth-of-type(1) { margin: 0 10px 0 100px; }
+form.edit fieldset input[type="submit"]:nth-of-type(1) { margin: 0 10px 0 100px; }
 
 form.edit input[type="submit"] {
   background: #148fd5;
   color: #ffffff;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   width: 190px;
   height: 35px;
   font-size: 18px;
 }
 
-main li form.edit textarea { 
+form.edit textarea { 
   resize: none; 
-  margin-left: 18px;
+  margin: 0 0 25px 18px;
   vertical-align: top;
 }
 
-main li form.edit input#title,
-main li form.edit select#due-day,
-main li form.edit select#due-month,
-main li form.edit select#due-year,
-main li form.edit textarea {
+form.edit label[for="description"] { padding-top: 8px; }
+
+form.edit input#title,
+form.edit select#due-day,
+form.edit select#due-month,
+form.edit select#due-year,
+form.edit textarea {
   padding: 8px 0 8px 8px;
   border: 1px solid #b3b3b3;
+  font-size: 16px;
 }
 
 /**** Couldn't find good image to put as background to match psd and couldn't extract from png image ****/
-main li div.selects span.up-arrow {
+.up-arrow {
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 0 4px 4px 4px;
   border-color: transparent transparent #2c2c2c transparent;
   position: absolute;
-  top: 101px;
+  top: 107px;
 }
 
-main li div.selects span.down-arrow {
+.down-arrow {
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 4px 4px 0 4px;
   border-color: #2c2c2c transparent transparent transparent;
   position: absolute;
-  top: 110px;
+  top: 116px;
 }
 
-main li div.selects span.day-arrow { left: 240px; }
-main li div.selects span.month-arrow { left: 375px; }
-main li div.selects span.year-arrow { left: 515px; }
+.day-arrow { left: 240px; }
+.month-arrow { left: 375px; }
+.year-arrow { left: 515px; }
 
 /**** Modal Implementation ****/
 
-main li input#edit-item:checked + form.edit:before {
+input#edit-item:checked + form.edit:before {
   position: fixed;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.15);
   top: 0;
   left: 0;
   right: 0;
@@ -287,7 +297,7 @@ main li input#edit-item:checked + form.edit:before {
   content: "";
 }
 
-main li input#edit-item:checked + form.edit {
+input#edit-item:checked + form.edit {
   height: 400px;
   width: 575px;
   background: #fff;
@@ -296,7 +306,7 @@ main li input#edit-item:checked + form.edit {
   display: block;
   position: absolute;
   top: 100px;
-  left: 100px;
+  left: 104px;
 }
 
 /*** Narrower Screens ****/
@@ -305,5 +315,5 @@ main li input#edit-item:checked + form.edit {
 
   label[for="nav-trigger"] { visibility: visible; }
 
-  body main { margin-left: 0px; }
+  main { margin-left: 0px; }
 }
