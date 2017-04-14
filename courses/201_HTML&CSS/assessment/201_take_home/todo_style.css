@@ -60,7 +60,16 @@ nav li {
 
 nav li.selected {
   background: #383f5f;
-  color: #ffffff;
+  color: #ffffff; 
+  overflow: auto;
+}
+
+nav li.selected time {
+  float: right;
+}
+
+nav li.selected .circle {
+  float: left;
 }
 
 nav li.selected .circle { background: #148fd5; }
@@ -145,6 +154,12 @@ input[type="checkbox"] {
 main li {
   padding: 18px 0;
   border-top: 1px solid #c7c7c7;
+  display: inline-block;
+  margin-right: 50px;
+}
+
+main ul li:last-child {
+  margin-top: -50px;
 }
 
 li.checked label {
@@ -175,7 +190,8 @@ li.checked > input[type="checkbox"] + label:before {
 form.delete {
   height: 20px;
   width: 15px;
-  float: right;
+  float: left;
+  margin-right: 15px;
 }
 
 form.delete button {
