@@ -166,3 +166,139 @@ function missing(arr) {
 //console.log(missing([1, 2, 3, 4]));                    // []
 //console.log(missing([1, 5]));                          // [2, 3, 4]
 //console.log(missing([6]));                             // []
+
+function concat(array1) {
+  var newArr = [];
+
+  for (var i = 0; i < array1.length; i++) {
+    newArr[i]  = array1[i];
+  }
+
+  for (var i = 1; i < arguments.length; i++) {
+    var currentArg = arguments[i];
+
+    if (Array.isArray(currentArg)) {
+      for (var i = 0; i < currentArg.length; i++) {
+        newArr.push(currentArg[i]);
+      }
+    } else {
+      newArr.push(currentArg);
+    }
+  }
+
+  return newArr;
+}
+
+//console.log(concat([1, 2, 3], [4, 5, 6]));            // [1, 2, 3, 4, 5, 6]
+//console.log(concat([1, 2], 3));                       // [1, 2, 3]
+//console.log(concat([2, 3], ['two', 'three']));        // [2, 3, "two", "three"]
+//console.log(concat([2, 3], 'four'));                  // [2, 3, "four"]
+//
+//
+//var obj = { a: 2, b: 3 };
+//var newArray = concat([2, 3], obj);      // [2, 3, { a: 2, b: 3 }]
+//obj.a = 'two';
+//console.log(newArray);                                // [2, 3, { a: 'two', b: 3 }]
+//
+//var arr1 = [1, 2, 3];
+//var arr2 = [4, 5, obj];
+//var arr3 = concat(arr1, arr2);
+//console.log(arr3);                                    // [1, 2, 3, 4, 5, { a: 'two', b: 3 }]
+//obj.b = 'three';
+//console.log(arr3);                                    // [1, 2, 3, 4, 5, { a: 'two', b: 'three' }]
+//
+//arr3[5].b = 3;                           // or arr3[5]['b'] = 3
+//console.log(obj);                                     // { a: 'two', b: 3 }
+//
+//
+//
+//console.log(concat([1, 2 ,3], [4, 5, 6], [7, 8, 9]));           // [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+//console.log(concat([1, 2], "a", ["one", "two"]));               // [ 1, 2, "a", "one", "two" ]
+//console.log(concat([1, 2], ["three"], 4));                      // [ 1, 2, "three", 4 ]
+
+function pop(array) {
+  var popped = array[array.length - 1];
+
+  array.splice(array.length - 1, 1);
+
+  return popped;
+}
+
+function push(array) {
+  for (var i = 1; i < arguments.length; i++) {
+    array[array.length] = arguments[i];
+  }
+
+  return array.length
+}
+
+//var array = [1, 2, 3]
+//pop(array);                   // 3
+//console.log(array)            // [1, 2]
+//pop([]);                      // undefined
+//pop([1, 2, ['a', 'b', 'c']]); // [ 'a', 'b', 'c' ]
+//
+//var array = [1, 2, 3]
+//push(array, 4, 5, 6);         // 6
+//console.log(array)            // [1, 2, 3, 4, 5, 6]
+//push([1, 2], ['a', 'b']);     // 3
+//push([], 1);                  // 1
+//push([]);                     // 0
+
+function reverse(inputForReversal) {
+  var newArr = [];
+
+  for (var i = inputForReversal.length - 1; i >= 0; i--) {
+    newArr.push(inputForReversal[i])
+  }
+
+  if (Array.isArray(inputForReversal)) {
+    return newArr;
+  } else {
+    return newArr.join('');
+  }
+}
+
+//console.log(reverse('Hello'));          // olleH
+//console.log(reverse('a'));              // a
+//console.log(reverse([1, 2, 3, 4]));     // [4, 3, 2, 1]
+//console.log(reverse([]));               // []
+
+function slice(array, begin, end) {
+  var extractedElements = [];
+
+  for (var i = begin; i < end; i++) {
+    extractedElements[i - begin] = array[i];
+  }
+
+  return extractedElements;
+}
+
+//console.log(slice([1, 2, 3], 1, 2));           // [2]
+//console.log(slice([1, 2, 3], 2, 0));           // []
+//console.log(slice([1, 2, 3], 5, 1));           // []
+//
+//var arr = [1, 2, 3];
+//console.log(slice(arr, 1, 3));                 // [2, 3]
+//console.log(arr);                              // [1, 2, 3]
+
+function areArraysEqual(array1, array2) {
+  sorted2 = array2.sort(function(a, b) { 
+    return a - b; 
+  });
+
+  sorted1 = array1.sort(function(a, b) {
+    return a - b;
+  });
+
+  console.log(arraysEqual(sorted1, sorted2));
+}
+
+areArraysEqual([1, 2, 3], [1, 2, 3]);                  // true
+areArraysEqual([1, 2, 3], [3, 2, 1]);                  // true
+areArraysEqual(['a', 'b', 'c'], ['b', 'c', 'a']);      // true
+areArraysEqual(['1', 2, 3], [1, 2, 3]);                // false
+areArraysEqual([1, 1, 2, 3], [3, 1, 2, 1]);            // true
+areArraysEqual([1, 2, 3, 4], [1, 1, 2, 3]);            // false
+areArraysEqual([1, 1, 2, 2], [4, 2, 3, 1]);            // false
+
