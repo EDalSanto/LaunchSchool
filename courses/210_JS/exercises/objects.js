@@ -68,4 +68,31 @@ function wordCount(str) {
 
 //console.log(wordCount('box car cat bag box'));    // { box: 2, car: 1, cat: 1, bag: 1 }
 
+// input: string
+// output: histogram of only repeated chars, case insensitive
+function repeatedCharacters(string) {
+  var lowerCaseString = string.toLowerCase(); 
+  var countObject = {};
+  
+  for (var i = 0; i < lowerCaseString.length; i++) {
+    if (lowerCaseString[i] in countObject) {
+      countObject[lowerCaseString[i]] += 1;
+    } else {
+      countObject[lowerCaseString[i]] = 1;
+    }
+  }
 
+  for (letter in countObject) {
+    if (countObject[letter] === 1) {
+      delete countObject[letter];
+    }
+  }
+
+  return countObject;
+}
+
+repeatedCharacters('Programming');    // { r: 2, g: 2, m: 2 }
+repeatedCharacters('Combination');    // { o: 2, i: 2, n: 2 }
+repeatedCharacters('Pet');            // {}
+repeatedCharacters('Paper');          // { p: 2 }
+repeatedCharacters('Baseless');       // { s: 3, e: 2 }
