@@ -91,8 +91,47 @@ function repeatedCharacters(string) {
   return countObject;
 }
 
-repeatedCharacters('Programming');    // { r: 2, g: 2, m: 2 }
-repeatedCharacters('Combination');    // { o: 2, i: 2, n: 2 }
-repeatedCharacters('Pet');            // {}
-repeatedCharacters('Paper');          // { p: 2 }
-repeatedCharacters('Baseless');       // { s: 3, e: 2 }
+//repeatedCharacters('Programming');    // { r: 2, g: 2, m: 2 }
+//repeatedCharacters('Combination');    // { o: 2, i: 2, n: 2 }
+//repeatedCharacters('Pet');            // {}
+//repeatedCharacters('Paper');          // { p: 2 }
+//repeatedCharacters('Baseless');       // { s: 3, e: 2 }
+
+function getSelectedColumns(numbers, cols) {
+  var result = [];
+  for (var i = 0, outerLength = numbers.length; i < outerLength; i++) {
+    for (var j = 0, innerLength = cols.length; j < innerLength; j++) {
+      if (!result[j]) {
+        result[j] = [];
+      }
+
+      result[j][i] = numbers[i][cols[j]];
+    }
+  }
+
+  return result;
+}
+
+// Given array of number arrays
+var array1 = [[1, 2, 3], [4, 5 ,6], [7, 8 ,9]];
+var array2 = [[1, 2, 3], [1, 2, 3], [1, 2, 3]];
+
+// array1 in row/column format
+// [[1, 2, 3],
+//  [4, 5, 6],
+//  [7, 8, 9]]
+
+//console.log(getSelectedColumns(array1, [0]));     // [[1]]; expected [[1, 4, 7]]
+//console.log(getSelectedColumns(array1, [0, 2]));  // [[1, 4], [3, 6]]; expected [[1, 4, 7], [3, 6, 9]]
+//console.log(getSelectedColumns(array2, [1, 2]));  // [[2, 2], [3, 4]]; expected [[2, 2, 2], [3, 3, 3]]
+
+function makeDoubler(caller) {
+  return function(num) { 
+    console.log("This function was called by " + caller + ".");
+    return num + num;
+  }
+}
+
+var doubler = makeDoubler('Victor');
+console.log(doubler(5));                 // 10
+// This function was called by Victor.
