@@ -247,4 +247,105 @@
 //var age = Math.floor(Math.random() * (200 - 20)) + 20;
 //console.log('Teddy is ' + age + ' years old');
 
+//var age = parseInt(prompt('What is your age?'));
+//var retirementAge = parseInt(prompt('At what age would you like to retire?'));
+//var thisYear = new Date().getFullYear();
+//var retirementYear = thisYear + (retirementAge - age);
+//
+//console.log("It's " + thisYear + '. You will retire in ' + retirementYear + '.');
+//console.log('You have only ' + (retirementYear - thisYear) + ' years of work to go!');
 
+//function isRealPalindrome(string) {
+//  var reversed = string.split('').reverse().join('').toLowerCase();
+//
+//  console.log(reversed.replace(/[^\w]/gi, '') === string.toLowerCase().replace(/[^\w]/gi, ''));
+//}
+//
+//isRealPalindrome('madam');               // true
+//isRealPalindrome('Madam');               // true (case does not matter)
+//isRealPalindrome('Madam, I\'m Adam');    // true (only alphanumerics matter)
+//isRealPalindrome('356653');              // true
+//isRealPalindrome('356a653');             // true
+//isRealPalindrome('123ab321');            // false
+
+//function isPalindromicNumber(num) {
+//  console.log(String(num).split('').reverse().join('') === String(num));
+//}
+//
+//isPalindromicNumber(34543);        // true
+//isPalindromicNumber(123210);       // false
+//isPalindromicNumber(22);           // true
+//isPalindromicNumber(5);            // true
+
+//function runningTotal(arr) {
+//  var sum = 0;
+//
+//  var totalArr = arr.map(function(el) {
+//    return sum += el;
+//  });
+//
+//  console.log(totalArr);
+//}
+//
+//runningTotal([2, 5, 13]);             // [2, 7, 20]
+//runningTotal([14, 11, 7, 15, 20]);    // [14, 25, 32, 47, 67]
+//runningTotal([3]);                    // [3]
+//runningTotal([]);                     // []
+
+//function swap(string) {
+//  var swapped = string.split(' ').map(function(word) {
+//    var firstLetter = word[0];
+//    var lastLetter = word[word.length - 1];
+//
+//    word = word.replace(/^\w{1}/, lastLetter);
+//    word = word.replace(/\w{1}$/, firstLetter);
+//
+//    return word;
+//  });
+//
+//  console.log(swapped.join(' '));
+//}
+
+//function swap(string) {
+//  var wordsArray = string.split(' ');
+//  
+//  var swapped = wordsArray.map(function(word) {
+//    return swapFirstLastCharacters(word);
+//  });
+//
+//  console.log(swapped.join(' '));
+//}
+//
+//function swapFirstLastCharacters(word) {
+//  return word[word.length - 1] + word.slice(1, word.length - 1) + word[0]; 
+//}
+//
+//swap('Oh what a wonderful day it is');    // 'hO thaw a londerfuw yad ti si'
+//swap('Abcde');                            // 'ebcdA'
+//swap('a');                                // 'a'
+
+//function incrementProperty(obj, prop) {
+//  if (prop in obj) {
+//    obj[prop] += 1;
+//  } else { 
+//    obj[prop] = 1;
+//  }
+//}
+//
+//function wordSizes(string) {
+//  var obj = {};
+//  if (string === '') { return obj; }
+//
+//  var wordArr = string.split(' ');
+//
+//  for (var i = 0; i < wordArr.length; i++) {
+//    incrementProperty(obj, wordArr[i].replace(/[^A-Za-z]/g, '').length);
+//  }
+//
+//  console.log(obj);
+//}
+//
+//wordSizes('Four score and seven.');                        // { "3": 1, "4": 1, "5": 2 }
+//wordSizes('Hey diddle diddle, the cat and the fiddle!');   // { "3": 5, "6": 3 }
+//wordSizes('What\'s up doc?');                              // { "5": 1, "2": 1, "3": 1 }
+//wordSizes('');                                             // {}
