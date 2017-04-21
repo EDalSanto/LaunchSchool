@@ -349,3 +349,28 @@
 //wordSizes('Hey diddle diddle, the cat and the fiddle!');   // { "3": 5, "6": 3 }
 //wordSizes('What\'s up doc?');                              // { "5": 1, "2": 1, "3": 1 }
 //wordSizes('');                                             // {}
+
+var MINUTES_IN_DEGREE = 60;
+var SECONDS_IN_DEGREE = 60 * MINUTES_IN_DEGREE;
+var degree = "\xb0";
+
+function dms(degreesFloat) {
+  var degreesInt = Math.floor(degreesFloat);
+  var degreesMinutes = Math.floor((degreesFloat - degreesInt) * MINUTES_IN_DEGREE);
+  var degreesSeconds = Math.floor(((degreesFloat - degreesInt) * SECONDS_IN_DEGREE) % MINUTES_IN_DEGREE);
+
+  console.log(degreesInt + degree + padZeros(degreesMinutes) + "'" + padZeros(degreesSeconds) + '"');
+}
+
+function padZeros(number) {
+  return String(number).length < 2 ? ('0' + String(number)) : String(number);
+}
+
+//dms(30);        // 30°00'00"
+//dms(76.73);     // 76°43'48"
+//dms(254.6);     // 254°35'59"
+//dms(93.034773); // 93°02'05"
+//dms(0);         // 0°00'00"
+//dms(360);       // 360°00'00" or 0°00'00"
+
+
