@@ -450,3 +450,320 @@ function sumArray(arr) {
 //    { average: 91.8, minimum: 80, maximum: 100 },
 //  ],
 //}
+
+function alphabeticNumberSort(array) {
+  var numberWords = [ 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 
+                      'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen',                      'eighteen', 'nineteen' ]
+
+  return array.sort(function(val1, val2) {
+    var v1English = numberWords[val1]; 
+    var v2English = numberWords[val2];
+
+    if (v1English > v2English) {
+      return 1;
+    } else if (v1English < v2English) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+}
+
+//console.log(alphabeticNumberSort([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]));
+// [8, 18, 11, 15, 5, 4, 14, 9, 19, 1, 7, 17, 6, 16, 10, 13, 3, 12, 2, 0]
+
+function sum(num) {
+  return String(num).split('').reduce(function(acc, val) {
+    return acc + parseInt(val, 10);
+  }, 0);
+}
+
+//console.log(sum(23));          // 5
+//console.log(sum(496));         // 19
+//console.log(sum(123456789));   // 45
+
+function multiplyAllPairs(arr1, arr2) {
+  var newArr = [];
+
+  arr1.forEach(function(val1) {
+    arr2.forEach(function(val2) {
+      newArr.push(val1 * val2);
+    });
+  });
+
+  newArr.sort(function(val1, val2) {
+    if (val1 > val2) {
+      return 1;
+    } else if (val1 < val2) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+
+  console.log(newArr);
+}
+
+//multiplyAllPairs([2, 4], [4, 3, 1, 2]) // [2, 4, 4, 6, 8, 8, 12, 16]
+
+// input: array of nums
+// output: num that represent sum of each leading subsequence
+// algo:
+//   -reduce by adding slice each time 
+function sumOfSums(array) {
+  return array.reduce(function(acc, val, index) {
+    return acc + array.slice(0, index + 1).reduce(function(acc, val) {
+      return acc + val; 
+    });
+  });
+}
+
+//console.log(sumOfSums([3, 5, 2]))       // (3) + (3 + 5) + (3 + 5 + 2) # -> (21)
+//console.log(sumOfSums([1, 5, 7, 3]))    // (1) + (1 + 5) + (1 + 5 + 7) + (1 + 5 + 7 + 3) # -> (36)
+//console.log(sumOfSums([4]))             // 4
+//console.log(sumOfSums([1, 2, 3, 4, 5])) // 35
+
+function substringsAtStart(string) {
+  return string.split('').map(function(element, index) {
+    return string.slice(0, index) + element 
+  });
+}
+
+//console.log(substringsAtStart('abc'))   // ['a', 'ab', 'abc']
+//console.log(substringsAtStart('a'))     // ['a']
+//console.log(substringsAtStart('xyzzy')) // ['x', 'xy', 'xyz', 'xyzz', 'xyzzy']
+
+function substrings(string) {
+  return string.split('').map(function(element,index) {
+    return substringsAtStart(string.slice(index, string.length)); 
+  }).reduce(function(resArr, subArr) {
+    return resArr.concat(subArr); 
+  });
+}
+
+//console.log(substrings('abcde'));
+// result
+//[ 'a', 'ab', 'abc', 'abcd', 'abcde',
+//  'b', 'bc', 'bcd', 'bcde',
+//  'c', 'cd', 'cde',
+//  'd', 'de',
+//  'e' ]
+
+function isPalindrome(string) {
+  return (string.split('').reverse().join('') === string && string.length > 1);
+}
+
+function palindromes(string) {
+  return substrings(string).filter(isPalindrome);
+}
+
+//console.log(palindromes('abcd'));  // []
+//console.log(palindromes('madam')); // ['madam', 'ada']
+//console.log(palindromes('hello-madam-did-madam-goodbye'));
+//// result
+////[ 'll', '-madam-', '-madam-did-madam-', 'madam', 'madam-did-madam', 'ada',
+////  'adam-did-mada', 'dam-did-mad', 'am-did-ma', 'm-did-m', '-did-', 'did',
+////  '-madam-', 'madam', 'ada', 'oo' ]
+//
+//console.log(palindromes('knitting cassettes'));
+// result
+//[ 'nittin', 'itti', 'tt', 'ss', 'settes', 'ette', 'tt' ]
+
+function buyFruit(nestedArray) {
+  return nestedArray.map(function(subArr) {
+    return repeat(subArr); 
+  }).reduce(function(flattened, subArr) {
+    return flattened.concat(subArr); 
+  });
+}
+
+function repeat(subArr) {
+  var newArr = [];
+
+  for (var i = 0; i < subArr[1]; i++) {
+    newArr.push(subArr[0]);
+  }
+
+  return newArr;
+}
+
+//console.log(buyFruit([['apples', 3], ['orange', 1], ['bananas', 2]]));
+// result
+//['apples', 'apples', 'apples', 'orange', 'bananas','bananas']
+
+var transactions = [ {id: 101, movement: 'in', quantity: 5, },
+                     {id: 105, movement: 'in', quantity: 10, },
+                     {id: 102, movement: 'out', quantity: 17, },
+                     {id: 101, movement: 'in', quantity: 12, },
+                     {id: 103, movement: 'out', quantity: 15, },
+                     {id: 102, movement: 'out', quantity: 15, },
+                     {id: 105, movement: 'in', quantity: 25, },
+                     {id: 101, movement: 'out', quantity: 18, },
+                     {id: 102, movement: 'in', quantity: 22, },
+                     {id: 103, movement: 'out', quantity: 15, },];
+
+function transactionsFor(itemId, transactions) {
+  return transactions.filter(function(transaction) {
+    return transaction.id === itemId;
+  });
+}
+
+function isItemAvailable(itemId, transactions) {
+  var total = transactionsFor(itemId, transactions).reduce(function(total, transaction) {
+    if (transaction.movement === 'in') {
+      return total += transaction.quantity;
+    } else if (transaction.movement === 'out') {
+      return total -= transaction.quantity;
+    }
+  }, 0);
+
+  return total > 0;
+}
+
+//console.log(isItemAvailable(101, transactions)); // false
+//console.log(isItemAvailable(105, transactions)); // true
+
+//console.log(transactionsFor(101, transactions));
+// result
+//[ { id: 101, movement: 'in', quantity: 5 },
+//  { id: 101, movement: 'in', quantity: 12 },
+//  { id: 101, movement: 'out', quantity: 18 }, ]
+
+function isUppercase(str) {
+  console.log(!str.match(/[a-z]/));
+}
+
+//isUppercase('t')          // false
+//isUppercase('T')          // true
+//isUppercase('Four Score') // false
+//isUppercase('FOUR SCORE') // true
+//isUppercase('4SCORE!')    // true
+//isUppercase('')           // true
+
+function removeVowels(array) {
+  console.log(array.map(function(element) {
+    return element.replace(/[aeiuo]/gi, '');
+  }));
+}
+
+//removeVowels(['abcdefghijklmnopqrstuvwxyz']);             // ['bcdfghjklmnpqrstvwxyz']
+//removeVowels(['green', 'YELLOW', 'black', 'white']);      // ['grn', 'YLLW', 'blck', 'wht']
+//removeVowels(['ABC', 'AEIOU', 'XYZ']);                    // ['BC', '', 'XYZ']
+
+// input: string
+// output: object that counts lowercase letters, uppercase letters, and neither
+// algo: 
+function letterCaseCount(str) {
+  var returnObj = { lowercase: 0, uppercase: 0, neither: 0 }; 
+
+  for (var i = 0; i < str.length; i++) {
+    if (!!str[i].match(/[A-Z]/)) {
+      returnObj['uppercase']++;
+    } else if (!!str[i].match(/[a-z]/)) {
+      returnObj['lowercase']++;
+    } else {
+      returnObj['neither']++;
+    }
+  }
+
+  console.log(returnObj);
+}
+
+//letterCaseCount('abCdef 123')    // { lowercase: 5, uppercase: 1, neither: 4 }
+//letterCaseCount('ab!!Cdef  123') // { lowercase: 5, uppercase: 1, neither: 7 }
+//letterCaseCount('AbCd +Ef')      // { lowercase: 3, uppercase: 3, neither: 2 }
+//letterCaseCount('123')           // { lowercase: 0, uppercase: 0, neither: 3 }
+//letterCaseCount('')              // { lowercase: 0, uppercase: 0, neither: 0 }
+
+function wordCap(str) {
+  console.log(str.split(' ').map(function(word) {
+    return word.slice(0, 1).toUpperCase() + word.slice(1, word.length);
+  }).join(' '));
+}
+
+//wordCap('four score and seven')    // 'Four Score And Seven'
+//wordCap('the javaScript language') // 'The Javascript Language'
+//wordCap('this is a "quoted" word') // 'This Is A "quoted" Word'
+
+// input: string
+// output: string with each char case swapped
+// algo: 
+//   - split, map on case and use opposite, join
+function swapcase(string) {
+  var swapped = string.split('').map(function(char) {
+    if (!!char.match(/[A-Z]/)) {
+      return char.toLowerCase();
+    } else if (!!char.match(/[a-z]/)) {
+      return char.toUpperCase();
+    } else {
+      return char;
+    }
+  }).join('');
+
+  console.log(swapped);
+}
+
+//swapcase('CamelCase')         // 'cAMELcASE'
+//swapcase('Tonight on XYZ-TV') // 'tONIGHT ON xyz-tv'
+//swapcase('') // ''
+
+function staggeredCase(str) {
+  var toUpper = true;
+
+  var stagged = str.split('').map(function(char) {
+    if (char.match(/[a-z]/i)) {
+      if (toUpper) {
+        char = char.toUpperCase();
+      } else { 
+        char = char.toLowerCase();
+      }
+
+      toUpper = !toUpper;
+      return char;
+    } else {
+      return char;
+    }
+  }).join('');
+
+  console.log(stagged);
+}
+
+//staggeredCase('I Love Launch School!')     // 'I lOvE lAuNcH sChOoL!'
+//staggeredCase('ALL CAPS')                  // 'AlL cApS'
+//staggeredCase('ignore 77 the 444 numbers') // 'IgNoRe 77 ThE 444 nUmBeRs'
+
+function wordLengths(str) {
+  console.log(str.split(' ').map(function(word) {
+    return word + ' ' + word.length;
+  }));
+}
+
+//wordLengths('cow sheep chicken');
+//// result
+//['cow 3', 'sheep 5', 'chicken 7']
+//
+//wordLengths('baseball hot dogs and apple pie');
+//// result
+//['baseball 8', 'hot 3', 'dogs 4', 'and 3', 'apple 5', 'pie 3']
+//
+//wordLengths('It ain\'t easy, is it?');
+//// result
+//['It 2', 'ain\'t 5', 'easy, 5', 'is 2', 'it? 3']
+//
+//wordLengths('Supercalifragilisticexpialidocious');
+//// result
+//['Supercalifragilisticexpialidocious 34']
+//
+//wordLengths('');
+//// result
+//[]
+
+function searchWord(word, text) {
+  var regex = new RegExp(("\\b" + word + "\\b"), 'gi');
+  var highlighted = text.replace(regex, '**' + word.toUpperCase() + '**');
+  console.log(highlighted);
+}
+
+var text = 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?'
+
+searchWord('sed', text);   // 3

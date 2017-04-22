@@ -373,4 +373,310 @@ function padZeros(number) {
 //dms(0);         // 0°00'00"
 //dms(360);       // 360°00'00" or 0°00'00"
 
+// Input: two arrays 
+// Output: one array
+//  - represents union(all values of both arrays with no duplication)
+//  Algorithm:
+//    - create new array initialized to the values(no side effects) of array1
+//      - no duplication
+//    - iterate through array2 and add number if not already in newArray
 
+function union(array1, array2) {
+  var newArr = [];
+
+  for (var i = 0; i < arguments.length; i++) {
+    arguments[i].forEach(function(element) {
+      if (!newArr.includes(element)) {
+        newArr.push(element);
+      }
+    });
+  }
+
+  console.log(newArr);
+}
+
+//union([1, 3, 5], [3, 6, 9]); // [1, 3, 5, 6, 9]
+//union([1, 1, 3, 5], [3, 6, 9]); // [1, 3, 5, 6, 9]
+//union([], [3, 6, 9]); // [3, 6, 9]
+//union([], []); // []
+
+// input: one array
+// output: two arrays which represent original array divided in half
+// Algorithm: 
+//   - Create new array that will contain two halves
+//   - Push first half of array into result array
+//   - Push second half of array into result array
+
+function halvsies(originalArray) {
+  var halves = [];
+  var midwayIndex = Math.ceil((originalArray.length / 2));
+  var firstHalf = originalArray.slice(0, midwayIndex);
+  var secondHalf = originalArray.slice(midwayIndex, originalArray.length);
+
+  halves.push(firstHalf);
+  halves.push(secondHalf);
+  console.log(halves);
+}
+
+//halvsies([1, 2, 3, 4])    // [[1, 2], [3, 4]]
+//halvsies([1, 5, 2, 4, 3]) // [[1, 5, 2], [4, 3]]
+//halvsies([5])             // [[5], []]
+//halvsies([])              // [[], []]
+
+// input: array of numbers
+// output: number which is duplicated
+// Algo:
+//  - iterate through input array
+//  - store already seen nums in an already-seen array
+//  - if num already in already-seen array, return num
+
+function findDup(array) {
+  var alreadySeen = [];
+
+  for (var i = 0; i < array.length; i++) {
+    if (alreadySeen.includes(array[i])) {
+      return array[i];
+    }
+
+    alreadySeen.push(array[i]);
+  }
+}
+
+//console.log(findDup([1, 5, 3, 1]))                              // 1
+//console.log(findDup([18,  9, 36, 96, 31, 19, 54, 75, 42, 15,
+//         38, 25, 97, 92, 46, 69, 91, 59, 53, 27,
+//         14, 61, 90, 81,  8, 63, 95, 99, 30, 65,
+//         78, 76, 48, 16, 93, 77, 52, 49, 37, 29,
+//         89, 10, 84,  1, 47, 68, 12, 33, 86, 60,
+//         41, 44, 83, 35, 94, 73, 98,  3, 64, 82,
+//         55, 79, 80, 21, 39, 72, 13, 50,  6, 70,
+//         85, 87, 51, 17, 66, 20, 28, 26,  2, 22,
+//         40, 23, 71, 62, 73, 32, 43, 24,  4, 56,
+//         7,  34, 57, 74, 45, 11, 88, 67,  5, 58]))  // 73
+
+// Input: two arrays
+// Output: new array that contains all elements from both arrays in alteration
+// Algo: 
+//   - Create new interleaved array
+//   - Iterate through one array
+//   - Add current element of array
+//   - Add element at same index for other array
+//   - Return new interleaved array
+
+function interleave(array1, array2) {
+  var newArr = [];
+
+  for (var i = 0; i < array1.length; i++) {
+    newArr.push(array1[i], array2[i]);
+  }
+
+  return newArr;
+}
+
+//console.log(interleave([1, 2, 3], ['a', 'b', 'c'])) // [1, 'a', 2, 'b', 3, 'c']
+
+
+// Input: array of integers
+// Output: string rounded to decimal places of multiplication of all numbers and division by length of array 
+// Algo
+//   - reduce to value then round
+function showMultiplicativeAverage(array) {
+  var multiplicationResult = array.reduce(function(acc, value) {
+    return acc * value;
+  }, 1);
+
+  var divisionResult = multiplicationResult / array.length
+
+  console.log(String(divisionResult.toFixed(3)));
+}
+
+//showMultiplicativeAverage([3, 5])                 // '7.500'
+//showMultiplicativeAverage([2, 5, 7, 11, 13, 17])  // '28361.667'
+
+// Input: two arrays of numbers
+// Output: array of products each pair of numbers at corresponding indexes 
+function multiplyList(array1, array2) {
+  return array1.map(function(value, index) {
+    return value * array2[index];
+  });
+}
+
+//console.log(multiplyList([3, 5, 7], [9, 10, 11])) // [27, 50, 77]
+
+function digitList(number) {
+  return String(number).split('').map(function(value) {
+    return parseInt(value);
+  });
+}
+
+//console.log(digitList(12345));       // [1, 2, 3, 4, 5]
+//console.log(digitList(7));           // [7]
+//console.log(digitList(375290));      // [3, 7, 5, 2, 9, 0]
+//console.log(digitList(444));         // [4, 4, 4]
+
+function incrementProperty(obj, element) {
+  if (element in obj) {
+    obj[element]++;
+  } else {
+    obj[element] = 1;
+  }
+}
+
+function countOccurrences(array) {
+  var obj = {};
+
+  array.forEach(function(element) {
+    incrementProperty(obj, element);
+  });
+
+  return obj;
+}
+
+var vehicles = ['car', 'car', 'truck', 'car', 'SUV', 'truck', 'motorcycle', 'motorcycle', 'car', 'truck'];
+//console.log(countOccurrences(vehicles));
+
+// console output
+//car => 4
+//truck => 3
+//SUV => 1
+//motorcycle => 2
+
+function average(array) {
+  var avg = Math.floor(array.reduce(function(sum, val) {
+    return sum + val;
+  }) / array.length);
+
+  console.log(avg);
+}
+
+//average([1, 5, 87, 45, 8, 8])    // 25
+//average([9, 47, 23, 95, 16, 52]) // 40
+
+var CONSONANTS = 'abcdfghjklmnpqrstvwxyz';
+
+function doubleConsonants(string) {
+  console.log(string.split('').map(function(ch) {
+    if (!!ch.match(/[abcdfghjklmnpqrstvwxyz]/i)) {
+      return ch.repeat(2);
+    } else {
+      return ch;
+    }
+  }).join(''));
+}
+
+//repeater('Hello')     // "HHeelllloo"
+//repeater("Good job!") // "GGoooodd  jjoobb!!"
+//repeater('')          // ''
+
+//doubleConsonants('String')       // "SSttrrinngg"
+//doubleConsonants('Hello-World!') // "HHellllo-WWorrlldd!"
+//doubleConsonants('July 4th')     // "JJullyy 4tthh"
+//doubleConsonants('')             // ""
+
+function reversedNumber(originalNumber) {
+  var reversedNumberStr = String(originalNumber).split('').reverse().join('')
+ 
+  console.log(parseInt(reversedNumberStr, 10));
+}
+
+//reversedNumber(12345); // 54321
+//reversedNumber(12213); // 31221
+//reversedNumber(456);   // 654
+//reversedNumber(12000); // 21 # Note that zeros get dropped!
+//reversedNumber(1);     // 1
+
+function centerOf(str) {
+  var center = Math.floor(str.length / 2);
+
+  if ((str.length % 2) === 0) {
+    console.log(str.substr(center - 1, 2));
+  } else {
+    console.log(str.substr(center, 1)); 
+  }
+}
+
+//centerOf('I love ruby')    // 'e'
+//centerOf('Launch School')  // ' '
+//centerOf('Launch')         // 'un'
+//centerOf('Launchschool')   // 'hs'
+//centerOf('x')              // 'x'
+
+function negative(number) {
+  if (number >= 0) {
+    return number * -1;
+  } else {
+    return number
+  }
+}
+
+//negative(5)  // -5
+//negative(-3) // -3
+//negative(0)  // -0
+
+function sequence(number) {
+ var seq = [];
+  
+  for (var i = 1; i <= number; i++) {
+    seq.push(i);
+  }
+
+  return seq;
+}
+
+//sequence(5) // [1, 2, 3, 4, 5]
+//sequence(3) // [1, 2, 3]
+//sequence(1) // [1]
+
+function swapName(name) {
+  return name.split(' ').reverse().join(', ');
+}
+
+//swapName('Joe Roberts') // 'Roberts, Joe'
+
+function sequence(count, firstNumber) {
+  var seq = [];
+
+  for (var i = 1; i <= count; i++) {
+    seq.push(i * firstNumber);
+  }
+
+  console.log(seq);
+}
+
+//sequence(5, 1)       // [1, 2, 3, 4, 5]
+//sequence(4, -7)      // [-7, -14, -21, -28]
+//sequence(3, 0)       // [0, 0, 0]
+//sequence(0, 1000000) // []
+
+function reverseSentence(string) {
+  var words = string.split(' ');
+  var reversedWords = [];
+  
+  for (var i = words.length - 1; i >= 0; i--) {
+    reversedWords.push(words[i]);
+  }
+
+  console.log(reversedWords.join(' '));
+}
+
+//reverseSentence('');                     // ''
+//reverseSentence('Hello World');          // 'World Hello'
+//reverseSentence('Reverse these words');  // 'words these Reverse'
+
+function reverseWords(string) {
+  var words = string.split(' ');
+  
+  var res = words.map(function(word) {
+    if (word.length >= 5) {
+      return word.split('').reverse().join('');
+    } else {
+      return word;
+    }
+  }).join(' ');
+
+  console.log(res);
+}
+
+//reverseWords('Professional');          // lanoisseforP
+//reverseWords('Walk around the block'); // Walk dnuora the kcolb
+//reverseWords('Launch School');         // hcnuaL loohcS
