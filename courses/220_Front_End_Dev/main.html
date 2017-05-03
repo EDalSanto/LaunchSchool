@@ -1,0 +1,48 @@
+<body>
+  <ul>
+    <li>Fruit</li>
+    <li>Vegetables
+      <ul>
+        <li>Root
+          <ul>
+            <li>Potatoes</li>
+            <li>Carrots
+              <ul>
+                <li>Danvers</li>
+                <li>Chantenay</li>
+              </ul>
+            </li>
+            <li>Herbs
+              <ul>
+                <li>Cilantro</li>
+                <li>Parsley</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Lettuce</li>
+      </ul>
+    </li>
+  </ul>
+  <script>
+    function walk(node) {
+      // do something with node
+      if (node.tagName === 'LI') {
+        var text = node.firstChild.textContent.trim();
+        console.log(text);
+      }
+
+      // for each child node
+      for (var i = 0; i < node.childNodes.length; i++) {
+        // recursively call walk()
+        walk(node.childNodes[i]);
+      }
+    }   
+
+    function walkList() {
+      walk(document.body);
+    }    
+
+    walkList();
+  </script>
+</body>
