@@ -1,0 +1,17 @@
+ul { list-style: none; }
+
+#column {
+  float: right;
+  width: 80%;
+  clear: both;
+}
+
+aside {
+  overflow: hidden;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+}

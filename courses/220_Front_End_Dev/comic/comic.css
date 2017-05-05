@@ -1,0 +1,91 @@
+#comic {
+  position: relative;
+  overflow: hidden;
+  width: 705px;
+  height: 312px;
+  margin: 0 auto;
+  background: transparent url("xkcd.gif") 0 0 no-repeat;
+}
+
+[id^="panel"] {
+  float: left;
+  width: 215px;
+  height: 282px;
+}
+
+#panel_2 { width: 179px; }
+
+#panel_3 {
+  width: 130px;
+  margin-right: 8px;
+}
+
+#panel_4 { width: 173px; }
+
+[id^="blind"] {
+  position: absolute;
+  background: #ffffff;
+}
+
+#blind_1 {
+  left: 3px;
+  top: 6px;
+  width: 123px;
+  height: 76px;
+}
+
+#blind_2 {
+  left: 33px;
+  top: 57px;
+  width: 178px;
+  height: 65px;
+}
+
+#blind_3 {
+  left: 224px;
+  top: 7px;
+  width: 139px;
+  height: 94px;
+}
+
+#blind_4 {
+  left: 290px;
+  top: 77px;
+  width: 96px;
+  height: 46px;
+}
+
+#blind_5 {
+  left: 402px;
+  top: 8px;
+  width: 102px;
+  height: 137px;
+}
+
+#blind_6 {
+  left: 441px;
+  top: 67px;
+  width: 76px;
+  height: 81px;
+}
+
+#blind_7 {
+  left: 535px;
+  top: 6px;
+  width: 139px;
+  height: 79px;
+}
+
+#blind_8 {
+  left: 609px;
+  top: 51px;
+  width: 49px;
+  height: 30px;
+}
+
+#blind_9 {
+  left: 561px;
+  top: 79px;
+  width: 137px;
+  height: 42px;
+}
