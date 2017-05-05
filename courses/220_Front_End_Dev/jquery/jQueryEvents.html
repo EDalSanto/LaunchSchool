@@ -1,0 +1,35 @@
+<ul>
+  <li><a href="#">Apples</a></li>
+  <li><a href="#">Bananas</a></li>
+  <li><a href="#">Oranges</a></li>
+</ul>
+<form action="" method="post">
+  <fieldset>
+    <input type="text" />
+    <input type="submit" value="Choose" />
+  </fieldset>
+</form>
+
+<p>choose your favorite fruit!</p>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+  var $p = $('p');
+  var output = 'Your favorite fruit is: '
+  
+  $('a').click(function(e) {
+    e.preventDefault();
+    var $e = $(this);
+  
+    $p.text(output + $e.text());
+  });
+
+  $('form').submit(function(e) {
+    e.preventDefault();
+    var $input = $(this).find('input[type=text]');
+
+    $p.text(output + $input.val());
+  });
+
+</script>

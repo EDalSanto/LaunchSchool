@@ -1,0 +1,82 @@
+body {
+  font: normal 14px Helvetica, Arial, sans-serif;
+  background: #780E24;
+}
+
+a { color: #16997c; }
+
+main, header {
+  width: 600px;
+  padding: 25px;
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+header { margin-bottom: 25px; }
+header ul {
+  padding: 0;
+  list-style: none;
+}
+header li {
+  position: relative;
+}
+header ul ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  background: #f0f0a0;
+}
+header li li {
+  padding: 5px;
+}
+header a { text-decoration: none; }
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+dt {
+  padding: 0 0 5px 0;
+  font-weight: bold;
+}
+
+dd { margin: 0; }
+
+input[type="text"] {
+  height: 20px;
+  padding: 5px 0 5px 5px;
+  font: normal 14px/100% sans-serif;
+}
+
+.accordion { display: none; }
+
+.opened { display: block; }
+
+.clicked {
+  padding: 3px;
+  color: #f0f033;
+  background: #181818;
+}
+
+nav ul ul { display: none; }
+
+form p {
+  display: none;
+  padding: 15px 0;
+  font: bold 13px Helvetica, Arial, sans-serif;
+}
+
+form p.success {
+  color: #339933;
+}
+
+form p.error {
+  color: #b00b00;
+}
+
+#birthstone {
+  font: italic bold 16px Georgia, serif;
+}

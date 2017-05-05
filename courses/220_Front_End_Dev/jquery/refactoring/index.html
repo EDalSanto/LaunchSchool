@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Refactoring</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="stylesheets/page.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="javascripts/to_refactor.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="#">Site Name</a></h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Home</a>
+            <ul>
+              <li><a href="#">Submenu 1</a></li>
+              <li><a href="#">Submenu 2</a></li>
+              <li><a href="#">Submenu 3</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Click the buttons to toggle them</h2>
+      <p>
+        <a class="button" href="#">Toggle me!</a>
+        <button>Toggle me too!</button>
+      </p>
+
+      <p>Sed ornare vel justo vel fringilla. Proin pharetra sapien lectus, et vestibulum elit pellentesque quis. Mauris vel erat in nisi aliquet mattis. Quisque at mi a lorem laoreet eleifend. Praesent condimentum euismod porta. Sed eu pretium augue, a laoreet nisl. Nulla convallis porttitor enim id feugiat. Suspendisse vehicula justo sapien, ac sollicitudin ipsum malesuada at.</p>
+      <a class="toggle" href="#">Read more</a>
+      <p class="accordion">Pellentesque vitae imperdiet nibh, ut hendrerit nisi. Donec sed diam lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta eu metus commodo laoreet. Integer vehicula luctus velit nec viverra. Phasellus ut sapien non arcu mollis luctus. Maecenas vel bibendum tellus. Proin lacinia porta enim, at elementum enim tristique quis. Duis nibh arcu, facilisis at enim a, mollis venenatis odio. Nam sit amet pretium ligula. Curabitur tincidunt neque fringilla interdum tempor. Vivamus tempus interdum ligula et ultrices. Sed sed nibh sapien.</p>
+
+      <form action="" method="post">
+        <p class="success">Thanks for your payment!</p>
+        <p class="error">Hey! Give us your card!</p>
+        <fieldset>
+          <h3>Please provide a payment method</h3>
+          <dl>
+            <dt><label for="credit_card">Credit Card</label></dt>
+            <dd><input type="text" name="credit_card" /></dd>
+          </dl>
+        </fieldset>
+        <input type="submit" value="Pay" />
+      </form>
+
+      <h3>Choose the month you were born in</h3>
+      <ul>
+        <li><a href="#">January</a></li>
+        <li><a href="#">February</a></li>
+        <li><a href="#">March</a></li>
+        <li><a href="#">April</a></li>
+        <li><a href="#">May</a></li>
+        <li><a href="#">June</a></li>
+        <li><a href="#">July</a></li>
+        <li><a href="#">August</a></li>
+        <li><a href="#">September</a></li>
+        <li><a href="#">October</a></li>
+        <li><a href="#">November</a></li>
+        <li><a href="#">December</a></li>
+      </ul>
+      <p id="birthstone"></p>
+    </main>
+  </body>
+</html>

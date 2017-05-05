@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="answer">0</div>
+  <form action="#" method="post">
+    <input type="number">
+    <select>
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="/">/</option>
+      <option value="*">*</option>
+    </select>
+    <input type="number">
+    <input type="submit" value="=">
+  </form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script>
+  $('form').submit(function(e) {
+    e.preventDefault();
+
+    var operand1 = parseInt($('input[type=number]').first().val(), 10);
+    var operand2 = parseInt($('input[type=number]').last().val(), 10);
+    var operator = $('select').val();
+    var res;
+
+    if (operator === '+') {
+      res = operand1 + operand2;
+    } else if (operator === '-') {
+      res = operand1 - operand2;
+    } else if (operator === '/') {
+      res = operand1 / operand2;
+    } else {
+      res = operand1 * operand2;
+    }
+
+    var $answer = $('.answer');
+    $answer.text(res);
+  });
+</script>

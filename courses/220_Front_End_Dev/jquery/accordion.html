@@ -1,0 +1,38 @@
+<form action="#" method="post">
+  <input type="text" maxLength="1">
+  <input type="submit">
+</form>
+<a href="3">Toggle</a>
+<div id="accordion">
+  <p>Accordion</p>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script>
+  var charCode;
+
+  $('form').submit(function(e) {
+    e.preventDefault();
+    var $input = $('input[type=text]');
+    charCode = $input.val().charCodeAt(0);
+
+
+  });
+
+  $(document).off('keypress').keypress(function(e) {
+    if (e.which !== charCode) {
+      return ;
+    }
+
+    $('a').trigger('click');
+  });
+
+  $('a').click(function(e) {
+    e.preventDefault();
+
+    var accordion = $('#accordion');
+    accordion.slideToggle();
+  });
+
+</script>

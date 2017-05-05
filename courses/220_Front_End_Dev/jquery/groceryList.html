@@ -1,0 +1,41 @@
+<link rel="stylesheet" media="print" href="stylesheets/print.css" />
+
+<form action="#" method="post">
+  <h2>Add an Item</h2>
+  <label>Item name
+    <input type="text" name="name">
+  </label>
+  <label>Quantity
+    <input type="number" name="quantity">
+  </label>
+  <input type="submit" value="Add">
+</form>
+<h1>Groceries</h1>
+<ul>
+  
+</ul>
+
+<style>
+  input {
+    display: block;
+  }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script>
+  var $form = $('form');
+  $form.on('submit', function(e) {
+    e.preventDefault();
+
+    var itemName = $('input[type=text]').val();
+    var number = $('input[type=number]').val();
+    number = number === '' ? 1 : number;
+    
+    var $ul = $('ul');
+    var item = "<li>" + number + ' ' + itemName + "</li>"; 
+    $ul.append(item);
+    $form.get(0).reset();
+  });
+
+</script>
